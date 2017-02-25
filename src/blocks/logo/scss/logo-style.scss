@@ -1,0 +1,13 @@
+@import "bourbon";
+@import "../../mixins-media.scss";
+@import "../../vars.scss";
+
+.logo {
+	height: 100%;
+	display: block;
+}
+
+.logo__logo-img {
+	margin-top: 22px;
+	margin-left: 22px;
+}

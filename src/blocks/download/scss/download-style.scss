@@ -1,0 +1,112 @@
+@import "bourbon";
+@import "../../mixins-media.scss";
+@import "../../vars.scss";
+
+.download {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	z-index: 5;
+}
+
+.btn-download {
+	margin-top: 28px;
+
+	@include font-OpenSansBold($colour: #fff, $size: 18px)
+	text-decoration: none;
+
+	background-color: $main-color;
+	border-radius: 40px;
+	border: 3px solid #fff;
+	padding: 15px 40px;
+
+	&:hover {
+		background-color: $white-color;
+		color: $pink-color;
+	}
+
+	&:active {
+		color: $pink-down-color;
+	}
+}
+
+.download__icon-wrap {
+	display: flex;
+	margin-top: 20px;
+	justify-content: space-around;
+	height: 70px;
+
+	&--within {
+		width: 205px;
+	}
+
+	&--without {
+		width: 60vw;
+	}
+}
+
+.download__icon .download__icon {
+	width: 60px;
+}
+
+.download__icon-wrap .android-logo {
+ font-size: 1.3px;
+}
+
+.download__icon-wrap .apple-logo {
+	font-size: 3.2px;
+}
+
+.download__icon-wrap .microsoft-logo {
+	font-size: 8.1px;
+	padding-top: 8px;
+	width: 70px;
+}
+
+.download__text {
+	@include font-OpenSansRegular($size: 14px, $lh: 24px, 
+		$colour: rgba(255, 255, 255, 0.7));
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.download__slogan {
+	&--within {
+		color: $white-color;
+		@include font-OpenSansLight($size: 40px, $weight: normal);
+		text-align: center;
+	}
+}
+
+@include media("screen", "<tablet-larger-small") {
+	.download {
+		background-color: $main-color;
+	}
+	.download--within,
+	.download__slogan {
+		display: none;
+	}
+}
+
+@include media("screen", ">=tablet-larger-small") {
+	.download--without {
+		display: none;
+	}
+
+	.download--within {
+		background: none;
+		z-index: 1;
+	}
+
+	.btn-download {
+		background: none;
+	}
+}
+
+@include media("screen", ">=tablet-larger-small") {
+	.download {
+		margin-top: 70px;
+		margin-left: 5%;		
+	}
+}

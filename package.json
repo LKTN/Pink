@@ -1,0 +1,34 @@
+{
+  "name": "scaffolding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "css-mqpacker": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-dynamic-name": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-postcss": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svg-sprites": "^4.0.2",
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest",
+    "imagemin-pngquant": "latest",
+    "include-media": "^1.4.9",
+    "node-bourbon": "latest",
+    "node-normalize-scss": "^1.4.0",
+    "rimraf": "latest"
+  },
+  "dependencies": {
+    "uuid": "^3.0.1"
+  }
+}

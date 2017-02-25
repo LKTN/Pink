@@ -1,0 +1,6 @@
+@import "bourbon";
+
+@include font-face("OpenSansBold", "../fonts/OpenSansBold/OpenSansBold", $file-formats: eot woff ttf);
+@include font-face("OpenSansLight", "../fonts/OpenSansLight/OpenSansLight", $file-formats: eot woff ttf);
+@include font-face("OpenSansRegular", "../fonts/OpenSansRegular/OpenSansRegular", $file-formats: eot woff ttf);
+@include font-face("OpenSansSemiBold", "../fonts/OpenSansSemiBold/OpenSansSemiBold", $file-formats: eot woff ttf);
