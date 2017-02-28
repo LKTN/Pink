@@ -10,17 +10,13 @@
 
 .menu__wrap {
 	display: flex;
+	align-items: center;
+	padding: 0 15px;
+	margin: 0 auto;
 }
 
 .menu__wrap-logo-btn {
-	height: 69px;
-	display: block;
 	box-sizing: border-box;
-}
-
-.menu__nav {
-	z-index: 3;
-	display: flex;
 }
 
 .menu__nav-list {
@@ -60,18 +56,19 @@
 }
 
 @include media("screen", ">=tablet-wide") {
-	.menu {
-		display: flex;
-		justify-content: center;
-	}
 
 	.menu__wrap {
-		justify-content: center;
-		width: 90%;
-		max-width: 1200px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 15px;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1170px;
 	}
 
 	.menu__nav {
+		display: flex;
 		width: 80%;
 		justify-content: flex-end;
 	}
@@ -80,10 +77,12 @@
 		justify-content: space-around;
 		width: 80%;
 		height: 112px;
+		flex-wrap: wrap;
 	}
 
 	.menu__nav-item {
-		margin: 45px 0;
+		align-self: center;
+		height: 25px;
 
 		&--active a {
 			&:hover {
@@ -107,13 +106,6 @@
 			border: none;
 		}
 	}
-	.menu__wrap-logo-btn {
-		flex: 1 1 auto;
-	}
-
-	.logo__logo-img {
-		margin-top: 28px;
-	}
 }
 
 
@@ -124,17 +116,11 @@
 
 	.menu__wrap {
 		width: 100%;
-		flex: 1 1 auto;
-	}
-
-	.menu__nav {
-		flex: 1 1 auto;
 	}
 
 	.menu__nav-list {
 		flex-direction: column;
 		@include font-OpenSansBold;
-		flex: 1 1 auto;
 		height: 102px;
 	}
 
@@ -146,8 +132,7 @@
 		display: block;
 		text-transform: uppercase;
 
-		padding: 12px 21px;
-		padding-bottom: 13px;
+		padding: 20px 21px;
 		text-align: center;
 
 		border-top: 1px solid #475360;
@@ -226,7 +211,6 @@
 
 		.menu__nav {
 			position: absolute;
-			top: 0;
 			left: 0;
 			width: 100%;
 		}
@@ -280,7 +264,7 @@
 	}
 
 	.menu--nojs {
-		.menu__wrap-logo-btn {
+		.menu__wrap {
 			background: $menu-color;
 			border-bottom: 1px solid #030303;
 		}
@@ -292,7 +276,6 @@
 		.menu__nav {
 			position: absolute;
 			display: block;
-			top: 0;
 			left: 0;
 			width: 100%;
 		}
@@ -305,40 +288,37 @@
 
 @include media("screen", "<tablet-larger-small") {
 	.menu--nojs {
-		.menu__nav-list {
-			margin-top: 69px;
+		.menu__nav {
+			top: 70px;
 			flex-direction: column
 		}
 	}	
 }
 
-@include media("screen", ">=tablet-larger-small") {
-	.menu--nojs {
-		.menu__wrap-logo-btn {
-			height: 110px;
-		}
-
-		.logo__logo-img {
-			margin-top: 27px;
-		}
-			
-		.menu__nav-list {
-			margin-top: 109px;	
-		}
-	}
-}
-
 @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
-	.menu__wrap-logo-btn {
-		width: 100%;
-		border-bottom: 1px solid #030303;
-		height: 109px;
+	.menu--nojs {			
+		.menu__nav {
+			top: 110px;	
+		}
 	}
-	
+
+	.menu__wrap {
+		box-sizing: border-box;
+		height: 110px;
+	}
+
+	.menu__nav {
+		top: 110px;
+	}
+
+	.menu--opened .menu__wrap {
+		border-bottom: 1px solid #030303;
+	}
+
 	.menu__toggle {
 		border: none;
 		border-bottom: 1px solid #030303;
-		height: 108px;
+		height: 109px;
 		width: 110px;
 
 		&::before, 
@@ -348,10 +328,6 @@
 			left: initial;
 			right: 40px;
 		}
-	}
-
-	.logo__logo-img {
-		margin-top: 27px;
 	}
 
 	.menu--closed .menu__toggle {
@@ -366,10 +342,6 @@
 
 	.menu--opened {
 		
-		.menu__nav-list {
-			margin-top: 109px;	
-		}
-
 		.menu__toggle {
 			&::before,
 			&::after {
@@ -384,14 +356,18 @@
 }
 
 @include media("screen", "<tablet-larger-small") {
-	.menu__wrap-logo-btn {
-		width: 100%;
-		border-bottom: 1px solid #030303;
-		height: 69px;
+	.menu__wrap {
+		box-sizing: border-box;
+		height: 70px;
 	}
+
+	.menu--opened .menu__wrap {
+		border-bottom: 1px solid #030303;
+	}
+
 	.menu__toggle {
 		width: 80px;
-		height: 69px;
+		height: 70px;
 	}
 
 	.menu--closed .menu__toggle {
@@ -404,8 +380,9 @@
 	}
 
 	.menu--opened {
-		.menu__nav-list {
-			margin-top: 69px;
+
+		.menu__nav {
+			top: 70px;
 		}
 
 		.menu__toggle {

@@ -7,98 +7,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/style.min.css">
-
 </head>
 <body>
-	<header class="header">
-		<div class="header__wrap">
-		
-			
+  <header class="header">
+    <div class="header__wrap">
 			<div class="menu menu--closed menu--nojs">
 				<div class="menu__wrap">
-					<div class="menu__wrap-logo-btn">
-						<div class="logo">
-							<picture>
-								<source srcset="img/logotype-white-desktop.png" media="only screen and (min-width: 1024px)">
-								<source srcset="img/logotype-white-tablet.png" media="only screen and (min-width: 700px)">
-								<img class="logo__logo-img" src="img/logotype-white-mobile.png" alt="logo">
-							</picture>
-						</div>
+          <div class="logo">
+            <picture>
+              <source srcset="img/logotype-white-desktop.png" media="only screen and (min-width: 1024px)">
+              <source srcset="img/logotype-white-tablet.png" media="only screen and (min-width: 700px)">
+              <img class="logo__logo-img" src="img/logotype-white-mobile.png" alt="logo">
+            </picture>
+          </div>
+          <button class="menu__toggle" type="button">	
+          </button>								
+          <nav class="menu__nav">
+            <ul class="menu__nav-list">
+              <li class="menu__nav-item menu__nav-item--active"><a>Главная</a></li>
+              <li class="menu__nav-item"><a href="#">Фотографии</a></li>
+              <li class="menu__nav-item"><a href="#">Конкурс</a></li>
+              <li class="menu__nav-item"><a href="#">HMTL Academy</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
 
-						<button class="menu__toggle" type="button">	
-						</button>		
-					</div>
-						
-					<nav class="menu__nav">
-						<ul class="menu__nav-list">
-							<li class="menu__nav-item menu__nav-item--active"><a>Главная</a></li>
-							<li class="menu__nav-item"><a href="#">Фотографии</a></li>
-							<li class="menu__nav-item"><a href="#">Конкурс</a></li>
-							<li class="menu__nav-item"><a href="#">HMTL Academy</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-			
-			<div class="header__wrap-download">
-				<div class="header__phone">
-				</div>
+      <div class="header__wrap-download">
+        <div class="header__phone"></div>
 
-				<div class="header__phone-screen">		
-				</div>
-			
+        <div class="header__phone-screen"></div>
 
-				<section class="download download--within">
-					<h2 class="download__slogan download__slogan--within">
-						Взгляните <br>на жизнь <br>иначе!
-					</h2>
+        <section class="download download--within">
+          <h2 class="download__slogan download__slogan--within">
+            Взгляните <br>на жизнь <br>иначе!
+          </h2>
+
+          <a class="btn-download" href="#">Скачать приложение</a>
 					
-					<a class="btn-download" href="#">Скачать приложение</a>
-					
-					<div class="download__icon-wrap download__icon-wrap--within">
-						<div class="download__icon icon apple-logo">
-						</div>
-						<div class="download__icon icon android-logo">
-						</div>
-						<div class="download__icon icon microsoft-logo">
-						</div>
+          <div class="download__icon-wrap download__icon-wrap--within">
+            <div class="download__icon icon apple-logo"></div>
+            <div class="download__icon icon android-logo"></div>
+            <div class="download__icon icon microsoft-logo"></div>
 					</div>
 
-					<div class="download__text">
-						<p>
-							Доступно для iPhone, iPad, Android,<br> Windows Phone, OS X, Windows 8
-						</p>
-					</div>
-				</section>
-			</div>
-		</div>
-
-			
-			
+          <div class="download__text">
+            <p>
+              Доступно для iPhone, iPad, Android,<br> Windows Phone, OS X, Windows 8
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
 		
-		<section class="download download--without">
-			<h2 class="download__slogan">
-				Взгляните <br>на жизнь <br>иначе!
-			</h2>
+    <section class="download download--without">
+      <h2 class="download__slogan">
+        Взгляните <br>на жизнь <br>иначе!
+      </h2>
 			
-			<a class="btn-download" href="#">Скачать приложение</a>
+      <a class="btn-download" href="#">Скачать приложение</a>
 			
-			<div class="download__icon-wrap download__icon-wrap--without">
-				<div class="download__icon icon apple-logo">
-				</div>
-				<div class="download__icon icon android-logo">
-				</div>
-				<div class="download__icon icon microsoft-logo">
-				</div>
-			</div>
+      <div class="download__icon-wrap download__icon-wrap--without">
+        <div class="download__icon icon apple-logo"></div>
+        <div class="download__icon icon android-logo"></div>
+        <div class="download__icon icon microsoft-logo"></div>
+      </div>
 
-			<div class="download__text">
-				<p>
-					Доступно для iPhone, iPad, Android,<br> Windows Phone, OS X, Windows 8
-				</p>
-			</div>
-		</section>
-	</header>
+      <div class="download__text">
+        <p>
+          Доступно для iPhone, iPad, Android,<br> Windows Phone, OS X, Windows 8
+        </p>
+      </div>
+    </section>
+  </header>
 
 <script>
 'use strict'
