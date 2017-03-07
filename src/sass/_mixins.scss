@@ -1,26 +1,41 @@
-//     _ _ __   ___| |_   _  __| | ___   _ __ ___   ___  __| |_  __ _
-//    | | '_ \ / __| | | | |/ _` |/ _ \ | '_ ` _ \ / _ \/ _` | |/ _` |
-//    | | | | | (__| | |_| | (_| |  __/ | | | | | |  __/ (_| | | (_| |
-//    |_|_| |_|\___|_|\__,_|\__,_|\___| |_| |_| |_|\___|\__,_|_|\__,_|
-//
-//      Simple, elegant and maintainable media queries in Sass
-//                        v1.4.9
-//
+@mixin font-OpenSansBold($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+@mixin font-OpenSansLight($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'OpenSansLight', Helvetica, Arial, sans-serif;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+@mixin font-OpenSansRegular($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+@mixin font-OpenSansSemiBold($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'OpenSansSemiBold', Helvetica, Arial, sans-serif;
+  @if $size { font-size: $size; }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+
+//v1.4.9
 //                http://include-media.com
 //
 //         Authors: Eduardo Boucas (@eduardoboucas)
 //                  Hugo Giraudel (@hugogiraudel)
-//
-//      This project is licensed under the terms of the MIT license
-
-
-////
-/// include-media library public configuration
-/// @author Eduardo Boucas
-/// @access public
-////
-
-
 ///
 /// Creates a list of global breakpoints
 ///

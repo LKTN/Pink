@@ -1,0 +1,138 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.header__wrap {
+  background-size: cover;
+  z-index: -20;
+  display: flex;
+  flex-direction: column;
+
+  @include media("screen", "<phone") {
+    background: url("../img/back-mobile-1x-jpg.png") no-repeat top center;
+    background-size: cover;
+    height: 462px;
+  }
+
+  @include media("screen", ">=phone", "<tablet-larger") {
+    background: url("../img/back-tablet-1x.png") no-repeat top center;
+    background-size: cover;
+    height: 462px;
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    height: 729px;
+  }
+
+  @include media("screen", ">=tablet-larger") {
+    background: url("../img/back-desktop-jpg.png") no-repeat center;
+    background-size: cover;
+  }
+
+  @include media("screen", ">=tablet-wide") {
+    height: 853px;
+  }
+
+  &--short {
+    @include media("screen", "<phone") {
+      height: 280px;
+    }
+
+    @include media("screen", ">=phone", "<phablet") {
+      height: 280px;
+    }
+
+    @include media("screen", ">=phablet", "<tablet-larger-small") {
+      height: 320px;
+    }
+
+    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+      height: 440px;
+    }
+
+    @include media("screen", ">=tablet-larger", "<tablet-wide") {
+      height: 440px;
+      background-position: 0 0;
+    }
+
+    @include media("screen", ">=tablet-wide") {
+      height: 440px;
+      background-position: 0 0;
+    }
+
+  }
+  
+}
+
+.header__wrap-download {
+  position: relative;
+  display: flex;
+  height: 100%;
+
+  @include media("screen", ">=tablet-wide", "<desktop") {
+    width: 100%;
+  }
+
+  @include media("screen", ">=desktop") {
+    width: 1200px;
+    align-self: center;
+  }
+}
+
+.header__phone {
+  position: absolute;
+  z-index: 1;
+
+  @include media("screen", "<tablet-larger-small") {
+    background-image: url("../img/hand-mobile.png");
+    width: 320px;
+    height: 302px; 
+    bottom: 0;   
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    background-image: url("../img/hand-tablet.png");
+    width: 700px;
+    height: 545px;
+    bottom: 0;
+    right: 0;
+  }
+
+  @include media("screen", ">=tablet-wide") {
+    background-image: url("../img/hand-desctop.png");
+    width: 1050px;
+    height: 645px;
+    bottom: 0;
+    right: -50px;
+  }
+
+}
+
+.header__phone-screen {
+  position: absolute;
+  z-index: 0;
+
+  @include media("screen", "<tablet-larger-small") {
+    background: url("../img/screen-phone-mobile.png") no-repeat;
+    width: 120px;
+    height: 200px;
+    bottom: 69px;
+    left: 104px;
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    background-image: url("../img/screen-phone-tablet.png");
+    width: 195px;
+    height: 347px;
+    bottom: 143px;
+    right: 112px;  
+  }
+
+  @include media("screen", ">=tablet-wide") {
+    background-image: url("../img/screen-phone-desctop.png");
+    width: 230px;
+    height: 408px;
+    bottom: 173px;
+    right: 200px;
+  }
+}

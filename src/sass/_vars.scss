@@ -1,0 +1,39 @@
+// Global
+
+$pink:                                        #d22856;
+$white:                                       #fff;
+$black:                                       #000;
+$blue:                                        #283645;
+$dark-blue:                                   #1d2631;
+
+// Typography color
+
+$text-color:                                  $white;
+$text-descr-color:                            rgba($white, 0.7);
+$text-active-hover-color:                     $pink;
+$text-active-hover-color-opacity:             rgba($pink, 0.3);
+$text-down-color:                             rgba($white, 0.3);
+
+// Border-menu
+
+$border-menu-top-color:                       #495562;
+$border-menu-bottom-color:                    #030303;
+$border-menu-hover-color:                     $white;
+$border-menu-active-hover-color:              $pink;
+
+// Backgrounds
+
+$background-main-color:                       $dark-blue;
+$background-menu-color:                       #283645;
+$background-menu-color-opacity:               rgba($background-main-color, 0.3);
+
+// Button-download
+
+$btn-download-text-color:                     $pink;   
+$btn-download-background-color:               $white;   
+$btn-download-text-down-color:                rgba($pink, 0.3);   
+
+// Button-menu
+
+$btn-menu-hover-color:                        $pink;
+$btn-menu-down-color:                         rgba($pink, 0.3);

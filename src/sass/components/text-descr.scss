@@ -1,0 +1,10 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.text-descr {
+  @include font-OpenSansRegular($size: 14px, $lh: 24px)
+  text-align: center;
+  margin-bottom: 25px;
+  color: $text-descr-color;
+}

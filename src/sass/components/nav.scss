@@ -1,0 +1,162 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 10;
+
+  .menu--opened & {
+    @include media("screen", "<tablet-wide") {
+      position: absolute;
+      left: 0;
+      width: 100%;      
+    }
+
+  }
+
+  .menu--closed & {
+    @include media("screen", "<tablet-wide") {
+      display: none;
+    }
+
+  }
+
+  .menu--nojs & {
+    @include media("screen", "<tablet-wide") {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+    }
+
+  }
+
+  &--menu {
+    @include media("screen", ">=tablet-wide") {
+      justify-content: flex-end;
+      width: 80%;   
+    }
+
+  }
+
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+    
+  width: 100%;
+  @include font-OpenSansRegular;
+  list-style: none;
+    
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+
+  @include media("screen", ">=tablet-wide") {
+    width: 80%;
+    height: 112px;
+    justify-content: space-around;      
+  }
+
+  .nav--menu & {
+    @include media("screen", "<tablet-wide") {
+      flex-direction: column;
+      @include font-OpenSansBold;
+    }
+
+  }
+
+}
+
+.nav__item {
+  .menu--opened & {
+    @include media("screen", "<tablet-wide") {
+        width: 100%;      
+    }
+
+  }
+
+  .menu--nojs & {
+    @include media("screen", "<tablet-wide") {
+      width: 100%;
+      z-index: 20;      
+    }
+
+  }
+
+  & a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 24px;
+    color: $text-color;
+    text-align: center;
+
+    @include media("screen", ">=tablet-wide") {
+      padding-bottom: 10px;
+    }
+
+    &[href]:hover {
+      color: $text-active-hover-color;
+
+      @include media("screen", ">=tablet-wide") {
+        border-bottom: 2px solid $border-menu-active-hover-color;
+        color: $text-active-hover-color;
+      }
+
+    }
+
+    &[href]:active {
+      color: $text-active-hover-color-opacity;
+
+      @include media("screen", ">=tablet-wide") {
+        color: $text-down-color;
+        border: none;
+      }
+    }
+
+    .nav--menu & {
+      @include media("screen", "<tablet-wide") {
+        display: block;
+        text-transform: uppercase;
+        background-color: $background-menu-color;
+
+        padding: 20px 21px;
+        text-align: center;
+
+        border-top: 1px solid $border-menu-top-color;
+        border-bottom: 1px solid $border-menu-bottom-color;
+        z-index: 3;
+      }   
+
+    }
+    
+  }
+
+  &--active {
+
+    & a {
+      &:hover {
+        @include media("screen", ">=tablet-wide") {
+          border-bottom: 2px solid $border-menu-hover-color;
+          color: $text-color;
+        }
+
+      }
+
+      &:active {
+        @include media("screen", ">=tablet-wide") {
+          color: $text-down-color;
+          border: none;
+        }
+
+      }
+
+    }     
+
+  }
+
+}

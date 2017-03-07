@@ -1,0 +1,83 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+
+.menu {
+  width: 100%;
+  background-color: $background-menu-color-opacity;
+
+  @include media("screen", "<tablet-wide") {
+    background-color: $background-menu-color;
+  }
+
+  &--closed {
+    @include media("screen", "<tablet-wide") {
+      z-index: 3;
+      background-color: $background-menu-color-opacity;
+    }
+
+  }
+
+}
+
+.menu__wrap {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @include media("screen", ">=tablet-wide") {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1170px;
+  }
+
+  @include media("screen", "<tablet-wide") {
+    width: 100%;
+    box-sizing: border-box;
+
+    .menu--opened & {
+      border-bottom: 1px solid $border-menu-bottom-color;
+    }
+
+    .menu--nojs & {
+      background: $background-menu-color;
+      border-bottom: 1px solid $border-menu-bottom-color;
+    }
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    height: 110px;
+  }
+
+  @include media("screen", "<tablet-larger-small") {
+    height: 70px;
+  }
+
+}
+
+.menu__nav {
+  @include media("screen", "<tablet-larger-small") {
+    top: 70px;
+
+    .menu--nojs & {
+      top: 70px;
+    }
+
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    top: 110px;
+
+    .menu--nojs & {
+      top: 110px; 
+    }
+
+  }
+
+}

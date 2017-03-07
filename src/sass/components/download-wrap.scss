@@ -1,0 +1,40 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 5;
+
+  @include media("screen", ">=tablet-larger-small") {
+    margin-top: 70px;
+    margin-left: 5%;  
+  }
+
+  @include media("screen", "<tablet-larger-small") {
+    background-color: $background-main-color;
+  }
+
+  &--within {
+    @include media("screen", "<tablet-larger-small") {
+      display: none;
+    }
+
+    @include media("screen", ">=tablet-larger-small") {
+      background: none;
+      z-index: 1;
+    }
+
+  }
+
+  &--without {
+    @include media("screen", ">=tablet-larger-small") {
+      display: none;
+    }
+
+  }
+
+}

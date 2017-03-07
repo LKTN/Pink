@@ -1,0 +1,27 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.btn-download {
+  margin-top: 28px;
+
+  @include font-OpenSansBold($colour: #fff, $size: 18px);
+  text-decoration: none;
+
+  border-radius: 40px;
+  border: 3px solid #fff;
+  padding: 15px 40px;
+
+  &:hover {
+    background-color: $btn-download-background-color;
+    color: $btn-download-text-color;
+  }
+
+  &:active {
+    color: $btn-download-text-down-color;
+  }
+
+  @include media("screen", ">=tablet-larger-small") {
+    background: none;
+  }
+}

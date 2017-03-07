@@ -27,17 +27,17 @@ var path = {
         sprites: 'src/img/'
     },
     src: {
-        html: 'src/pages/*.html',
+        html: 'src/*.html',
         js: 'src/js/main.js',
-        css: 'src/style.scss',
+        css: 'src/sass/style.scss',
         svg: 'src/img/src-svg/*.svg',
         img: 'src/img/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
-        html: 'src/pages/*.html',
+        html: 'src/*.html',
         js: 'src/js/**/*.js',
-        css: 'src/**/**/*.scss',
+        css: 'src/sass/**/*.scss',
         img: ['!src/img/*.svg', 'src/img/*.*'],
         fonts: 'src/fonts/**/*.*'
     },
@@ -81,8 +81,8 @@ gulp.task('css:build', function () {
     gulp.src(path.src.css) 
         //.pipe(sourcemaps.init())
         .pipe(sass({
-        	//подключение бурбона и normalize
-            includePaths: [require('node-bourbon').includePaths, require('node-normalize-scss').includePaths, require('include-media').includePaths],
+        	//bourbone
+            includePaths: require('node-bourbon').includePaths,
             //outputStyle: 'compressed',
             //sourceMap: true,
             errLogToConsole: true
@@ -90,7 +90,7 @@ gulp.task('css:build', function () {
         .pipe(prefixer({browsers: ['last 2 versions']}))
         .pipe(postcss([
         	mqpacker({
-        		sort: true
+        		sort: true//sorting media query
         	})
         ]))
         .pipe(gulp.dest(path.build.css))
@@ -116,12 +116,12 @@ gulp.task('image:build', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('sprites', function () { //Необходимо править путь к sprite.svg в _sprite.scss
+gulp.task('sprites', function () { 
     return gulp.src(path.src.svg)
         .pipe(svgSprite({
-            cssFile: "../blocks/_sprite.scss",
+            cssFile: "../src/sass/_sprite.scss",
             preview: false,
-            svgPath: "../img/"
+            svgPath: "../img/sprite.svg"
 
         }))
         .pipe(gulp.dest(path.build.sprites));
@@ -153,7 +153,7 @@ gulp.task('watch', function(){
         gulp.start('js:build');
     });
     watch([path.watch.img], function(event, cb) {
-        gulp.start('image:build', 'spritees:build');
+        gulp.start('image:build');
     });
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');

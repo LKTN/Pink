@@ -1,0 +1,16 @@
+{
+  "name": "infoarmor",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Tolya <tl_lktn@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "normalize-css": "^5.0.0"
+  },
+  "install": {
+    "path": "src/sass/libs"
+  }
+}

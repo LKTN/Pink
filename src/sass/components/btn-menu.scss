@@ -1,0 +1,171 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.btn-menu {
+  display: none;
+
+  @include media("screen", "<tablet-wide") {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+
+    background-color: rgba(40, 54, 69, 0);
+    border: none;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+    
+    .menu--opened & {
+      z-index: 10;
+      box-sizing: border-box;
+
+      &:hover::before,
+      &:hover::after {
+        background-color: $btn-menu-hover-color;
+      }
+
+      &::before, 
+      &::after {
+        content: '';
+        position: absolute;
+
+        background-color: #FFF;
+      }
+      
+      &::before {
+        transform: rotate(45deg);
+        box-shadow: none;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &:active::before,
+      &:active::after {
+        background-color: $btn-menu-down-color;
+      }
+
+    }
+
+    .menu--closed & {
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 0 8px 0 0 #fff, 0 16px 0 0 #fff;
+
+        &:hover::before,
+        &:hover::after {
+          background-color: $btn-menu-hover-color;
+        }
+
+        &:hover::before,
+        &:hover::after {
+          background-color: $btn-menu-hover-color;
+          box-shadow: 0 8px 0 0 $btn-menu-hover-color, 0 16px 0 0  $btn-menu-hover-color; 
+        }
+
+        &:active::before{
+          background-color: $btn-menu-down-color;
+          box-shadow: 0 8px 0 0 $btn-menu-down-color, 0 16px 0 0  $btn-menu-down-color;   
+        }   
+      }
+
+      &:hover::before,
+      &:hover::after {
+        background-color: $btn-menu-hover-color;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        background-color: $btn-menu-hover-color;
+        box-shadow: 0 8px 0 0 $btn-menu-hover-color, 0 16px 0 0  $btn-menu-hover-color; 
+      }
+
+      &:active::before{
+        background-color: $btn-menu-down-color;
+        box-shadow: 0 8px 0 0 $btn-menu-down-color, 0 16px 0 0  $btn-menu-down-color;   
+      }
+
+    }
+
+    .menu--nojs & {
+      display: none;
+    }
+
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    border: none;
+    border-bottom: 1px solid #030303;
+    height: 109px;
+    width: 110px;
+
+    &::before, 
+    &::after {
+      top: 52px;
+      height: 3px;
+      left: initial;
+      right: 40px;
+    }
+
+    .menu--closed & {
+      &::before {
+        top: 44px;
+        left: initial;
+        right: 25px;
+        width: 50px;
+      }
+
+    }
+
+    .menu--opened & {
+      &::before,
+      &::after {
+        top: 51px;
+        left: initial;
+        right: 20px;
+        width: 50px;
+        height: 4px;      
+      }
+
+    }
+
+  }
+
+  @include media("screen", "<tablet-larger-small") {
+    width: 80px;
+    height: 70px;
+
+    .menu--closed & {
+      &::before {
+        top: 22px;
+        left: 20px;
+        width: 38px;
+        height: 2.5px;
+      }
+
+    }
+
+    .menu--opened & {
+      border-bottom: 1px solid #000;
+      
+      &::before,
+      &::after {
+        top: 31px;
+        left: 30px;
+        width: 33px;
+        height: 4px;    
+      }
+
+    }
+  }
+
+}
