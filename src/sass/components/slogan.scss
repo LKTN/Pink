@@ -29,4 +29,23 @@
     }
   }
 
+  &--descr {
+    color: $text-descr-slogan-color;
+    width: 100%;
+
+    @include media ("screen", "<tablet-larger-small") {
+      font-size: 24px;
+
+      &:last-child {
+        margin-top: 25px;
+      }
+
+    }
+
+    @include media ("screen", ">=tablet-wide") {
+      font-size: 50px;
+    }
+
+  }
+
 }

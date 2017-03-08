@@ -1,4 +1,4 @@
-@mixin font-OpenSansBold($size: false, $colour: false, $weight: false,  $lh: false) {
+  @mixin font-OpenSansBold($size: false, $colour: false, $weight: false,  $lh: false) {
   font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
   @if $size { font-size: $size; }
   @if $colour { color: $colour; }

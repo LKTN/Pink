@@ -1,0 +1,94 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.descr-app {
+
+	@include media ("screen", "<tablet-larger-small") {
+		display: flex;
+		flex-direction: column;
+		align-items: center;	
+	}
+
+}
+
+.descr-app__slogan {
+
+
+	@include media("screen", "<phone-wide"){
+		margin-top: 45px;
+	}
+
+	@include media("screen", ">=phone-wide", "<tablet-wide")  {
+		margin-top: 60px;
+		width: 100%;
+	}
+
+	@include media("screen", ">=tablet-wide") {
+		margin-top: 75px;
+	}
+}
+
+.descr-app__wrap-phone-text {
+	display: flex;
+
+	@include media ("screen", "<tablet-larger-small") {
+		flex-direction: column;
+		align-items: center;	
+	}
+
+	@include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+		margin-top: 20px;
+	}
+
+	@include media ("screen", ">=tablet-wide") {
+		flex-direction: column;
+		align-items: center;		
+	}
+}
+
+.descr-app__phones {
+  display: flex;
+  justify-content: space-around;
+
+  margin-top: 20px;
+  margin-bottom: 50px;
+
+  width: 80%;
+  max-width: 1200px;
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+  	width: 310px;
+  	height: 500px;
+  	align-self: flex-start;
+  	margin-left: 30px;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    margin-top: 75px;
+  }
+
+}
+
+.descr-app__text {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	align-items: center;
+
+	@include media ("screen", "<tablet-larger-small") {
+		flex-direction: column;
+	}
+	
+	@include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+		margin-top: 50px;
+		align-items: flex-start;
+	}
+
+	@include media ("screen", ">=tablet-wide") {
+		max-width: 1200px;
+		width: 80%;
+		justify-content: space-around;
+		flex-direction: row;
+	}
+}
