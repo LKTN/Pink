@@ -5,22 +5,69 @@
 .text-advantage {
   display: flex;
   flex-direction: column;
-  width: 245px;
+  width: 100%;
   text-align: center;
+
+  @include media ("screen", "<tablet-larger-small") {
+    padding-bottom: 40px;
+  }
 
   @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
     width: 80%;
-    margin-left: 35px;
     text-align: left;
     align-items: flex-start;
+    padding-bottom: 45px;
   }
+
+  @include media("screen", ">=tablet-wide") {
+    width: 375px;
+    align-items: center;
+  }
+
+  &--topic {
+    margin: auto;//доработать для других страниц
+  }
+
+  &--hours {
+    
+
+    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+      width: 50%;
+      margin-top: 50px;
+      margin-left: 40px;  
+    }
+
+    @include media ("screen", ">=tablet-wide") {
+      width: 50%;
+      align-items: flex-start;
+      text-align: left;
+      margin-top: 80px; 
+      margin-left: 70px;
+    }
+
+  }
+
 }
 
 .text-advantage__title {
   @include font-OpenSansBold($size: 18px, $colour: $text-advantage-title-color);
+  padding-bottom: 20px;
 
+  @include media ("screen", "<tablet-larger-small") {
+      
+  }
+  
   @include media ("screen", ">=tablet-wide") {
     font-size: 30px;
+    width: 300px;
+  }
+
+  .text-advantage--hours & {
+    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+      font-size: 30px;
+      width: 200px;  
+    }
+    
   }
 }
 
@@ -29,5 +76,17 @@
 
   @include media ("screen", ">=tablet-wide") {
     font-size: 18px;
+    width: 250px;
   }
+
+  .text-advantage--hours & {
+    @include media ("screen", ">=tablet-wide") {
+      width: 100%;
+    }
+  }
+}
+
+.text-advantage__link {
+  margin-top: 25px;
+  color: $text-link-color;
 }

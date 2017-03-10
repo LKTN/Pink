@@ -2,6 +2,10 @@
 @import "../mixins.scss";
 @import "../vars.scss";
 
+.header {
+  overflow: hidden;
+}
+
 .header__wrap {
   background-size: cover;
   z-index: -20;

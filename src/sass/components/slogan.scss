@@ -2,13 +2,11 @@
 @import "../mixins.scss";
 @import "../vars.scss";
 
+
 .slogan {
   color: $text-color;
   @include font-OpenSansLight($size: 40px, $weight: normal);
-  margin: auto;
   text-align: center;
-  width: 70%;
-  max-width: 800px;
 
   @include media("screen", "<tablet-larger-small") {
     .download--within & {
@@ -19,14 +17,6 @@
 
   &--download {
     margin: 0;
-  }
-
-  &--topic {
-    font-size: 50px;
-
-    @include media("screen", "<tablet-larger-small") {
-      font-size: 24px;
-    }
   }
 
   &--descr {

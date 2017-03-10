@@ -4,14 +4,7 @@
 
 .phone {
   position: relative;
-  width: 186px;
   display: flex;
-
-  @include media("screen", "<tablet-larger-small") {
-    &:last-child {
-      justify-content: center;
-    }
-  }
 
   @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
     &:last-child {
@@ -32,10 +25,6 @@
 }
 
 .phone__iphone {
-
-  top: 0;
-  left: 0;
-
   @include media("screen", "<tablet-larger-small") {
     background: url(../img/phone-mobile.png) no-repeat top center; 
     width: 160px;
@@ -63,10 +52,6 @@
 
   width: 163px;
   height: 255px;
-
-  @include media("screen", "<phone-wide") {
-    display: none;
-  }
 
   &--gray {
     @include media("screen", ">=tablet-wide") {
@@ -104,4 +89,3 @@
   }
 
 }
-

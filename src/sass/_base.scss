@@ -1,0 +1,43 @@
+
+// Base common styles
+
+html  {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  height: 100%;
+  *,
+  &::after,
+  &::before {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+body {
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: "Open Sans", "Arial", sans-serif;
+  word-wrap: break-word;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  &:focus {
+    outline: 0;
+  }
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
