@@ -42,12 +42,12 @@
     box-sizing: border-box;
 
     .menu--opened & {
-      border-bottom: 1px solid $border-menu-bottom-color;
+      //border-bottom: 1px solid $border-menu-bottom-color;
     }
 
     .menu--nojs & {
       background: $background-menu-color;
-      border-bottom: 1px solid $border-menu-bottom-color;
+      //border-bottom: 1px solid $border-menu-bottom-color;
     }
   }
 

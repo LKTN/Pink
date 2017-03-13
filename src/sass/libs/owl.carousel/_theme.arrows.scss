@@ -1,0 +1,99 @@
+.owl-theme {
+  // Styling Next and Prev buttons
+  .owl-nav {
+    margin-top: 10px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    [class*='owl-'] {
+      color: $nav-color;
+      font-size: $nav-font-size;
+      margin: $nav-margin;
+      padding: $nav-padding;
+      display: block;
+      cursor: pointer;
+      border-radius: 3px;
+      overflow: hidden;
+      width: 24px;
+      position: absolute;
+      top: 25px;
+      
+      &:hover {
+        color:$nav-color-hover;
+        text-decoration: none;
+      }
+
+      @include media ("screen", "<tablet-wide") {
+        display: none;
+      }
+    }
+    .disabled {
+      opacity: $nav-disabled-opacity;
+      cursor: default;
+    }
+  }
+
+  // Styling dots
+  .owl-nav.disabled + .owl-dots {
+    margin-top: 10px;
+  }
+
+  .owl-dots {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    .owl-dot {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+
+      span {
+        width: $dot-width;
+        height: $dot-height;
+        margin: $dot-margin;
+        background: $dot-background;
+        display: block;
+        border-radius: 30px;
+      }
+
+      &.active {
+        span {
+          background: $dot-background-active;
+        }
+      }
+
+      @include media("screen", ">=tablet-wide") {
+        display: none;
+      }
+    }
+
+
+    .owl-dot span {
+      border: 2px solid #fff;
+    }
+
+    .owl-dot.active span {
+      border: 2px solid #000;
+    }
+  }
+
+  &--price {
+    @include media ("screen", "<tablet-larger-small") {
+      
+    }
+  }
+}
+// position arrows
+.owl-next {
+  right: 20%;
+}
+
+.owl-prev {
+  left: 20%;
+}
+
+@include media ("screen", ">=tablet-wide") {
+  .owl-carousel.owl-loaded {
+    width: 1350px;
+  }  
+}

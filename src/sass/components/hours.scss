@@ -4,11 +4,8 @@
 
 .hours {
   display: flex;
-  align-items: center;
   align-self: center;
-
   width: 100%;
-  max-width: 1200px;
   
   @include media ("screen", "<tablet-larger-small") {
     display: none;
@@ -20,6 +17,7 @@
 
   @include media ("screen", ">=tablet-wide") {
     margin-top: 75px;
+    width: 1000px;
   }
   
 }
@@ -40,7 +38,6 @@
     background: url("../img/timer-desctop.png") no-repeat;
     width: 298px;
     height: 345px;
-    margin-left: 7%;
   }
   
 }

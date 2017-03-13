@@ -8,20 +8,24 @@
   width: 100%;
   text-align: center;
 
-  @include media ("screen", "<tablet-larger-small") {
-    padding-bottom: 40px;
-  }
+  &--phone {
+    @include media ("screen", "<tablet-larger-small") {
+      padding-bottom: 40px;
+    }
 
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
-    width: 80%;
-    text-align: left;
-    align-items: flex-start;
-    padding-bottom: 45px;
-  }
+    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+      width: 80%;
+      text-align: left;
+      align-items: flex-start;
+      padding-bottom: 45px;
+    }
 
-  @include media("screen", ">=tablet-wide") {
-    width: 375px;
-    align-items: center;
+    @include media("screen", ">=tablet-wide") {
+      //margin-top: 60px;
+      width: 375px;
+      align-items: center;
+    }
+
   }
 
   &--topic {
@@ -30,9 +34,9 @@
 
   &--hours {
     
-
     @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
       width: 50%;
+      text-align: left;
       margin-top: 50px;
       margin-left: 40px;  
     }
@@ -47,19 +51,29 @@
 
   }
 
+  &--slideshow {
+    line-height: 30px;
+
+    @include media ("screen", "<tablet-larger-small") {
+      width: 90%;
+      margin: auto;
+    }
+
+
+  }
+
 }
 
 .text-advantage__title {
-  @include font-OpenSansBold($size: 18px, $colour: $text-advantage-title-color);
+  @include font-OpenSansBold($size: 20px, $colour: $text-advantage-title-color);
   padding-bottom: 20px;
-
-  @include media ("screen", "<tablet-larger-small") {
-      
-  }
   
-  @include media ("screen", ">=tablet-wide") {
-    font-size: 30px;
-    width: 300px;
+  .text-advantage--phone & {
+    @include media ("screen", ">=tablet-wide") {
+      font-size: 30px;
+      width: 300px;
+    }
+
   }
 
   .text-advantage--hours & {
@@ -68,6 +82,10 @@
       width: 200px;  
     }
     
+  }
+
+  .text-advantage--slideshow & {
+    padding-bottom: 10px;
   }
 }
 
@@ -84,9 +102,29 @@
       width: 100%;
     }
   }
+
+  .text-advantage--slideshow & {
+    @include media ("screen", ">=tablet-larger-small") {
+      order: -1;
+      margin-bottom: 45px;
+      font-size: 18px;
+      width: 620px;
+      align-self: center;
+    }
+  }
 }
 
 .text-advantage__link {
   margin-top: 25px;
   color: $text-link-color;
+}
+
+.text-advantage__title-descr {
+  .text-advantage--slideshow & {
+    @include media ("screen", "<tablet-larger-small") {
+      display: none;
+    }
+
+  }
+
 }

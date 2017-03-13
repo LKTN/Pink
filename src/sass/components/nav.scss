@@ -11,7 +11,8 @@
     @include media("screen", "<tablet-wide") {
       position: absolute;
       left: 0;
-      width: 100%;      
+      width: 100%;
+      border-top: 1px solid $border-menu-bottom-color;    
     }
 
   }
@@ -29,6 +30,7 @@
       display: block;
       left: 0;
       width: 100%;
+      border-top: 1px solid $border-menu-bottom-color;  
     }
 
   }

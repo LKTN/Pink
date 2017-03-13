@@ -8,9 +8,22 @@
   "license": "ISC",
   "homepage": "",
   "dependencies": {
-    "normalize-css": "^5.0.0"
+    "normalize-css": "^5.0.0",
+    "owl.carousel": "^2.2.1"
   },
   "install": {
-    "path": "src/sass/libs"
+    "path": {
+      "css": "src/sass/libs",
+      "scss": "src/sass/libs",
+      "js": "src/js/libs"
+    },
+    "sources": {
+      "jquery": "bower_components/jquery/dist/jquery.min.js",
+      "normalize-css": "bower_components/normalize-css/normalize.css",
+      "owl.carousel": [
+        "bower_components/owl.carousel/dist/owl.carousel.min.js",
+        "bower_components/owl.carousel/src/scss/*.scss"
+      ]
+    }
   }
 }

@@ -6,8 +6,11 @@
 @import "sprite.scss";
 @import "base.scss";
 
+@import "libs/owl.carousel/owl.carousel.scss";
+@import "libs/owl.carousel/owl.theme.arrows.scss";
+
 @import "components/nav.scss";
-@import "components/btn-menu.scss";
+@import "components/toggle-menu.scss";
 @import "components/btn-download.scss";
 @import "components/slogan.scss";
 @import "components/text-descr.scss";
@@ -20,6 +23,9 @@
 @import "components/phone.scss";
 @import "components/text-advantage.scss";
 @import "components/hours.scss";
+@import "components/slideshow.scss";
+
+
 
 
 

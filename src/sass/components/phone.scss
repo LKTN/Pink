@@ -39,19 +39,30 @@
 
   @include media("screen", ">=tablet-wide") {
     background: url(../img/phone-desctop.png) no-repeat top center;
-    width: 186px;
-    height: 300px;
+    width: 300px;
+    height: 302px;
   }
 
 }
 
 .phone__screen {
   position: absolute;
-  top: 45px;
-  left: 12px;
 
-  width: 163px;
-  height: 255px;
+  @include media ("screen", "<tablet-wide") {
+    top: 45px;
+    left: 12px;
+
+    width: 163px;
+    height: 255px;    
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+      top: 42px;
+      left: 63px;
+
+      width: 168px;
+      height: 260px;
+  }
 
   &--gray {
     @include media("screen", ">=tablet-wide") {
@@ -84,6 +95,7 @@
     @include media("screen", ">=tablet-wide") {
       background: url(../img/phone-screen-desctop-smile.png) no-repeat top center;
       background-size: cover;
+
     }
 
   }

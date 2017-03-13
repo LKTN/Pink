@@ -2,8 +2,12 @@
 @import "../mixins.scss";
 @import "../vars.scss";
 
+.icons-platform__icon {
+  width: inherit;
+  height: inherit;
+}
 
-.icon-wrap {
+.icons-platform {
   display: flex;
   margin-top: 20px;
   justify-content: space-around;
@@ -14,7 +18,7 @@
   }
 
   &--without {
-    width: 60vw;
+    width: 300px;
   }
 
   .android-logo {
@@ -31,4 +35,21 @@
     width: 70px;
   }
 
+}
+
+.icons-platform__item {
+  width: 55px;
+  height: 55px;
+}
+
+
+
+a svg .logo-pink-mobile {
+  fill: #FFFFFF;
+}
+a svg:hover .logo-pink-mobile {
+  fill: #d22856;
+}
+a svg:active .logo-pink-mobile {
+  fill: rgba(#fff, 0.3);
 }

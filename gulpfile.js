@@ -15,7 +15,12 @@ var gulp = require('gulp'),
     mqpacker = require("css-mqpacker"),
     reload = browserSync.reload,
     rename = require('gulp-dynamic-name'),
-    svgSprite = require("gulp-svg-sprites");
+    svgSprite = require('gulp-svg-sprite'),
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio'),
+    replace = require('gulp-replace');
+
+    /*svgSprite = require("gulp-svg-sprites");*/
 
 var path = {
     build: {
@@ -24,11 +29,11 @@ var path = {
         css: 'build/css/',
         img: 'build/img/',
         fonts: 'build/fonts/',
-        sprites: 'src/img/'
+        svg: 'src/img/'
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/main.js',
+        js: 'src/js/**/*.js',
         css: 'src/sass/style.scss',
         svg: 'src/img/src-svg/*.svg',
         img: 'src/img/*.*',
@@ -38,7 +43,7 @@ var path = {
         html: 'src/*.html',
         js: 'src/js/**/*.js',
         css: 'src/sass/**/*.scss',
-        img: ['!src/img/*.svg', 'src/img/*.*'],
+        img: 'src/img/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     clean: './build'
@@ -71,7 +76,7 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
     gulp.src(path.src.js) 
         //.pipe(sourcemaps.init()) 
-        .pipe(uglify()) 
+        .pipe(uglify()) //ругается, проверить.
         //.pipe(sourcemaps.write()) 
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
@@ -81,7 +86,7 @@ gulp.task('css:build', function () {
     gulp.src(path.src.css) 
         //.pipe(sourcemaps.init())
         .pipe(sass({
-        	//bourbone
+          //bourbone
             includePaths: require('node-bourbon').includePaths,
             //outputStyle: 'compressed',
             //sourceMap: true,
@@ -89,9 +94,9 @@ gulp.task('css:build', function () {
         }))
         .pipe(prefixer({browsers: ['last 2 versions']}))
         .pipe(postcss([
-        	mqpacker({
-        		sort: true//sorting media query
-        	})
+          mqpacker({
+            sort: true//sorting media query
+          })
         ]))
         .pipe(gulp.dest(path.build.css))
         .pipe(cssmin())
@@ -115,18 +120,48 @@ gulp.task('image:build', function () {
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({stream: true}));
 });
-
+/*
 gulp.task('sprites', function () { 
     return gulp.src(path.src.svg)
         .pipe(svgSprite({
-            cssFile: "../src/sass/_sprite.scss",
+            cssFile: "sass/_sprite.scss",
             preview: false,
             svgPath: "../img/sprite.svg"
 
         }))
         .pipe(gulp.dest(path.build.sprites));
 });
+*/
 
+gulp.task('sprite-build', function () {
+  return gulp.src(['src/img/logo-pink-mobile.svg', 'src/img/logo-pink-tablet.svg', 'src/img/logo-pink-desktop.svg'])
+    // minify svg
+    .pipe(svgmin({
+      js2svg: {
+        pretty: true
+      }
+    }))
+    // remove all fill, style and stroke declarations in out shapes
+    .pipe(cheerio({/*
+      run: function ($) {
+        $('[fill]').removeAttr('fill');
+        $('[stroke]').removeAttr('stroke');
+        $('[style]').removeAttr('style');
+      },*/
+      parserOptions: {xmlMode: true}
+    }))
+    // cheerio plugin create unnecessary string '&gt;', so replace it.
+    .pipe(replace('&gt;', '>'))
+    //build svg sprite
+    .pipe(svgSprite({
+      mode: {
+        symbol: {
+          sprite: "../general.svg"
+        }
+      }
+    }))
+    .pipe(gulp.dest('src'));
+});
 
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
