@@ -17,6 +17,9 @@
 
   &--download {
     margin: 0;
+    @include media ("screen", "<tablet-larger-small") {
+      display: none;
+    }
   }
 
   &--descr {

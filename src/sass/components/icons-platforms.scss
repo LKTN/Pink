@@ -2,11 +2,6 @@
 @import "../mixins.scss";
 @import "../vars.scss";
 
-.icons-platform__icon {
-  width: inherit;
-  height: inherit;
-}
-
 .icons-platform {
   display: flex;
   margin-top: 20px;
@@ -14,7 +9,7 @@
   height: 70px;
 
   &--within {
-    width: 205px;
+    width: 230px;
   }
 
   &--without {
@@ -37,19 +32,13 @@
 
 }
 
+.icons-platform__icon {
+  width: inherit;
+  height: inherit;
+}
+
 .icons-platform__item {
   width: 55px;
   height: 55px;
 }
 
-
-
-a svg .logo-pink-mobile {
-  fill: #FFFFFF;
-}
-a svg:hover .logo-pink-mobile {
-  fill: #d22856;
-}
-a svg:active .logo-pink-mobile {
-  fill: rgba(#fff, 0.3);
-}

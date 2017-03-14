@@ -6,22 +6,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 
-  z-index: 5;
-
-  @include media("screen", ">=tablet-larger-small") {
-    margin-top: 70px;
-    margin-left: 5%;  
-  }
+  //z-index: 5;
 
   @include media("screen", "<tablet-larger-small") {
     background-color: $background-main-color;
+    height: 285px;
+    
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    margin-right: 300px;
+    margin-bottom: 120px;  
+  }
+
+  @include media("screen", ">=tablet-wide") {
+    margin-right: 600px;
+    margin-bottom: 100px;
+    height: 500px;
   }
 
   &--within {
-    @include media("screen", "<tablet-larger-small") {
+    /*@include media("screen", "<tablet-larger-small") {
       display: none;
-    }
+    }*/
 
     @include media("screen", ">=tablet-larger-small") {
       background: none;
