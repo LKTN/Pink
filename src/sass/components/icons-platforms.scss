@@ -7,29 +7,7 @@
   margin-top: 20px;
   justify-content: space-around;
   height: 70px;
-
-  &--within {
-    width: 230px;
-  }
-
-  &--without {
-    width: 300px;
-  }
-
-  .android-logo {
-    font-size: 1.3px;
-  }
-
-  .apple-logo {
-    font-size: 3.2px;
-  }
-
-  .microsoft-logo {
-    font-size: 8.1px;
-    padding-top: 8px;
-    width: 70px;
-  }
-
+  width: 230px;
 }
 
 .icons-platform__icon {

@@ -3,13 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Frontend Devil</title>
+    <title>Pink</title>
+    <link rel="icon" type="image/png" href="../img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header header--index">
     
     <div class="menu menu--closed menu--nojs">
       <div class="menu__wrap">
@@ -20,9 +23,11 @@
             <img class="logo__logo-img" src="img/logo-pink-mobile.svg" alt="logo">
           </picture>
         </a>
+
         <button class="toggle-menu" type="button">  
-        </button>               
-        <nav class="nav nav--menu menu__nav">
+        </button> 
+
+        <nav class="nav menu__nav">
           <ul class="nav__list">
             <li class="nav__item nav__item--active"><a>Главная</a></li>
             <li class="nav__item"><a href="photo.html">Фотографии</a></li>
@@ -30,6 +35,7 @@
             <li class="nav__item"><a href="#">HMTL Academy</a></li>
           </ul>
         </nav>
+
       </div>
     </div>
 
@@ -38,116 +44,84 @@
         Взгляните <br>на жизнь <br>иначе!
       </h2>
 
-      <a class="btn-download" href="#">Скачать приложение</a>
+      <a class="btn-download download__btn" href="#">Скачать приложение</a>
         
         
-      <ul class="icons-platform icons-platform--within">
+      <ul class="icons-platform">
         <li class="icons-platform__item">
           <svg class="icons-platform__icon">
             <use xlink:href="/img/general.svg#logo-apple" fill="#fff"></use>
           </svg>
         </li>
+
         <li class="icons-platform__item">
           <svg class="icons-platform__icon">
             <use xlink:href="/img/general.svg#logo-android"></use>
           </svg>
         </li>
+
         <li class="icons-platform__item">
           <svg class="icons-platform__icon">
             <use xlink:href="/img/general.svg#logo-microsoft"></use>
           </svg>
         </li>
+
       </ul>
+
       <div class="text-descr">
         <p>
           Доступно для iPhone, iPad, Android,<br> Windows Phone, OS X, Windows 8
         </p>
       </div>
+
     </section>  
   </header>
-  <script>
-  'use strict'
-    var navMain = document.querySelector('.menu');
-    var navToggle = document.querySelector('.toggle-menu');
 
-    navMain.classList.remove('menu--nojs');
+  <section class="offer">
 
-    navToggle.addEventListener('click', function() {
-      if(navMain.classList.contains('menu--closed')) {
-        navMain.classList.remove('menu--closed');
-        navMain.classList.add('menu--opened');
-      } else {    
-        navMain.classList.add('menu--closed');
-        navMain.classList.remove('menu--opened');
-      }
-    })
-
-  </script>
-
-  <section class="descr-app">
-
-    <div class="descr-app__slogan">
-      <h2 class="slogan slogan--descr">Устали от серости мегаполиса?</h2>
-      <h2 class="slogan slogan--descr">Нам есть, что вам<br> предложить!</h2>
-    </div>
-    
-    <div class="descr-app__wrap-phone-text">
-      <div class="descr-app__phones">
-        <div class="phone">
-          <div class="phone__iphone">
-          </div>
-          <div class="phone__screen phone__screen--gray"></div>
-        </div>
-
-        <div class="phone">
-          <div class="phone__iphone">
-          </div>
-          <div class="phone__screen phone__screen--pink"></div>
-        </div>
-        
-        <div class="phone">
-          <div class="phone__iphone">
-          </div>
-          <div class="phone__screen phone__screen--smile"></div>
-        </div>
-
-
-      </div>
-      
-      <div class="descr-app__text">
-        <div class="text-advantage text-advantage--phone">
-          <h2 class="text-advantage__title">Поднимает настроение</h2>
-          <p class="text-advantage__text">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
-        </div>
-
-        <div class="text-advantage text-advantage--phone">
-          <h2 class="text-advantage__title">Меняет мир вокруг</h2>
-          <p class="text-advantage__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
-        </div>
-
-        <div class="text-advantage text-advantage--phone">
-          <h2 class="text-advantage__title">Заводит новых друзей</h2>
-          <p class="text-advantage__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
-        </div>
-      </div>
-
+    <div class="offer__slogan">
+      <p class="slogan slogan--descr">Устали от серости мегаполиса?</p>
+      <p class="slogan slogan--descr">Нам есть, что вам<br> предложить!</p>
     </div>
 
   </section>
+  
+  <section class="features">
 
-  <section class="hours">
-    <div class="hours__timer">
-      <p class="hours__round">
-        24
-      </p>
+    <ul class="features__list">
+
+      <li class="features__item features__item--gray">
+        <h2 class="features__title">Поднимает настроение</h2>
+        <p class="features__text">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+      </li>
+
+      <li class="features__item features__item--pink">
+        <h2 class="features__title">Меняет мир вокруг</h2>
+        <p class="features__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+      </li>
+
+      <li class="features__item features__item--smile">
+        <h2 class="features__title">Заводит новых друзей</h2>
+        <p class="features__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+      </li>
+
+    </ul>
+    
+  </section>
+
+  <section class="research">
+    <div class="research__timer">
+
    </div>
 
-    <div class="text-advantage text-advantage--hours">
+    <div class="text-advantage text-advantage--research research__text">
         <h2 class="text-advantage__title">Эффект на 24 часа!</h2>
         <p class="text-advantage__text">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки</p>
         <a href="#" class="text-advantage__link">Узнать больше об исследовании</a>
     </div>
+
   </section>
+
 
   <section class="slideshow-feedback">
 
@@ -176,17 +150,178 @@
   </section>
 
   <section class="price">
-    <div class="owl-carousel owl-theme owl-theme--price">
-      
+    <div class="price__wrap">
+
+      <table class="price__table">
+    
+        <tr class="price__row">
+
+          <th class="price__none"></th>
+        
+          <th class="price__th">
+            <div class="price__title">База</div>
+            <div class="price__value">1,99 USD</div>
+          </th>
+        
+          <th class="price__th price__th--best">
+            <div class="price__title">Стандарт</div>
+            <div class="price__value">3,99 USD</div>
+        
+          </th>
+          <th class="price__th">
+            <div class="price__title">АНЛИМ</div>
+            <div class="price__value">9,99 USD</div>
+        
+          </th>
+        </tr>
+    
+        <tr class="price__row">
+          <td class="price__td">Розовый фильтр</td>
+          
+          <td class="price__td">
+            <div class="price__availability price__availability--yes"></div>
+          </td>
+
+          <td class="price__td">
+            <div class="price__availability price__availability--yes"></div>
+          </td>
+
+          <td class="price__td">
+            <div class="price__availability price__availability--yes"></div>
+          </td>
+        
+        </tr>
+    
+        <tr class="price__row">
+
+          <td class="price__td">Смайлики</td>
+
+          <td class="price__td">
+            <div class="price__availability price__availability--no"></div>
+          </td>
+          
+          <td class="price__td">
+            <div class="price__availability price__availability--yes"></div>
+          </td>
+
+          <td class="price__td">
+            <div class="price__availability price__availability--yes"></div>
+          </td>
+        </tr>
+    
+        <tr class="price__row">
+
+          <td class="price__td">Комментарии</td>
+
+          <td class="price__td price__td--no">
+            <div class="price__availability price__availability--no"></div>
+          </td>
+
+          <td class="price__td">
+            <div class="price__availability price__availability--no"></div>
+          </td>
+
+          <td class="price__td">
+            <div class="price__availability price__availability--yes"></div>
+          </td>
+        </tr>
+    
+      </table>
     </div>
+
+  
   </section>
 
+  <section class="contacts">
+    
+    <div class="contacts__slogan">
+      <p class="slogan slogan--descr">Остались вопросы?<br>Свяжитесь с нами!</p>
+    </div>
+
+    <ul class="contacts__wrap">
+      
+      <li class="contacts__item">
+        <div class="contacts__title">Звоните:</div>
+        <a class="contacts__value" href="tel:+78125556666">+7 (812) 555-66-66</a>
+      </li>
+      
+      <li class="contacts__item">
+        <div class="contacts__title">Пишите:</div>
+        <a class="contacts__value" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+      </li>
+    
+      <li class="contacts__item">
+        <div class="contacts__title">Приезжайте в гости:</div>
+        <a class="contacts__value" href="#map">ул. Большая<br>Конюшенная, 19/8</a>
+      </li>
+    </ul>
+
+    <div class="contacts__map" name="map">
+      
+    </div>
+  
+  </section>
+
+  <footer class="footer footer--index">
+    
+    <div class="footer__logo">
+      <a href="#">
+        <picture>
+          <source srcset="img/logo-pink-footer-desktop.svg" media="only screen and (min-width: 1024px)">
+          <img class="logo" src="img/logo-pink-footer-tablet.svg" alt="logo" height="40" width="146">
+        </picture>
+      </a>
+    </div>
+
+    <section class="social footer__social">
+
+      <ul class="social__list">
+
+        <li class="social__item">
+          <a href="#" class="social__link">
+            <svg class="social__icon">
+              <use xlink:href="/img/general.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social__item">
+          <a href="#" class="social__link">
+            <svg class="social__icon">
+              <use xlink:href="/img/general.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social__item">
+          <a href="#" class="social__link">
+            <svg class="social__icon">
+              <use xlink:href="/img/general.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+
+      </ul>
+
+      
+    </section>
+
+    <div class="copyright footer__copyright">
+      
+      <a href="#" class="copyright__link">
+        <span class="copyright__text">Разработано</span>
+        <svg class="copyright__icon" width="48" height="48">
+          <use xlink:href="/img/general.svg#icon-htmlacademy"></use>
+        </svg>
+      </a>
+      
+    </div>
+  </footer>
 
 
 
-<script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="js/libs/owl.carousel/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
 
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBuoNB39WCqbDUGWK0Y5zLXS2XPG7QBVCY"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

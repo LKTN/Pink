@@ -1,0 +1,159 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  @include media ("screen",">=tablet-larger-small" ,"<tablet-wide") {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    height: 420px;
+  }
+
+  &::after {
+    @include media ("screen", "<tablet-larger-small") {
+      content: "";
+      display: block;
+      height: 276px;
+
+      background: url(../img/iphone-screen-mobile@1x.png) no-repeat center top;
+
+      @include media ("retina2x") {
+        background: url(../img/iphone-screen-mobile@2x.png) no-repeat center top;
+        background-size: 157px 320px;
+      }   
+
+    }
+
+    @include media ("screen", ">=tablet-larger-small" ,"<tablet-wide") {
+      content: "";
+      display: block;
+      position: relative;
+      height: 547px;
+      bottom: 140px;
+      flex-basis: 50%;
+
+      background: url(../img/iphone-screen-3-tablet@1x.png) no-repeat right bottom;
+
+      @include media ("retina2x") {
+        background: url(../img/iphone-screen-3-tablet@2x.png) no-repeat right bottom;
+        background-size: 268px 481px;
+      }
+
+    }
+
+  }
+
+}
+
+.features__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+
+  @include media ("screen",">=tablet-larger-small" ,"<tablet-wide") {
+    flex-basis: 65%;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    flex-direction: row;
+    width: 950px;
+    padding: 0;
+  }
+
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  @include media ("screen", "<tablet-larger-small") {
+    padding-bottom: 40px;
+  }
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    text-align: left;
+    padding-bottom: 45px;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    width: 375px;
+    align-items: center;
+  }
+
+  &--gray {
+    @include media ("screen", ">=tablet-wide") {
+      background: url(../img/iphone-screen-1-desktop@1x.png) no-repeat center top;
+
+      @include media ("retina2x") {
+        background: url(../img/iphone-screen-1-desktop@2x.png) no-repeat center top;
+        background-size: 292px 302px;
+      }
+
+    }
+
+  }
+
+  &--pink {
+    @include media ("screen", ">=tablet-wide") {
+      background: url(../img/iphone-screen-2-desktop@1x.png) no-repeat center top;
+
+      @include media ("retina2x") {
+        background: url(../img/iphone-screen-2-desktop@2x.png) no-repeat center top;
+        background-size: 292px 302px;
+      }
+
+    }
+
+  }
+
+  &--smile {
+    @include media ("screen", ">=tablet-wide") {
+      background: url(../img/iphone-screen-3-desktop@1x.png) no-repeat center top;
+
+      @include media ("retina2x") {
+        background: url(../img/iphone-screen-3-desktop@2x.png) no-repeat center top;
+        background-size: 292px 302px;
+      }
+
+    }
+
+  }
+
+  &::before {
+    @include media("screen", ">=tablet-wide") {
+      content: "";
+      display: block;
+      margin-bottom: 60px;
+      height: 302px;
+    }
+
+  }
+
+}
+
+.features__title {
+  @include font-OpenSansBold($size: 18px, $colour: $text-advantage-title-color);
+  padding-bottom: 20px;
+
+  @include media ("screen", ">=tablet-wide") {
+    font-size: 30px;
+    width: 250px;
+  }
+
+}
+
+.features__text {
+  @include font-OpenSansRegular($size: 14px, $colour: $text-advantage-color);
+
+  @include media ("screen", ">=tablet-wide") {
+    font-size: 18px;
+    width: 250px;
+  }
+
+}

@@ -3,7 +3,6 @@
 @import "libs/normalize-css/normalize";
 
 @import "fonts.scss";
-@import "sprite.scss";
 @import "base.scss";
 
 @import "libs/owl.carousel/owl.carousel.scss";
@@ -19,15 +18,16 @@
 @import "components/header.scss";
 @import "components/menu.scss";
 @import "components/logo.scss";
-@import "components/descr-app.scss";
-@import "components/phone.scss";
 @import "components/text-advantage.scss";
-@import "components/hours.scss";
+@import "components/research.scss";
 @import "components/slideshow.scss";
-
-
-
-
+@import "components/features.scss";
+@import "components/offer.scss";
+@import "components/price.scss";
+@import "components/contacts.scss";
+@import "components/footer.scss";
+@import "components/social.scss";
+@import "components/copyright.scss";
 
 
 

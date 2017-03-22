@@ -1,0 +1,38 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media("screen", "<tablet-larger-small") {
+    margin-bottom: 50px;
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    margin-bottom: 150px;
+  }
+
+  @include media("screen", ">=tablet-wide") {
+    margin-bottom: 80px;
+  }
+
+}
+
+.offer__slogan {
+
+  @include media("screen", "<tablet-larger-small"){
+    margin-top: 45px;
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide")  {
+    margin-top: 60px;
+  }
+
+  @include media("screen", ">=tablet-wide") {
+    margin-top: 75px;
+  }
+
+}

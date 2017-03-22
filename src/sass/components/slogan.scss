@@ -5,26 +5,36 @@
 
 .slogan {
   color: $text-color;
-  @include font-OpenSansLight($size: 40px, $weight: normal);
+  @include font-OpenSansLight ($size: 40px, $weight: normal);
   text-align: center;
 
-  @include media("screen", "<tablet-larger-small") {
-    .download--within & {
-      display: none;  
+  &--download {
+    @include media ("screen", "<tablet-larger-small") {
+      display: none;
+    }
+
+    @include media ("screen", ">=tablet-wide") {
+      font-size: 50px;
     }
 
   }
 
-  &--download {
-    margin: 0;
+  &--topic {
+    margin: auto;
+    width: 80vw;
+
     @include media ("screen", "<tablet-larger-small") {
-      display: none;
+      font-size: 24px;
     }
+
+    @include media ("screen", ">=tablet-wide") {
+      font-size: 50px;
+    }
+
   }
 
   &--descr {
     color: $text-descr-slogan-color;
-    width: 100%;
 
     @include media ("screen", "<tablet-larger-small") {
       font-size: 24px;

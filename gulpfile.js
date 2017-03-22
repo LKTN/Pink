@@ -18,9 +18,8 @@ var gulp = require('gulp'),
     svgSprite = require('gulp-svg-sprite'),
     svgmin = require('gulp-svgmin'),
     cheerio = require('gulp-cheerio'),
+    rigger = require('gulp-rigger'),
     replace = require('gulp-replace');
-
-    /*svgSprite = require("gulp-svg-sprites");*/
 
 var path = {
     build: {
@@ -33,7 +32,7 @@ var path = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/**/*.js',
+        js: 'src/js/main.js',
         css: 'src/sass/style.scss',
         svg: 'src/img/src-svg/*.svg',
         img: 'src/img/*.*',
@@ -75,8 +74,9 @@ gulp.task('html:build', function () {
 
 gulp.task('js:build', function () {
     gulp.src(path.src.js) 
+        .pipe(rigger())
         //.pipe(sourcemaps.init()) 
-        .pipe(uglify()) //ругается, проверить.
+        .pipe(uglify()) 
         //.pipe(sourcemaps.write()) 
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
@@ -120,21 +120,10 @@ gulp.task('image:build', function () {
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({stream: true}));
 });
-/*
-gulp.task('sprites', function () { 
-    return gulp.src(path.src.svg)
-        .pipe(svgSprite({
-            cssFile: "sass/_sprite.scss",
-            preview: false,
-            svgPath: "../img/sprite.svg"
 
-        }))
-        .pipe(gulp.dest(path.build.sprites));
-});
-*/
 
-gulp.task('sprite-build', function () {
-  return gulp.src(['src/img/logo-pink-mobile.svg', 'src/img/logo-pink-tablet.svg', 'src/img/logo-pink-desktop.svg'])
+gulp.task('sprite:build', function () {
+  return gulp.src(path.src.svg)
     // minify svg
     .pipe(svgmin({
       js2svg: {
@@ -160,7 +149,7 @@ gulp.task('sprite-build', function () {
         }
       }
     }))
-    .pipe(gulp.dest('src'));
+    .pipe(gulp.dest(path.build.svg));
 });
 
 gulp.task('fonts:build', function() {

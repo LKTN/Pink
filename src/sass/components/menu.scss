@@ -13,7 +13,6 @@
 
   &--closed {
     @include media("screen", "<tablet-wide") {
-      z-index: 3;
       background-color: $background-menu-color-opacity;
     }
 
@@ -24,39 +23,30 @@
 .menu__wrap {
   display: flex;
   align-items: center;
+
   padding: 0 15px;
   margin: 0 auto;
+  width: 100%;
 
-  @include media("screen", ">=tablet-wide") {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 950px;
-  }
-
-  @include media("screen", "<tablet-wide") {
-    width: 100%;
-    box-sizing: border-box;
-
-    .menu--opened & {
-      //border-bottom: 1px solid $border-menu-bottom-color;
-    }
-
-    .menu--nojs & {
-      background: $background-menu-color;
-      //border-bottom: 1px solid $border-menu-bottom-color;
-    }
+  @include media("screen", "<tablet-larger-small") {
+    height: 70px;
   }
 
   @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
     height: 110px;
   }
 
-  @include media("screen", "<tablet-larger-small") {
-    height: 70px;
+  @include media("screen", ">=tablet-wide") {
+    justify-content: space-between;
+    max-width: 950px;
+
+  }
+
+  @include media("screen", "<tablet-wide") {
+    .menu--nojs & {
+      background: $background-menu-color;
+    }
+    
   }
 
 }

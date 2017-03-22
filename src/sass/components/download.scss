@@ -8,8 +8,6 @@
   align-items: center;
   justify-content: space-around;
 
-  //z-index: 5;
-
   @include media("screen", "<tablet-larger-small") {
     background-color: $background-main-color;
     height: 285px;
@@ -27,23 +25,8 @@
     height: 500px;
   }
 
-  &--within {
-    /*@include media("screen", "<tablet-larger-small") {
-      display: none;
-    }*/
+}
 
-    @include media("screen", ">=tablet-larger-small") {
-      background: none;
-      z-index: 1;
-    }
-
-  }
-
-  &--without {
-    @include media("screen", ">=tablet-larger-small") {
-      display: none;
-    }
-
-  }
-
+.download__btn {
+  margin-top: 28px;
 }

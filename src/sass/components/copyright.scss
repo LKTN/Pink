@@ -1,0 +1,22 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.copyright {
+	
+}
+
+.copyright__link {
+	display: flex;
+	align-items: center;
+}
+
+.copyright__text {
+	@include font-OpenSansRegular ($size: 14px, $colour: $text-copyright-color)
+	margin-right: 5px;
+}
+
+.copyright__icon {
+	width: 48px;
+	height: 48px;
+}

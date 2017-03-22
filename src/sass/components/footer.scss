@@ -1,0 +1,39 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 125px;
+  padding: 0 40px;
+
+  @include media ("screen", ">=tablet-wide") {
+    width: 950px;
+    height: 200px;
+    align-self: center;
+  }
+
+
+  &--index {
+    @include media ("screen", "<tablet-larger-small") {
+      display: none;
+    }
+
+  }
+
+}
+
+.footer__logo {
+
+}
+
+.footer__social {
+
+}
+
+.footer__copyright {
+
+}
+

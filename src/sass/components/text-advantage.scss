@@ -8,45 +8,14 @@
   width: 100%;
   text-align: center;
 
-  &--phone {
-    @include media ("screen", "<tablet-larger-small") {
-      padding-bottom: 40px;
-    }
-
-    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
-      width: 80%;
-      text-align: left;
-      align-items: flex-start;
-      padding-bottom: 45px;
-    }
-
-    @include media("screen", ">=tablet-wide") {
-      //margin-top: 60px;
-      width: 375px;
-      align-items: center;
-    }
-
-  }
-
   &--topic {
-    margin: auto;//доработать для других страниц
+    margin: auto;
   }
 
-  &--hours {
+  &--research {
     
-    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
-      width: 50%;
+    @include media("screen", ">=tablet-larger-small") {
       text-align: left;
-      margin-top: 50px;
-      margin-left: 40px;  
-    }
-
-    @include media ("screen", ">=tablet-wide") {
-      width: 50%;
-      align-items: flex-start;
-      text-align: left;
-      margin-top: 80px; 
-      margin-left: 70px;
     }
 
   }
@@ -67,19 +36,10 @@
 .text-advantage__title {
   @include font-OpenSansBold($size: 20px, $colour: $text-advantage-title-color);
   padding-bottom: 20px;
-  
-  .text-advantage--phone & {
-    @include media ("screen", ">=tablet-wide") {
-      font-size: 30px;
-      width: 300px;
-    }
 
-  }
-
-  .text-advantage--hours & {
-    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+  .text-advantage--research & {
+    @include media("screen", ">=tablet-larger-small") {
       font-size: 30px;
-      width: 200px;  
     }
     
   }
@@ -97,7 +57,7 @@
     width: 250px;
   }
 
-  .text-advantage--hours & {
+  .text-advantage--research & {
     @include media ("screen", ">=tablet-wide") {
       width: 100%;
     }
@@ -110,16 +70,29 @@
       font-size: 18px;
       width: 620px;
       align-self: center;
+
     }
+
   }
+
 }
 
 .text-advantage__link {
   margin-top: 25px;
   color: $text-link-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $text-link-hover-color; 
+  }
+
+  &:active {
+    color: $text-link-down-color;
+  }
 }
 
 .text-advantage__title-descr {
+  
   .text-advantage--slideshow & {
     @include media ("screen", "<tablet-larger-small") {
       display: none;

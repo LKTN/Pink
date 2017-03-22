@@ -3,8 +3,6 @@
 @import "../vars.scss";
 
 .btn-download {
-  margin-top: 28px;
-
   @include font-OpenSansBold($colour: #fff, $size: 18px);
   text-decoration: none;
 

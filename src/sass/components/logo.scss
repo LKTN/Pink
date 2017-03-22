@@ -1,3 +1,14 @@
 @import "bourbon";
 @import "../mixins.scss";
 @import "../vars.scss";
+
+.logo {
+
+	.menu & {
+		@include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+			margin-left: 20px;
+		}
+
+	}
+
+}

@@ -1,0 +1,119 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    padding-top: 55px;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    padding-top: 75px;
+  }
+  
+}
+
+.contacts__slogan {
+  margin-bottom: 45px;
+}
+
+.contacts__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+
+  width: 100%;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 950px;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    justify-content: space-between;
+  }
+
+
+}
+
+.contacts__item {
+  text-align: center;
+  margin-bottom: 30px;
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    &:last-child {
+      width: 100%;
+    }
+
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    &:nth-child(2) {
+      order: 1;
+    }
+
+  }
+
+}
+
+.contacts__title {
+  @include font-OpenSansBold ($size: 18px, $colour: $text-contacts-color);
+  margin-bottom: 7px;
+}
+
+.contacts__value {
+  color: $white;
+  @include font-OpenSansLight ($size: 24px, $colour: $text-link-color);
+
+  &:hover {
+    color: $text-link-hover-color; 
+  }
+
+  &:active {
+    color: $text-link-down-color;
+  }
+
+}
+
+.contacts__map {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: #FFF;
+  
+  @include media ("screen", "<tablet-larger-small") {
+    height: 250px;
+  }
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    height: 420px;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    height: 550px;
+  }
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+    border-top: 32px solid #fff;
+    border-right: 50vw solid transparent;
+    border-left: 50vw solid transparent;
+
+    @include media ("screen", ">=tablet-larger-small") {
+      border-top: 75px solid #fff;
+    }
+
+  }
+
+}

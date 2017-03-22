@@ -7,74 +7,108 @@
   flex-direction: column;
   justify-content: space-between;
 
-  background-color: $background-main-color;
   background-size: auto, auto;
   background-repeat: no-repeat;  
 
   @include media("screen", "<tablet-larger-small") {
-    background-image: url("../img/iphone-hand-mobile@1x.png"),
-    url("../img/bg-back-mobile@1x.jpg");
+    background-image: url("../img/bg-back-mobile@1x.jpg");
     height: 730px;
-    background-position: center 160px, center top;
+    background-position: center top;
   
     @include media("retina2x") {
-      background-image: url("../img/iphone-hand-mobile@2x.png"),
-      url("../img/bg-back-mobile@2x.jpg");
+      background-image: url("../img/bg-back-mobile@2x.jpg");
+      background-size: auto 730px;
     }
   
   }
 
   @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
-    background-image: url("../img/iphone-hand-tablet@1x.png"),
-    url("../img/bg-back-tablet@1x.jpg");
+    background-image: url("../img/bg-back-tablet@1x.jpg");
     height: 730px;
-    background-position: center bottom, center top;
+    background-position: center top;
 
     @include media("retina2x") {
-      background-image: url("../img/iphone-hand-tablet@2x.png"),
-      url("../img/bg-back-tablet@2x.jpg");
+      background-image: url("../img/bg-back-tablet@2x.jpg");
+      background-size: auto 730px;
     }
 
   }
 
   @include media("screen", ">=tablet-wide") {
-    background-image: url("../img/iphone-hand-desktop@1x.png"),
-    url("../img/bg-back-desktop@1x.jpg");
+    background-image: url("../img/bg-back-desktop@1x.jpg");
     height: 850px;
-    background-position: calc(50% + 100px) bottom, center top;
+    background-position: center top;
 
     @include media("retina2x") {
-      background-image: url("../img/iphone-hand-desktop@2x.png"),
-      url("../img/bg-back-desktop@2x.jpg");
+      background-image: url("../img/bg-back-desktop@2x.jpg");
+      background-size: auto 850px;
     }
     
   }
 
+  &--index {
+    background-color: $background-main-color;
+
+    @include media("screen", "<tablet-larger-small") {
+      background-image: url("../img/iphone-hand-mobile@1x.png"),
+      url("../img/bg-back-mobile@1x.jpg");
+      height: 730px;
+      background-position: center 160px, center top;
+    
+      @include media("retina2x") {
+        background-image: url("../img/iphone-hand-mobile@2x.png"),
+        url("../img/bg-back-mobile@2x.jpg");
+        background-size: 258px 286px, auto 730px;
+      }
+    
+    }
+
+    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+      background-image: url("../img/iphone-hand-tablet@1x.png"),
+      url("../img/bg-back-tablet@1x.jpg");
+      height: 730px;
+
+      background-position: center bottom, center top;
+
+      @include media("retina2x") {
+        background-image: url("../img/iphone-hand-tablet@2x.png"),
+        url("../img/bg-back-tablet@2x.jpg");
+
+        background-size: 700px 545px, auto 730px;
+      }
+
+    }
+
+    @include media("screen", ">=tablet-wide") {
+      background-image: url("../img/iphone-hand-desktop@1x.png"),
+      url("../img/bg-back-desktop@1x.jpg");
+      height: 850px;
+      background-position: calc(50% + 100px) bottom, center top;
+
+      @include media("retina2x") {
+        background-image: url("../img/iphone-hand-desktop@2x.png"),
+        url("../img/bg-back-desktop@2x.jpg");
+
+        background-size: 1050px 645px, auto 850px;
+      }
+
+    }
+
+  }
+
   &--short {
-    @include media("screen", "<phone") {
-      height: 280px;
-    }
-
-    @include media("screen", ">=phone", "<phablet") {
-      height: 280px;
-    }
-
-    @include media("screen", ">=phablet", "<tablet-larger-small") {
-      height: 320px;
+    @include media("screen", "<tablet-larger-small") {
+      height: 240px;
+      background-position: center top;
     }
 
     @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
       height: 440px;
-    }
-
-    @include media("screen", ">=tablet-larger", "<tablet-wide") {
-      height: 440px;
-      background-position: 0 0;
+      background-position: center top;
     }
 
     @include media("screen", ">=tablet-wide") {
-      height: 440px;
-      background-position: 0 0;
+      height: 380px;
     }
 
   }

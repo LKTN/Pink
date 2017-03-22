@@ -5,7 +5,8 @@ $white:                                       #fff;
 $black:                                       #000;
 $blue:                                        #283645;
 $dark-blue:                                   #1d2631;
-
+$success:                                     #3dc644;
+$error:                                       #f25b26;
 
 // Typography color
 
@@ -17,7 +18,13 @@ $text-active-hover-color-opacity:             rgba($pink, 0.3);
 $text-down-color:                             rgba($white, 0.3);
 $text-advantage-title-color:                  $black;
 $text-advantage-color:                        #283645;
+$text-table-td-color:                         #283645;
+$text-table-th-color:                         $white;
+$text-contacts-color:                         #283645;
 $text-link-color:                             $pink;
+$text-link-hover-color:                       $black;
+$text-link-down-color:                        rgba($black, 0.3);
+$text-copyright-color:                        #283645;
 
 // Border
 
@@ -26,12 +33,17 @@ $border-menu-bottom-color:                    #030303;
 $border-menu-hover-color:                     $white;
 $border-menu-active-hover-color:              $pink;
 $border-hours-color:                          $pink;
+$border-table-color:                          #e5e5e5;
+$border-social-color:                         #f2f2f2;
+$border-social-hover-color:                   #030303;
 
 // Backgrounds
 
 $background-main-color:                       $dark-blue;
 $background-menu-color:                       #283645;
-$background-menu-color-opacity:               rgba($background-main-color, 0.3);
+$background-menu-color-opacity:               rgba($background-main-color, 0.4);
+$background-th-color:                         #283645;
+$background-th-best-color:                    #d22856;
 
 // Button-download
 
@@ -49,3 +61,15 @@ $btn-menu-down-color:                         rgba($pink, 0.3);
 $arrows-color:                                rgba(#283645, 0.3);
 $arrows-hover-color:                          rgba(#283645, 0.6);
 $arrows-down-color:                           rgba(#283645, 0.1);
+
+// Table cross and check
+
+$table-cross:                                 $error;
+$table-check:                                 $success;
+
+// Slider
+
+$dot-border:                                  $white;
+$dot-active-border:                           #283645;
+$dot-background:                              #BEC2C8;
+$dot-active-background:                       $white;

@@ -1,0 +1,50 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.research {
+  display: flex;
+  align-self: center;
+  padding: 40px; 
+
+  @include media ("screen", "<tablet-larger-small") {
+    display: none;
+  }
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    margin-top: 55px;
+    max-width: 760px;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    margin-top: 75px;
+    max-width: 950px;
+  }
+  
+}
+
+.research__text {
+  padding: 0 0 0 40px;
+  flex-basis: 65%;
+  align-self: center;
+}
+
+.research__timer {
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    background: url("../img/icon-timer.svg") no-repeat;
+    background-position: right 16px center;
+    background-size: 238px 276px;
+    flex-basis: 50%;
+    height: 276px;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    background: url("../img/icon-timer.svg") no-repeat;
+    background-position: right 16px center;
+    background-size: 298px 345px;
+    flex-basis: 37%;
+    height: 345px;
+  }
+  
+}
