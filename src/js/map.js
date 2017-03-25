@@ -11,7 +11,7 @@ function initMap() {
   var map = new google.maps.Map(contactsMap, mapOptions);
 
   var markerImage = new google.maps.MarkerImage(
-    "../img/icon-map-marker.svg",
+    "img/icon-map-marker.svg",
     new google.maps.Size(36, 36)
   );
 

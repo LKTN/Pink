@@ -71,9 +71,11 @@
 .contacts__value {
   color: $white;
   @include font-OpenSansLight ($size: 24px, $colour: $text-link-color);
-
-  &:hover {
-    color: $text-link-hover-color; 
+  
+  @include media ("screen", ">=tablet-wide") {
+    &:hover {
+      color: $text-link-hover-color; 
+    }    
   }
 
   &:active {

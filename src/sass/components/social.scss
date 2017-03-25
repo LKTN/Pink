@@ -21,12 +21,16 @@
 	border: 3px solid $border-social-color;
 	border-radius: 50%;
 	transition: border-color .4s linear;
-
-	&:hover {
-		border-color: $border-social-hover-color;
+	
+	@include media ("screen", ">=tablet-wide") {
+		&:hover {
+			border-color: $border-social-hover-color;
+		}	
+		
 	}
 
 	&:active {
+		border-color: $border-social-hover-color;
 		opacity: 0.3;
 	}
 
@@ -43,7 +47,7 @@
 	top: 50%;
 	left: 50%;
 	width: 18px;
-	height: 14px;
+	height: 20px;
 	fill: $pink;
 	transform: translate(-50%,-50%);
 }

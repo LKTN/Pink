@@ -25,9 +25,11 @@
       z-index: 10;
       box-sizing: border-box;
 
-      &:hover::before,
-      &:hover::after {
-        background-color: $btn-menu-hover-color;
+      @include media ("screen", ">=tablet-wide") {
+        &:hover::before,
+        &:hover::after {
+          background-color: $btn-menu-hover-color;
+        }
       }
 
       &::before, 
@@ -61,15 +63,12 @@
         background-color: #fff;
         box-shadow: 0 10px 0 0 #fff, 0 20px 0 0 #fff;
 
-        &:hover::before,
-        &:hover::after {
-          background-color: $btn-menu-hover-color;
-        }
-
-        &:hover::before,
-        &:hover::after {
-          background-color: $btn-menu-hover-color;
-          box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
+        @include media ("screen", ">=tablet-wide") {
+          &:hover::before,
+          &:hover::after {
+            background-color: $btn-menu-hover-color;
+            box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
+          }
         }
 
         &:active::before{
@@ -78,15 +77,13 @@
         }   
       }
 
-      &:hover::before,
-      &:hover::after {
-        background-color: $btn-menu-hover-color;
-      }
-
-      &:hover::before,
-      &:hover::after {
-        background-color: $btn-menu-hover-color;
-        box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
+      @include media ("screen", ">=tablet-wide") {
+        &:hover::before,
+        &:hover::after {
+          background-color: $btn-menu-hover-color;
+          box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
+        }
+        
       }
 
       &:active::before{

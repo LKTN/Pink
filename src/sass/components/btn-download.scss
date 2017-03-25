@@ -9,13 +9,16 @@
   border-radius: 40px;
   border: 3px solid #fff;
   padding: 15px 40px;
-
-  &:hover {
-    background-color: $btn-download-background-color;
-    color: $btn-download-text-color;
+  
+  @include media ("screen", ">=tablet-wide") {
+    &:hover {
+      background-color: $btn-download-background-color;
+      color: $btn-download-text-color;
+    }
   }
 
   &:active {
+    background-color: $btn-download-background-color;
     color: $btn-download-text-down-color;
   }
 

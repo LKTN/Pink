@@ -90,10 +90,9 @@
       padding-bottom: 10px;
     }
 
-    &[href]:hover {
-      color: $text-active-hover-color;
-
-      @include media("screen", ">=tablet-wide") {
+    @include media("screen", ">=tablet-wide") {
+      &[href]:hover {
+        color: $text-active-hover-color;       
         border-bottom: 2px solid $border-menu-active-hover-color;
         color: $text-active-hover-color;
       }
@@ -131,8 +130,8 @@
   &--active {
 
     & a {
-      &:hover {
-        @include media("screen", ">=tablet-wide") {
+      @include media("screen", ">=tablet-wide") {
+        &:hover {
           border-bottom: 2px solid $border-menu-hover-color;
           color: $text-color;
         }

@@ -82,8 +82,11 @@
   color: $text-link-color;
   text-decoration: underline;
 
-  &:hover {
-    color: $text-link-hover-color; 
+  @include media ("screen", ">=tablet-wide") {
+    &:hover {
+      color: $text-link-hover-color; 
+    }
+
   }
 
   &:active {

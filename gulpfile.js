@@ -21,6 +21,7 @@ var gulp = require('gulp'),
     rigger = require('gulp-rigger'),
     replace = require('gulp-replace');
 
+
 var path = {
     build: {
         html: 'build/',
@@ -28,7 +29,8 @@ var path = {
         css: 'build/css/',
         img: 'build/img/',
         fonts: 'build/fonts/',
-        svg: 'src/img/'
+        svg: 'src/img/',
+        svg_min: "src/img/src-svg/"
     },
     src: {
         html: 'src/*.html',
@@ -121,6 +123,19 @@ gulp.task('image:build', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('svgmin', function () {
+  return gulp.src(path.src.svg)
+    .pipe(svgmin(function (file) {
+      return {
+        plugins: [{
+          cleanupIDs: {
+            minify: true
+          }
+        }]
+      }
+    }))
+    .pipe(gulp.dest(path.build.svg_min));
+});
 
 gulp.task('sprite:build', function () {
   return gulp.src(path.src.svg)
