@@ -711,9 +711,250 @@ a, button {
   .nav__item a[href]:active {
     color: rgba(210, 40, 86, 0.3); }
 
-.toggle-menu {
+.hamburger {
   display: none; }
 
+.hamburger:focus {
+  outline: none; }
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  top: 45px;
+  left: 18px;
+  right: 18px;
+  height: 6px;
+  background: white; }
+
+/*
+.hamburger:hover span {
+  background: $btn-menu-hover-color;
+}*/
+.hamburger:active span {
+  background: rgba(210, 40, 86, 0.3); }
+
+.hamburger span::before,
+.hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: #fff;
+  content: ""; }
+
+/*
+.hamburger:hover span::before,
+.hamburger:hover span::after {
+  background-color: $btn-menu-hover-color;
+}
+*/
+.hamburger:active span::before,
+.hamburger:active span::after {
+  background-color: rgba(210, 40, 86, 0.3); }
+
+.hamburger span::before {
+  top: -15px; }
+
+.hamburger span::after {
+  bottom: -15px; }
+
+.hamburger--htx {
+  background-color: transparent; }
+
+.hamburger--htx span::before,
+.hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s; }
+
+.hamburger--htx span::before {
+  transition-property: top, transform; }
+
+.hamburger--htx span::after {
+  transition-property: bottom, transform; }
+
+/* active state, i.e. menu open */
+.hamburger--htx.is-active {
+  background-color: transparent; }
+
+.hamburger--htx.is-active span {
+  background: none; }
+
+.hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg); }
+
+.hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg); }
+
+.hamburger--htx.is-active span::before,
+.hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s; }
+
+/*
+.toggle-menu {
+  display: none;
+
+  @include media("screen", "<tablet-wide") {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+    
+    .menu--opened & {
+      z-index: 10;
+      box-sizing: border-box;
+
+      @include media ("screen", ">=tablet-wide") {
+        &:hover::before,
+        &:hover::after {
+          background-color: $btn-menu-hover-color;
+        }
+      }
+
+      &::before, 
+      &::after {
+        content: '';
+        position: absolute;
+
+        background-color: #FFF;
+      }
+      
+      &::before {
+        transform: rotate(45deg);
+        box-shadow: none;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &:active::before,
+      &:active::after {
+        background-color: $btn-menu-down-color;
+      }
+
+    }
+
+    .menu--closed & {
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 0 10px 0 0 #fff, 0 20px 0 0 #fff;
+
+        @include media ("screen", ">=tablet-wide") {
+          &:hover::before,
+          &:hover::after {
+            background-color: $btn-menu-hover-color;
+            box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
+          }
+        }
+
+        &:active::before{
+          background-color: $btn-menu-down-color;
+          box-shadow: 0 10px 0 0 $btn-menu-down-color, 0 20px 0 0  $btn-menu-down-color;   
+        }   
+      }
+
+      @include media ("screen", ">=tablet-wide") {
+        &:hover::before,
+        &:hover::after {
+          background-color: $btn-menu-hover-color;
+          box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
+        }
+        
+      }
+
+      &:active::before{
+        background-color: $btn-menu-down-color;
+        box-shadow: 0 10px 0 0 $btn-menu-down-color, 0 20px 0 0  $btn-menu-down-color;   
+      }
+
+    }
+
+    .menu--nojs & {
+      display: none;
+    }
+
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    border: none;
+    height: 109px;
+    width: 110px;
+
+    &::before, 
+    &::after {
+      top: 52px;
+      height: 4px;
+      left: initial;
+      right: 40px;
+    }
+
+    .menu--closed & {
+      &::before {
+        top: 44px;
+        left: initial;
+        right: 25px;
+        width: 53px;
+      }
+
+    }
+
+    .menu--opened & {
+      &::before,
+      &::after {
+        top: 51px;
+        left: initial;
+        right: 20px;
+        width: 50px;
+        height: 4px;      
+      }
+
+    }
+
+  }
+
+  @include media("screen", "<tablet-larger-small") {
+    width: 80px;
+    height: 70px;
+
+    .menu--closed & {
+      &::before {
+        top: 21px;
+        left: 6px;
+        width: 50px;
+        height: 3.5px;
+      }
+
+    }
+
+    .menu--opened & {
+      
+      &::before,
+      &::after {
+        top: 31px;
+        left: 23px;
+        width: 33px;
+        height: 4px;    
+      }
+
+    }
+  }
+
+}*/
 .btn-download {
   font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -1140,27 +1381,38 @@ a, button {
   width: 48px;
   height: 48px; }
 
+@media only screen and (min-width: 700px){
+  .btn-download{
+    background: none; }
+  .text-descr{
+    font-size: 18px; }
+  .text-advantage--research{
+    text-align: left; }
+  .text-advantage--research .text-advantage__title{
+    font-size: 30px; }
+  .text-advantage--slideshow .text-advantage__text{
+    -ms-flex-order: -1;
+    order: -1;
+    margin-bottom: 45px;
+    font-size: 18px;
+    width: 620px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center; }
+  .price::before{
+    border-top: 75px solid #fff; }
+  .contacts__wrap{
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    max-width: 950px; }
+  .contacts__map::before{
+    border-top: 75px solid #fff; } }
+
 @media only screen and (min-width: 700px) and (max-width: 1023px){
-  .toggle-menu{
-    border: none;
-    height: 109px;
-    width: 110px; }
-  .toggle-menu::before, .toggle-menu::after{
-    top: 52px;
-    height: 4px;
-    left: initial;
-    right: 40px; }
-  .menu--closed .toggle-menu::before{
-    top: 44px;
-    left: initial;
-    right: 25px;
-    width: 53px; }
-  .menu--opened .toggle-menu::before, .menu--opened .toggle-menu::after{
-    top: 51px;
-    left: initial;
-    right: 20px;
-    width: 50px;
-    height: 4px; }
   .download{
     margin-right: 300px;
     margin-bottom: 120px; }
@@ -1176,7 +1428,9 @@ a, button {
     height: 440px;
     background-position: center top; }
   .menu__wrap{
-    height: 110px; }
+    height: 110px;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
   .menu__nav{
     top: 110px; }
   .menu--nojs .menu__nav{
@@ -1228,37 +1482,6 @@ a, button {
     width: 100%; }
   .contacts__map{
     height: 420px; } }
-
-@media only screen and (min-width: 700px){
-  .btn-download{
-    background: none; }
-  .text-descr{
-    font-size: 18px; }
-  .text-advantage--research{
-    text-align: left; }
-  .text-advantage--research .text-advantage__title{
-    font-size: 30px; }
-  .text-advantage--slideshow .text-advantage__text{
-    -ms-flex-order: -1;
-    order: -1;
-    margin-bottom: 45px;
-    font-size: 18px;
-    width: 620px;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center; }
-  .price::before{
-    border-top: 75px solid #fff; }
-  .contacts__wrap{
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    max-width: 950px; }
-  .contacts__map::before{
-    border-top: 75px solid #fff; } }
 
 @media only screen and (min-width: 700px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 700px) and (max-width: 1023px) and (min-resolution: 192dpi), only screen and (min-width: 700px) and (max-width: 1023px) and (min-resolution: 2dppx){
   .header{
@@ -1406,16 +1629,6 @@ a, button {
   .social__item:hover{
     border-color: #030303; } }
 
-@media only screen and (max-width: 1023px) and (min-width: 1024px){
-  .menu--opened .toggle-menu:hover::before, .menu--opened .toggle-menu:hover::after{
-    background-color: #d22856; }
-  .menu--closed .toggle-menu::before:hover::before, .menu--closed .toggle-menu::before:hover::after{
-    background-color: #d22856;
-    box-shadow: 0 10px 0 0 #d22856, 0 20px 0 0 #d22856; }
-  .menu--closed .toggle-menu:hover::before, .menu--closed .toggle-menu:hover::after{
-    background-color: #d22856;
-    box-shadow: 0 10px 0 0 #d22856, 0 20px 0 0 #d22856; } }
-
 @media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 1024px) and (min-resolution: 192dpi), only screen and (min-width: 1024px) and (min-resolution: 2dppx){
   .header{
     background-image: url("../img/bg-back-desktop@2x.jpg");
@@ -1467,44 +1680,18 @@ a, button {
     border-top: 1px solid #495562;
     border-bottom: 1px solid #030303;
     z-index: 3; }
-  .toggle-menu{
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
+  .hamburger{
     display: block;
-    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    width: 96px;
+    height: 96px;
+    font-size: 0;
+    text-indent: -9999px;
+    box-shadow: none;
     border: none;
     cursor: pointer; }
-  .toggle-menu:active, .toggle-menu:focus{
-    outline: none; }
-  .menu--opened .toggle-menu{
-    z-index: 10;
-    box-sizing: border-box; }
-  .menu--opened .toggle-menu::before, .menu--opened .toggle-menu::after{
-    content: '';
-    position: absolute;
-    background-color: #FFF; }
-  .menu--opened .toggle-menu::before{
-    transform: rotate(45deg);
-    box-shadow: none; }
-  .menu--opened .toggle-menu::after{
-    transform: rotate(-45deg); }
-  .menu--opened .toggle-menu:active::before, .menu--opened .toggle-menu:active::after{
-    background-color: rgba(210, 40, 86, 0.3); }
-  .menu--closed .toggle-menu::before{
-    content: '';
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 10px 0 0 #fff, 0 20px 0 0 #fff; }
-  .menu--closed .toggle-menu::before:active::before{
-    background-color: rgba(210, 40, 86, 0.3);
-    box-shadow: 0 10px 0 0 rgba(210, 40, 86, 0.3), 0 20px 0 0 rgba(210, 40, 86, 0.3); }
-  .menu--closed .toggle-menu:active::before{
-    background-color: rgba(210, 40, 86, 0.3);
-    box-shadow: 0 10px 0 0 rgba(210, 40, 86, 0.3), 0 20px 0 0 rgba(210, 40, 86, 0.3); }
-  .menu--nojs .toggle-menu{
-    display: none; }
   .menu{
     background-color: #283645; }
   .menu--closed{
@@ -1515,19 +1702,6 @@ a, button {
     margin-top: 100px; } }
 
 @media only screen and (max-width: 699px){
-  .toggle-menu{
-    width: 80px;
-    height: 70px; }
-  .menu--closed .toggle-menu::before{
-    top: 21px;
-    left: 6px;
-    width: 50px;
-    height: 3.5px; }
-  .menu--opened .toggle-menu::before, .menu--opened .toggle-menu::after{
-    top: 31px;
-    left: 23px;
-    width: 33px;
-    height: 4px; }
   .slogan--download{
     display: none; }
   .slogan--topic{
@@ -1551,7 +1725,10 @@ a, button {
     height: 240px;
     background-position: center top; }
   .menu__wrap{
-    height: 70px; }
+    height: 70px;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 0 0 15px; }
   .menu__nav{
     top: 70px; }
   .menu--nojs .menu__nav{

@@ -12,7 +12,7 @@ $(document).ready(function(){
 });
 
 var navMain = document.querySelector('.menu');
-var navToggle = document.querySelector('.toggle-menu');
+var navToggle = document.querySelector('.hamburger');
 
 navMain.classList.remove('menu--nojs');
 

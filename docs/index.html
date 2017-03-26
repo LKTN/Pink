@@ -25,9 +25,35 @@
             <img class="logo__logo-img" src="img/logo-pink-mobile.svg" alt="logo">
           </picture>
         </a>
-
+<!--
         <button class="toggle-menu" type="button">  
         </button> 
+-->
+			  <button class="hamburger hamburger--htx">
+			    <span>toggle menu</span>
+			  </button>
+
+			  <script type="text/javascript">
+			  	
+					(function() {
+
+					  var toggles = document.querySelectorAll(".hamburger");
+
+					  for (var i = toggles.length - 1; i >= 0; i--) {
+					    var toggle = toggles[i];
+					    toggleHandler(toggle);
+					  };
+
+					  function toggleHandler(toggle) {
+					    toggle.addEventListener( "click", function(e) {
+					      e.preventDefault();
+					      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+					    });
+					  }
+
+					})();
+			  </script>
+
 
         <nav class="nav menu__nav">
           <ul class="nav__list">

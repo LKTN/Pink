@@ -30,10 +30,13 @@
 
   @include media("screen", "<tablet-larger-small") {
     height: 70px;
+    justify-content: space-between;
+    padding: 0 0 0 15px;
   }
 
   @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
     height: 110px;
+    justify-content: space-between;
   }
 
   @include media("screen", ">=tablet-wide") {
