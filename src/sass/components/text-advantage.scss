@@ -87,6 +87,10 @@
       color: $text-link-hover-color; 
     }
 
+    &:active {
+      color: $text-link-down-color;
+    }
+
   }
 
   &:active {

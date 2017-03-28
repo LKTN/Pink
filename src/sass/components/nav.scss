@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   z-index: 10;
+  transition: opacity .4s linear;
 
   .menu--opened & {
     @include media("screen", "<tablet-wide") {

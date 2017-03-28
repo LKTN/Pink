@@ -4,6 +4,7 @@
 
 
 .menu {
+  transition: border-color,background-color .4s linear;
   width: 100%;
   background-color: $background-menu-color-opacity;
 
@@ -23,15 +24,14 @@
 .menu__wrap {
   display: flex;
   align-items: center;
-
-  padding: 0 15px;
+  
+  padding: 0 0 0 15px;
   margin: 0 auto;
   width: 100%;
 
   @include media("screen", "<tablet-larger-small") {
     height: 70px;
     justify-content: space-between;
-    padding: 0 0 0 15px;
   }
 
   @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
@@ -42,7 +42,7 @@
   @include media("screen", ">=tablet-wide") {
     justify-content: space-between;
     max-width: 950px;
-
+    padding: 0 15px;
   }
 
   @include media("screen", "<tablet-wide") {

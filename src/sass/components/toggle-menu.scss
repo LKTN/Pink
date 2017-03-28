@@ -3,284 +3,122 @@
 @import "../vars.scss";
 
 .hamburger {
-  display: none;
-  @include media ("screen", "<tablet-wide") {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    //margin: 0;
-    padding: 0;
-    width: 96px;
-    height: 96px;
-    font-size: 0;
-    text-indent: -9999px;
-    //appearance: none;
-    box-shadow: none;
-    //border-radius: none;
-    border: none;
-    cursor: pointer;
-    //transition: background 0.3s;
+  display: block;
+  position: relative;
+  overflow: hidden;
+ 
+  width: 80px;
+  height: 70px;
+  font-size: 0;
+ 
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    width: 100px;
+    height: 110px;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    display: none;
   }
 
 }
 
-.hamburger:focus {
-  outline: none;
-}
-
-.hamburger span {
+.hamburger__span {
   display: block;
   position: absolute;
-  top: 45px;
+
+  top: 32px;
   left: 18px;
   right: 18px;
-  height: 6px;
+
+  height: 4px;
   background: white;
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    top: 55px;
+    height: 6px;
+  }
+
+  .hamburger.is-active & {
+    background: none;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    
+    left: 0;
+    width: 100%;
+    height: 4px;
+    
+    background-color: #fff;
+
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+    
+    @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+      height: 6px;
+    }
+
+    .hamburger.is-active & {
+      transition-delay: 0s, 0.3s;
+    }
+
+  }
+
+  &::before {
+    top: -10px;
+    transition-property: top, transform;
+    
+    @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+      top: -15px;
+    }
+
+    .hamburger.is-active & {
+      top: 0;
+      transform: rotate(45deg);
+    }
+  
+  }
+
+  &::after {
+    bottom: -10px;
+    transition-property: bottom, transform;
+
+    @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+      bottom: -15px;
+    }
+
+    .hamburger.is-active & {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+
+  }
+
 }
-/*
-.hamburger:hover span {
-  background: $btn-menu-hover-color;
-}*/
 
 .hamburger:active span {
   background: $btn-menu-down-color;
 }
 
-
-.hamburger span::before,
-.hamburger span::after {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background-color: #fff;
-  content: "";
-}
-/*
-.hamburger:hover span::before,
-.hamburger:hover span::after {
-  background-color: $btn-menu-hover-color;
-}
-*/
 .hamburger:active span::before,
 .hamburger:active span::after {
   background-color: $btn-menu-down-color;
 }
 
-
-.hamburger span::before {
-  top: -15px;
+.hamburger:active.is-active span::before,
+.hamburger:active.is-active span::after {
+  background-color: $btn-menu-down-isActive-color;
 }
 
-.hamburger span::after {
-  bottom: -15px;
-}
-.hamburger--htx {
-  background-color: transparent;
-}
 
-.hamburger--htx span {
-  //transition: background 0s 0.3s;
-}
-
-.hamburger--htx span::before,
-.hamburger--htx span::after {
-  transition-duration: 0.3s, 0.3s;
-  transition-delay: 0.3s, 0s;
-}
-
-.hamburger--htx span::before {
-  transition-property: top, transform;
-}
-
-.hamburger--htx span::after {
-  transition-property: bottom, transform;
-}
-
-/* active state, i.e. menu open */
-.hamburger--htx.is-active {
-  background-color: transparent;
-}
-
-.hamburger--htx.is-active span {
-  background: none;
-}
-
-.hamburger--htx.is-active span::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.hamburger--htx.is-active span::after {
-  bottom: 0;
-  transform: rotate(-45deg);
-}
-
-.hamburger--htx.is-active span::before,
-.hamburger--htx.is-active span::after {
-  transition-delay: 0s, 0.3s;
-}
-/*
-.toggle-menu {
-  display: none;
-
-  @include media("screen", "<tablet-wide") {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    display: block;
-
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-
-    &:active,
-    &:focus {
-      outline: none;
-    }
-    
-    .menu--opened & {
-      z-index: 10;
-      box-sizing: border-box;
-
-      @include media ("screen", ">=tablet-wide") {
-        &:hover::before,
-        &:hover::after {
-          background-color: $btn-menu-hover-color;
-        }
-      }
-
-      &::before, 
-      &::after {
-        content: '';
-        position: absolute;
-
-        background-color: #FFF;
-      }
-      
-      &::before {
-        transform: rotate(45deg);
-        box-shadow: none;
-      }
-
-      &::after {
-        transform: rotate(-45deg);
-      }
-
-      &:active::before,
-      &:active::after {
-        background-color: $btn-menu-down-color;
-      }
-
-    }
-
-    .menu--closed & {
-      &::before {
-        content: '';
-        position: absolute;
-        background-color: #fff;
-        box-shadow: 0 10px 0 0 #fff, 0 20px 0 0 #fff;
-
-        @include media ("screen", ">=tablet-wide") {
-          &:hover::before,
-          &:hover::after {
-            background-color: $btn-menu-hover-color;
-            box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
-          }
-        }
-
-        &:active::before{
-          background-color: $btn-menu-down-color;
-          box-shadow: 0 10px 0 0 $btn-menu-down-color, 0 20px 0 0  $btn-menu-down-color;   
-        }   
-      }
-
-      @include media ("screen", ">=tablet-wide") {
-        &:hover::before,
-        &:hover::after {
-          background-color: $btn-menu-hover-color;
-          box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
-        }
-        
-      }
-
-      &:active::before{
-        background-color: $btn-menu-down-color;
-        box-shadow: 0 10px 0 0 $btn-menu-down-color, 0 20px 0 0  $btn-menu-down-color;   
-      }
-
-    }
-
-    .menu--nojs & {
-      display: none;
-    }
-
-  }
-
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
-    border: none;
-    height: 109px;
-    width: 110px;
-
-    &::before, 
-    &::after {
-      top: 52px;
-      height: 4px;
-      left: initial;
-      right: 40px;
-    }
-
-    .menu--closed & {
-      &::before {
-        top: 44px;
-        left: initial;
-        right: 25px;
-        width: 53px;
-      }
-
-    }
-
-    .menu--opened & {
-      &::before,
-      &::after {
-        top: 51px;
-        left: initial;
-        right: 20px;
-        width: 50px;
-        height: 4px;      
-      }
-
-    }
-
-  }
-
-  @include media("screen", "<tablet-larger-small") {
-    width: 80px;
-    height: 70px;
-
-    .menu--closed & {
-      &::before {
-        top: 21px;
-        left: 6px;
-        width: 50px;
-        height: 3.5px;
-      }
-
-    }
-
-    .menu--opened & {
-      
-      &::before,
-      &::after {
-        top: 31px;
-        left: 23px;
-        width: 33px;
-        height: 4px;    
-      }
-
-    }
-  }
-
-}*/

@@ -690,7 +690,8 @@ a, button {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  z-index: 10; }
+  z-index: 10;
+  transition: opacity .4s linear; }
 
 .nav__list {
   display: -ms-flexbox;
@@ -712,249 +713,64 @@ a, button {
     color: rgba(210, 40, 86, 0.3); }
 
 .hamburger {
-  display: none; }
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 80px;
+  height: 70px;
+  font-size: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent; }
+  .hamburger:focus {
+    outline: none; }
 
-.hamburger:focus {
-  outline: none; }
-
-.hamburger span {
+.hamburger__span {
   display: block;
   position: absolute;
-  top: 45px;
+  top: 32px;
   left: 18px;
   right: 18px;
-  height: 6px;
+  height: 4px;
   background: white; }
+  .hamburger.is-active .hamburger__span {
+    background: none; }
+  .hamburger__span::before, .hamburger__span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s; }
+    .hamburger.is-active .hamburger__span::before, .hamburger.is-active .hamburger__span::after {
+      transition-delay: 0s, 0.3s; }
+  .hamburger__span::before {
+    top: -10px;
+    transition-property: top, transform; }
+    .hamburger.is-active .hamburger__span::before {
+      top: 0;
+      transform: rotate(45deg); }
+  .hamburger__span::after {
+    bottom: -10px;
+    transition-property: bottom, transform; }
+    .hamburger.is-active .hamburger__span::after {
+      bottom: 0;
+      transform: rotate(-45deg); }
 
-/*
-.hamburger:hover span {
-  background: $btn-menu-hover-color;
-}*/
 .hamburger:active span {
   background: rgba(210, 40, 86, 0.3); }
 
-.hamburger span::before,
-.hamburger span::after {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background-color: #fff;
-  content: ""; }
-
-/*
-.hamburger:hover span::before,
-.hamburger:hover span::after {
-  background-color: $btn-menu-hover-color;
-}
-*/
 .hamburger:active span::before,
 .hamburger:active span::after {
   background-color: rgba(210, 40, 86, 0.3); }
 
-.hamburger span::before {
-  top: -15px; }
+.hamburger:active.is-active span::before,
+.hamburger:active.is-active span::after {
+  background-color: #562b44; }
 
-.hamburger span::after {
-  bottom: -15px; }
-
-.hamburger--htx {
-  background-color: transparent; }
-
-.hamburger--htx span::before,
-.hamburger--htx span::after {
-  transition-duration: 0.3s, 0.3s;
-  transition-delay: 0.3s, 0s; }
-
-.hamburger--htx span::before {
-  transition-property: top, transform; }
-
-.hamburger--htx span::after {
-  transition-property: bottom, transform; }
-
-/* active state, i.e. menu open */
-.hamburger--htx.is-active {
-  background-color: transparent; }
-
-.hamburger--htx.is-active span {
-  background: none; }
-
-.hamburger--htx.is-active span::before {
-  top: 0;
-  transform: rotate(45deg); }
-
-.hamburger--htx.is-active span::after {
-  bottom: 0;
-  transform: rotate(-45deg); }
-
-.hamburger--htx.is-active span::before,
-.hamburger--htx.is-active span::after {
-  transition-delay: 0s, 0.3s; }
-
-/*
-.toggle-menu {
-  display: none;
-
-  @include media("screen", "<tablet-wide") {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    display: block;
-
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-
-    &:active,
-    &:focus {
-      outline: none;
-    }
-    
-    .menu--opened & {
-      z-index: 10;
-      box-sizing: border-box;
-
-      @include media ("screen", ">=tablet-wide") {
-        &:hover::before,
-        &:hover::after {
-          background-color: $btn-menu-hover-color;
-        }
-      }
-
-      &::before, 
-      &::after {
-        content: '';
-        position: absolute;
-
-        background-color: #FFF;
-      }
-      
-      &::before {
-        transform: rotate(45deg);
-        box-shadow: none;
-      }
-
-      &::after {
-        transform: rotate(-45deg);
-      }
-
-      &:active::before,
-      &:active::after {
-        background-color: $btn-menu-down-color;
-      }
-
-    }
-
-    .menu--closed & {
-      &::before {
-        content: '';
-        position: absolute;
-        background-color: #fff;
-        box-shadow: 0 10px 0 0 #fff, 0 20px 0 0 #fff;
-
-        @include media ("screen", ">=tablet-wide") {
-          &:hover::before,
-          &:hover::after {
-            background-color: $btn-menu-hover-color;
-            box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
-          }
-        }
-
-        &:active::before{
-          background-color: $btn-menu-down-color;
-          box-shadow: 0 10px 0 0 $btn-menu-down-color, 0 20px 0 0  $btn-menu-down-color;   
-        }   
-      }
-
-      @include media ("screen", ">=tablet-wide") {
-        &:hover::before,
-        &:hover::after {
-          background-color: $btn-menu-hover-color;
-          box-shadow: 0 10px 0 0 $btn-menu-hover-color, 0 20px 0 0  $btn-menu-hover-color; 
-        }
-        
-      }
-
-      &:active::before{
-        background-color: $btn-menu-down-color;
-        box-shadow: 0 10px 0 0 $btn-menu-down-color, 0 20px 0 0  $btn-menu-down-color;   
-      }
-
-    }
-
-    .menu--nojs & {
-      display: none;
-    }
-
-  }
-
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
-    border: none;
-    height: 109px;
-    width: 110px;
-
-    &::before, 
-    &::after {
-      top: 52px;
-      height: 4px;
-      left: initial;
-      right: 40px;
-    }
-
-    .menu--closed & {
-      &::before {
-        top: 44px;
-        left: initial;
-        right: 25px;
-        width: 53px;
-      }
-
-    }
-
-    .menu--opened & {
-      &::before,
-      &::after {
-        top: 51px;
-        left: initial;
-        right: 20px;
-        width: 50px;
-        height: 4px;      
-      }
-
-    }
-
-  }
-
-  @include media("screen", "<tablet-larger-small") {
-    width: 80px;
-    height: 70px;
-
-    .menu--closed & {
-      &::before {
-        top: 21px;
-        left: 6px;
-        width: 50px;
-        height: 3.5px;
-      }
-
-    }
-
-    .menu--opened & {
-      
-      &::before,
-      &::after {
-        top: 31px;
-        left: 23px;
-        width: 33px;
-        height: 4px;    
-      }
-
-    }
-  }
-
-}*/
 .btn-download {
   font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -1030,6 +846,7 @@ a, button {
     background-color: #1d2631; }
 
 .menu {
+  transition: border-color,background-color .4s linear;
   width: 100%;
   background-color: rgba(29, 38, 49, 0.4); }
 
@@ -1038,7 +855,7 @@ a, button {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  padding: 0 15px;
+  padding: 0 0 0 15px;
   margin: 0 auto;
   width: 100%; }
 
@@ -1381,38 +1198,19 @@ a, button {
   width: 48px;
   height: 48px; }
 
-@media only screen and (min-width: 700px){
-  .btn-download{
-    background: none; }
-  .text-descr{
-    font-size: 18px; }
-  .text-advantage--research{
-    text-align: left; }
-  .text-advantage--research .text-advantage__title{
-    font-size: 30px; }
-  .text-advantage--slideshow .text-advantage__text{
-    -ms-flex-order: -1;
-    order: -1;
-    margin-bottom: 45px;
-    font-size: 18px;
-    width: 620px;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center; }
-  .price::before{
-    border-top: 75px solid #fff; }
-  .contacts__wrap{
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    max-width: 950px; }
-  .contacts__map::before{
-    border-top: 75px solid #fff; } }
-
 @media only screen and (min-width: 700px) and (max-width: 1023px){
+  .hamburger{
+    width: 100px;
+    height: 110px; }
+  .hamburger__span{
+    top: 55px;
+    height: 6px; }
+  .hamburger__span::before, .hamburger__span::after{
+    height: 6px; }
+  .hamburger__span::before{
+    top: -15px; }
+  .hamburger__span::after{
+    bottom: -15px; }
   .download{
     margin-right: 300px;
     margin-bottom: 120px; }
@@ -1483,6 +1281,37 @@ a, button {
   .contacts__map{
     height: 420px; } }
 
+@media only screen and (min-width: 700px){
+  .btn-download{
+    background: none; }
+  .text-descr{
+    font-size: 18px; }
+  .text-advantage--research{
+    text-align: left; }
+  .text-advantage--research .text-advantage__title{
+    font-size: 30px; }
+  .text-advantage--slideshow .text-advantage__text{
+    -ms-flex-order: -1;
+    order: -1;
+    margin-bottom: 45px;
+    font-size: 18px;
+    width: 620px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center; }
+  .price::before{
+    border-top: 75px solid #fff; }
+  .contacts__wrap{
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    max-width: 950px; }
+  .contacts__map::before{
+    border-top: 75px solid #fff; } }
+
 @media only screen and (min-width: 700px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 700px) and (max-width: 1023px) and (min-resolution: 192dpi), only screen and (min-width: 700px) and (max-width: 1023px) and (min-resolution: 2dppx){
   .header{
     background-image: url("../img/bg-back-tablet@2x.jpg");
@@ -1527,6 +1356,8 @@ a, button {
   .nav__item--active a:active{
     color: rgba(255, 255, 255, 0.3);
     border: none; }
+  .hamburger{
+    display: none; }
   .btn-download:hover{
     background-color: #fff;
     color: #d22856; }
@@ -1553,7 +1384,8 @@ a, button {
   .menu__wrap{
     -ms-flex-pack: justify;
     justify-content: space-between;
-    max-width: 950px; }
+    max-width: 950px;
+    padding: 0 15px; }
   .text-advantage__text{
     font-size: 18px;
     width: 250px; }
@@ -1561,6 +1393,8 @@ a, button {
     width: 100%; }
   .text-advantage__link:hover{
     color: #000; }
+  .text-advantage__link:active{
+    color: rgba(0, 0, 0, 0.3); }
   .research{
     margin-top: 75px;
     max-width: 950px; }
@@ -1680,18 +1514,6 @@ a, button {
     border-top: 1px solid #495562;
     border-bottom: 1px solid #030303;
     z-index: 3; }
-  .hamburger{
-    display: block;
-    position: relative;
-    overflow: hidden;
-    padding: 0;
-    width: 96px;
-    height: 96px;
-    font-size: 0;
-    text-indent: -9999px;
-    box-shadow: none;
-    border: none;
-    cursor: pointer; }
   .menu{
     background-color: #283645; }
   .menu--closed{
@@ -1727,8 +1549,7 @@ a, button {
   .menu__wrap{
     height: 70px;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 0 0 0 15px; }
+    justify-content: space-between; }
   .menu__nav{
     top: 70px; }
   .menu--nojs .menu__nav{
