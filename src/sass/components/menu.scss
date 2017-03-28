@@ -6,10 +6,17 @@
 .menu {
   transition: border-color,background-color .4s linear;
   width: 100%;
-  background-color: $background-menu-color-opacity;
 
   @include media("screen", "<tablet-wide") {
     background-color: $background-menu-color;
+  }
+
+  @include media("screen", "<tablet-larger-small") {
+    height: 70px;
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    height: 110px;
   }
 
   &--closed {
@@ -19,30 +26,33 @@
 
   }
 
+  @include media("screen", ">=tablet-wide") {
+    display: flex;
+    justify-content: space-between;
+    max-width: 950px;
+  }
+
 }
 
 .menu__wrap {
   display: flex;
-  align-items: center;
-  
-  padding: 0 0 0 15px;
-  margin: 0 auto;
+  align-items: center;  
   width: 100%;
 
   @include media("screen", "<tablet-larger-small") {
     height: 70px;
     justify-content: space-between;
+    padding: 0 0 0 15px;
   }
 
   @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
     height: 110px;
     justify-content: space-between;
+    padding: 0 0 0 35px;
   }
 
   @include media("screen", ">=tablet-wide") {
-    justify-content: space-between;
-    max-width: 950px;
-    padding: 0 15px;
+    width: 150px;
   }
 
   @include media("screen", "<tablet-wide") {

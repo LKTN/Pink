@@ -15,6 +15,12 @@
       background-color: $btn-download-background-color;
       color: $btn-download-text-color;
     }
+
+    &:active {
+      background-color: $btn-download-background-color;
+      color: $btn-download-text-down-color;
+    }
+    
   }
 
   &:active {

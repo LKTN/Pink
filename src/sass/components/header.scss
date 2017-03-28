@@ -114,3 +114,18 @@
   }
   
 }
+
+.header__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: $background-menu-color-opacity;
+
+  @include media("screen", "<tablet-larger-small") {
+    height: 70px;
+  }
+
+  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    height: 110px;
+  }
+}

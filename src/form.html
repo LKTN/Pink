@@ -11,21 +11,48 @@
   <body>
     <header class="header header--short">
       
-      <div class="menu menu--closed menu--nojs">
-        <div class="menu__wrap">
+      <div class="header__wrapper">
+      
+        <div class="menu menu--closed menu--nojs">
 
-          <a href="index.html" class="logo">
-            <picture>
-              <source srcset="img/logo-pink-desktop.svg" media="only screen and (min-width: 1024px)">
-              <source srcset="img/logo-pink-tablet.svg" media="only screen and (min-width: 700px)">
-              <img class="logo__logo-img" src="img/logo-pink-mobile.svg" alt="logo">
-            </picture>
-          </a>
+          <div class="menu__wrap">
+          
+            <a href="index.html" class="logo">
+              <picture>
+                <source srcset="img/logo-pink-desktop.svg" media="only screen and (min-width: 1024px)">
+                <source srcset="img/logo-pink-tablet.svg" media="only screen and (min-width: 700px)">
+                <img class="logo__logo-img" src="img/logo-pink-mobile.svg" alt="logo">
+              </picture>
+            </a>
 
-          <button class="toggle-menu" type="button">  
-          </button> 
+            <button class="hamburger">
+              <span class="hamburger__span">toggle menu</span>
+            </button>
 
-          <nav class="nav nav--menu menu__nav">
+            <script type="text/javascript">
+              
+              (function() {
+
+                var toggles = document.querySelectorAll(".hamburger");
+
+                for (var i = toggles.length - 1; i >= 0; i--) {
+                  var toggle = toggles[i];
+                  toggleHandler(toggle);
+                };
+
+                function toggleHandler(toggle) {
+                  toggle.addEventListener( "click", function(e) {
+                    e.preventDefault();
+                    (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+                  });
+                }
+
+              })();
+            </script>
+
+          </div>
+
+          <nav class="nav menu__nav">
             <ul class="nav__list">
               <li class="nav__item"><a href="index.html">Главная</a></li>
               <li class="nav__item"><a href="photo.html">Фотографии</a></li>
@@ -33,8 +60,9 @@
               <li class="nav__item"><a href="#">HMTL Academy</a></li>
             </ul>
           </nav>
-          
+
         </div>
+      
       </div>
 
       <h2 class="slogan slogan--topic">
@@ -42,24 +70,7 @@
       </h2> 
     </header>
     
-    <script>
-    'use strict'
-      var navMain = document.querySelector('.menu');
-      var navToggle = document.querySelector('.toggle-menu');
-
-      navMain.classList.remove('menu--nojs');
-
-      navToggle.addEventListener('click', function() {
-        if(navMain.classList.contains('menu--closed')) {
-          navMain.classList.remove('menu--closed');
-          navMain.classList.add('menu--opened');
-        } else {    
-          navMain.classList.add('menu--closed');
-          navMain.classList.remove('menu--opened');
-        }
-      })
-
-    </script>
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBuoNB39WCqbDUGWK0Y5zLXS2XPG7QBVCY"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

@@ -6,39 +6,43 @@
   display: flex;
   flex-wrap: wrap;
   z-index: 10;
-  transition: opacity .4s linear;
 
-  .menu--opened & {
-    @include media("screen", "<tablet-wide") {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      border-top: 1px solid $border-menu-bottom-color;    
-    }
+  @include media("screen", "<tablet-wide") {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid $border-menu-bottom-color;
+    transition: opacity .4s linear;
+  }
 
+  @include media("screen", ">=tablet-wide") {
+    justify-content: flex-end;
+    width: 80%;   
   }
 
   .menu--closed & {
     @include media("screen", "<tablet-wide") {
-      display: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.4s, opacity 0.4s linear;
+    }
+
+  }
+
+  .menu--opened & {
+    @include media("screen", "<tablet-wide") {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s, opacity 0.4s linear;
     }
 
   }
 
   .menu--nojs & {
     @include media("screen", "<tablet-wide") {
-      position: absolute;
-      display: block;
-      left: 0;
-      width: 100%;
-      border-top: 1px solid $border-menu-bottom-color;  
+      opacity: 1;
     }
 
-  }
-
-  @include media("screen", ">=tablet-wide") {
-    justify-content: flex-end;
-    width: 80%;   
   }
 
 }
@@ -47,7 +51,6 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-    
   width: 100%;
   @include font-OpenSansRegular;
     
@@ -65,19 +68,9 @@
 }
 
 .nav__item {
-  .menu--opened & {
-    @include media("screen", "<tablet-wide") {
-        width: 100%;      
-    }
-
-  }
-
-  .menu--nojs & {
-    @include media("screen", "<tablet-wide") {
-      width: 100%;
-      z-index: 20;      
-    }
-
+  @include media("screen", "<tablet-wide") {
+    width: 100%;
+    z-index: 20;     
   }
 
   & a {
@@ -122,7 +115,7 @@
         border-top: 1px solid $border-menu-top-color;
         border-bottom: 1px solid $border-menu-bottom-color;
         z-index: 3;
-      }   
+      }
 
     }
     
@@ -137,17 +130,14 @@
           color: $text-color;
         }
 
-      }
-
-      &:active {
-        @include media("screen", ">=tablet-wide") {
+        &:active {    
           color: $text-down-color;
           border: none;
         }
 
       }
 
-    }     
+    } 
 
   }
 
