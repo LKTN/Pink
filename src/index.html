@@ -14,59 +14,59 @@
 <body>
   <header class="header header--index">
     <div class="header__wrapper">
-    	
-	    <div class="menu menu--closed menu--nojs">
+      
+      <div class="menu menu--closed menu--nojs">
 
-	      <div class="menu__wrap">
-	      
-	        <a href="index.html" class="logo">
-	          <picture>
-	            <source srcset="img/logo-pink-desktop.svg" media="only screen and (min-width: 1024px)">
-	            <source srcset="img/logo-pink-tablet.svg" media="only screen and (min-width: 700px)">
-	            <img class="logo__logo-img" src="img/logo-pink-mobile.svg" alt="logo">
-	          </picture>
-	        </a>
+        <div class="menu__wrap">
+        
+          <a href="index.html" class="logo">
+            <picture>
+              <source srcset="img/logo-pink-desktop.svg" media="only screen and (min-width: 1024px)">
+              <source srcset="img/logo-pink-tablet.svg" media="only screen and (min-width: 700px)">
+              <img class="logo__logo-img" src="img/logo-pink-mobile.svg" alt="logo">
+            </picture>
+          </a>
 
-				  <button class="hamburger">
-				    <span class="hamburger__span">toggle menu</span>
-				  </button>
+          <button class="hamburger">
+            <span class="hamburger__span">toggle menu</span>
+          </button>
 
-				  <script type="text/javascript">
-				  	
-						(function() {
+          <script type="text/javascript">
+            
+            (function() {
 
-						  var toggles = document.querySelectorAll(".hamburger");
+              var toggles = document.querySelectorAll(".hamburger");
 
-						  for (var i = toggles.length - 1; i >= 0; i--) {
-						    var toggle = toggles[i];
-						    toggleHandler(toggle);
-						  };
+              for (var i = toggles.length - 1; i >= 0; i--) {
+                var toggle = toggles[i];
+                toggleHandler(toggle);
+              };
 
-						  function toggleHandler(toggle) {
-						    toggle.addEventListener( "click", function(e) {
-						      e.preventDefault();
-						      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-						    });
-						  }
+              function toggleHandler(toggle) {
+                toggle.addEventListener( "click", function(e) {
+                  e.preventDefault();
+                  (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+                });
+              }
 
-						})();
-				  </script>
+            })();
+          </script>
 
-	      </div>
+        </div>
 
-	      <nav class="nav menu__nav">
-	        <ul class="nav__list">
-	          <li class="nav__item nav__item--active"><a>Главная</a></li>
-	          <li class="nav__item"><a href="photo.html">Фотографии</a></li>
-	          <li class="nav__item"><a href="form.html">Конкурс</a></li>
-	          <li class="nav__item"><a href="#">HMTL Academy</a></li>
-	        </ul>
-	      </nav>
+        <nav class="nav menu__nav">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--active"><a>Главная</a></li>
+            <li class="nav__item"><a href="photo.html">Фотографии</a></li>
+            <li class="nav__item"><a href="form.html">Конкурс</a></li>
+            <li class="nav__item"><a href="#">HMTL Academy</a></li>
+          </ul>
+        </nav>
 
-	    </div>
-		
-		</div>
-		
+      </div>
+    
+    </div>
+    
     <section class="download">
 
       <h2 class="slogan slogan--download">
@@ -189,21 +189,37 @@
 
           <th class="price__none"></th>
         
+
           <th class="price__th">
-            <div class="price__title">База</div>
-            <div class="price__value">1,99 USD</div>
+            
+            <div class="price__th-wrap">
+              <div class="price__title">База</div>
+              <div class="price__value">1,99 USD</div>              
+            </div>
+
           </th>
         
-          <th class="price__th price__th--best">
-            <div class="price__title">Стандарт</div>
-            <div class="price__value">3,99 USD</div>
-        
-          </th>
+
           <th class="price__th">
-            <div class="price__title">АНЛИМ</div>
-            <div class="price__value">9,99 USD</div>
-        
+
+            <div class="price__th-wrap price__th-wrap--best">
+              <div class="price__title">Стандарт</div>
+              <div class="price__value">3,99 USD</div>
+            </div>
+
           </th>
+
+
+          <th class="price__th">
+            
+            <div class="price__th-wrap">
+              <div class="price__title">АНЛИМ</div>
+              <div class="price__value">9,99 USD</div>
+            </div>
+
+          </th>
+
+
         </tr>
     
         <tr class="price__row">

@@ -1009,13 +1009,23 @@ a, button {
   border-collapse: collapse; }
 
 .price__th {
-  position: relative;
   overflow: hidden;
   height: 100px;
   color: #fff;
   background-color: #283645;
   border: 2px solid #e5e5e5; }
-  .price__th--best::before {
+
+.price__th-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  .price__th-wrap--best::before {
     content: "ХИТ";
     position: absolute;
     transform: rotate(-45deg);
@@ -1029,7 +1039,6 @@ a, button {
     line-height: 30px; }
 
 .price__td {
-  position: relative;
   width: 25%;
   height: 60px;
   background-color: #FFF;

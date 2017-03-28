@@ -59,7 +59,7 @@
 }
 
 .price__th {
-  position: relative;
+  //position: relative;
   overflow: hidden;
 
   height: 100px;
@@ -67,6 +67,19 @@
   background-color: $background-th-color;
   border: 2px solid $border-table-color;
 
+
+
+
+}
+
+.price__th-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+  position: relative;
 
   &--best {
     &::before {
@@ -89,7 +102,7 @@
 }
 
 .price__td {
-  position: relative;
+  //position: relative;
   width: 25%;
   height: 60px;
   
