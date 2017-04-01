@@ -29,6 +29,7 @@
 
     @include media ("screen", ">=tablet-wide") {
       font-size: 50px;
+      max-width: 830px;
     }
 
   }
@@ -47,6 +48,19 @@
 
     @include media ("screen", ">=tablet-wide") {
       font-size: 50px;
+    }
+
+  }
+
+  &--form {
+    @include font-OpenSansRegular($size: 14px, $colour: $text-descr-slogan-color, $lh: 30px);
+
+    @include media ("screen", "<tablet-larger-small") {
+      font-size: 14px;
+    }
+
+    @include media ("screen", ">=tablet-larger-small") {
+      font-size: 18px;
     }
 
   }

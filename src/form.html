@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Frontend Devil</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="format-detection" content="telephone=no">
-      <link rel="stylesheet" href="css/style.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pink</title>
+    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <header class="header header--short">
@@ -69,6 +72,138 @@
         Конкурс на самое безбашенное путешествие с Пинк
       </h2> 
     </header>
+
+    <section class="offer offer--form">
+      
+      <p class="slogan slogan--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! Пожалуйста, заполните форму ниже:</p>
+
+    </section>
+
+      
+      <form action="/" class="form" method="post">
+        
+        <fieldset class="form__fieldset form__fieldset--full-name">
+          
+          <div class="form__group">
+            <label class="form__label" for="name">Фамилия:</label>
+            <input class="form__input" type="text" id="name" name="user-name" placeholder="Укажите фамилию" required>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="surname">Имя:</label>
+            <input class="form__input" type="text" id="surname" name="user-surname" placeholder="Введите ваше имя" required>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="patronymic">Отчество:</label>
+            <input class="form__input" type="text" id="patronymic" name="user-patronymic" placeholder="Ну и отчество тоже" required>
+          </div>
+        
+        </fieldset>
+
+        <div class="form__fieldset-wrap">
+
+          <fieldset class="form__fieldset form__fieldset--checkbox">
+            <legend class="form__legend">Ваши безбашенные достижения в путешествии</legend>
+            
+            <div class="form__checkboxes-wrap">
+              <label class="checkbox" for="selfie-shark">Сделал селфи с акулой
+                <input class="checkbox__input" id="selfie-shark" type="checkbox" name="selfie-shark" />
+                <div class="checkbox__indicator"></div>
+              </label>              
+
+              <label class="checkbox" for="Norris">Видел Чака Норриса
+                <input class="checkbox__input" id="Norris" type="checkbox" name="Norris" />
+                <div class="checkbox__indicator"></div>
+              </label>
+
+              <label class="checkbox" for="tower">Удержал башню
+                <input class="checkbox__input" id="tower" type="checkbox" name="tower" />
+                <div class="checkbox__indicator"></div>
+              </label>
+
+              <label class="checkbox" for="beach">Обгорел на пляже
+                <input class="checkbox__input" id="beach" type="checkbox" name="beach" />
+                <div class="checkbox__indicator"></div>
+              </label>
+
+              <label class="checkbox" for="souvenirs">Накупил сувениров
+                <input class="checkbox__input" id="souvenirs" type="checkbox" name="souvenirs" />
+                <div class="checkbox__indicator"></div>
+              </label>
+
+              <label class="checkbox" for="hotel">Разгромил отель
+                <input class="checkbox__input" id="hotel" type="checkbox" name="hotel" />
+                <div class="checkbox__indicator"></div>
+              </label>
+            </div>
+
+
+          </fieldset>
+        
+        </div>
+
+
+        <fieldset class="form__fieldset form__fieldset--contacts-info">
+          <legend class="form__legend form__legend--hide">Контактная информация</legend>
+
+          <div class="form__contacts-wrap">
+
+            <div class="form__group form__group--contacts-phone">
+              <label class="form__label form__label--contacts" for="tel">Номерок телефончика</label>
+              <input class="form__input form__input--contacts" type="tel" id="tel" name="tel" placeholder="Номер, пожалуйста" required>
+            </div>
+
+            <div class="form__group form__group--contacts-mail">
+              <label class="form__label form__label--contacts" for="email">Адресок почты</label>
+              <input class="form__input form__input--contacts" type="email" id="email" name="email" placeholder="E-mail, пожалуйста" required>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+
+        <div class="form__fieldset-wrap form__fieldset-wrap--radio">
+
+          <fieldset class="form__fieldset form__fieldset--radio">
+            <legend class="form__legend">С каким приложением путешествовали?</legend>
+              
+            <label class="radio" for="ios">Pink для iOS
+              <input class="radio__input" id="ios" type="radio" name="platform" value="iOS" />
+              <div class="radio__indicator"></div>
+            </label>
+
+            <label class="radio" for="android">Pink на Android
+              <input class="radio__input" id="android" type="radio" name="platform" value="Android" />
+              <div class="radio__indicator"></div>
+            </label>
+
+            <label class="radio" for="windows">Windows Phone
+              <input class="radio__input" id="windows" type="radio" name="platform" value="Windows" />
+              <div class="radio__indicator"></div>
+            </label>
+
+          </fieldset> 
+        
+        </div>
+
+        <fieldset class="form__fieldset form__fieldset--textarea">
+          <legend class="form__legend">Опишите свои эмоции</legend>
+
+          <textarea class="form__textarea" name="emotion" id="emotion" cols="30" rows="5" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+          
+
+        </fieldset>
+
+      </form>
+    
+
+
+
+
+
+
     
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBuoNB39WCqbDUGWK0Y5zLXS2XPG7QBVCY"></script>
     <script type="text/javascript" src="js/main.js"></script>
