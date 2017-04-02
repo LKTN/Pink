@@ -1160,12 +1160,13 @@ a, button, input {
 .footer {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  height: 125px;
-  padding: 0 40px; }
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 250px; }
 
 .social__list {
   display: -ms-flexbox;
@@ -1229,7 +1230,7 @@ a, button, input {
       justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
-  margin-bottom: 100px; }
+  margin-bottom: 50px; }
 
 .form__fieldset-wrap {
   display: -ms-flexbox;
@@ -1240,6 +1241,19 @@ a, button, input {
   padding: 40px 0;
   width: 100%;
   max-width: 940px; }
+
+.form__submit {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  height: 150px;
+  width: 100%;
+  margin: 50px 20px 0 20px; }
 
 .form__fieldset {
   display: -ms-flexbox;
@@ -1258,10 +1272,17 @@ a, button, input {
     border: none;
     width: 100%; }
   .form__fieldset--textarea {
+    width: 100%;
     margin-top: 50px;
     border: none; }
 
 .form__checkboxes-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.form__radio-wrap {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -1296,10 +1317,9 @@ a, button, input {
   font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
   font-size: 18px;
   color: #283645;
-  line-height: 30px;
   width: 100%;
   height: 60px;
-  padding: 0 10px;
+  padding: 12px 10px;
   border: 2px solid #e5e5e5; }
   .form__input:hover {
     border: 2px solid #283645; }
@@ -1314,12 +1334,14 @@ a, button, input {
     font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
     font-size: 18px;
     color: #283645;
-    line-height: 30px; }
+    line-height: 30px;
+    line-height: 1.5em; }
   .form__input:-moz-placeholder {
     font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
     font-size: 18px;
     color: #283645;
-    line-height: 30px; }
+    line-height: 30px;
+    line-height: 1.5em; }
   .form__input:-ms-input-placeholder {
     font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
     font-size: 18px;
@@ -1335,7 +1357,10 @@ a, button, input {
     color: transparent; }
 
 .form__textarea {
+  height: 200px;
+  width: 100%;
   resize: none;
+  padding: 20px;
   font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
   font-size: 18px;
   color: #283645;
@@ -1468,7 +1493,47 @@ a, button, input {
     background-color: #d22856;
     height: 15px;
     border-radius: 50px; }
-  @media only screen and (min-width: 700px) and (max-width: 1023px){
+
+.btn-submit {
+  width: 100%;
+  max-width: 300px;
+  height: 65px;
+  background-color: #26ac6e;
+  border-radius: 3px;
+  border: none; }
+  .btn-submit:hover {
+    background-color: #159c5e; }
+  .btn-submit--disabled {
+    background-color: #e6e6e6;
+    outline: none; }
+    .btn-submit--disabled:hover {
+      background-color: #e6e6e6; }
+    .btn-submit--disabled:active {
+      outline: none; }
+
+.btn-submit__text {
+  text-transform: uppercase;
+  font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #fff;
+  line-height: 30px;
+  transition: opacity 0.3s; }
+  .btn-submit:active .btn-submit__text {
+    opacity: 0.3; }
+  .btn-submit--disabled:active .btn-submit__text {
+    opacity: 1; }
+
+.required-fields {
+  font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #283645;
+  line-height: 30px;
+  text-transform: uppercase; }
+
+.required-fields__star {
+  color: #d22856; }
+
+@media only screen and (min-width: 700px) and (max-width: 1023px){
   .hamburger{
     width: 100px;
     height: 110px; }
@@ -1555,6 +1620,17 @@ a, button, input {
     width: 100%; }
   .contacts__map{
     height: 420px; }
+  .footer{
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 125px;
+    padding: 0 40px; }
+  .form__submit{
+    margin: 50px 40px 0 40px; }
   .form__fieldset--checkbox{
     margin: 0 40px; }
   .form__fieldset--radio{
@@ -1566,7 +1642,8 @@ a, button, input {
   .form__checkboxes-wrap{
     -ms-flex-pack: distribute;
     justify-content: space-around; } }
-  @media only screen and (min-width: 700px){
+
+@media only screen and (min-width: 700px){
   .btn-download{
     background: none; }
   .slogan--form{
@@ -1598,6 +1675,13 @@ a, button, input {
     max-width: 950px; }
   .contacts__map::before{
     border-top: 75px solid #fff; }
+  .form__submit{
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 940px;
+    height: 65px; }
   .form__fieldset{
     padding: 0 40px; }
   .form__fieldset--checkbox{
@@ -1686,7 +1770,8 @@ a, button, input {
     width: 280px; }
   .radio{
     width: 280px; } }
-  @media only screen and (min-width: 700px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 700px) and (max-width: 1023px) and (min-resolution: 192dpi), only screen and (min-width: 700px) and (max-width: 1023px) and (min-resolution: 2dppx){
+
+@media only screen and (min-width: 700px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 700px) and (max-width: 1023px) and (min-resolution: 192dpi), only screen and (min-width: 700px) and (max-width: 1023px) and (min-resolution: 2dppx){
   .header{
     background-image: url("../img/bg-back-tablet@2x.jpg");
     background-size: auto 730px; }
@@ -1696,10 +1781,12 @@ a, button, input {
   .features::after{
     background: url(../img/iphone-screen-3-tablet@2x.png) no-repeat right bottom;
     background-size: 268px 481px; } }
-  @media only screen and (min-width: 701px) and (max-width: 1023px){
+
+@media only screen and (min-width: 701px) and (max-width: 1023px){
   .price__wrap{
     padding: 0 40px; } }
-  @media only screen and (min-width: 1024px){
+
+@media only screen and (min-width: 1024px){
   .owl-theme .owl-dots .owl-dot{
     display: none; }
   .owl-carousel.owl-loaded{
@@ -1835,11 +1922,16 @@ a, button, input {
   .contacts__map{
     height: 550px; }
   .footer{
+    -ms-flex-direction: row;
+    flex-direction: row;
     width: 950px;
     height: 200px;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
-    align-self: center; }
+    align-self: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 125px; }
   .social__item:hover{
     border-color: #030303; }
   .form{
@@ -1852,6 +1944,9 @@ a, button, input {
     order: -1;
     margin: 0;
     padding: 0; }
+  .form__submit{
+    margin: 50px 0 0 0;
+    height: 65px; }
   .form__fieldset--full-name{
     width: 440px;
     -ms-flex-order: -2;
@@ -1897,7 +1992,8 @@ a, button, input {
     border: 2px solid #d22856; }
   .radio__input[type="radio"]:checked:active ~ .radio__indicator:after{
     display: none; } }
-  @media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 1024px) and (min-resolution: 192dpi), only screen and (min-width: 1024px) and (min-resolution: 2dppx){
+
+@media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 1024px) and (min-resolution: 192dpi), only screen and (min-width: 1024px) and (min-resolution: 2dppx){
   .header{
     background-image: url("../img/bg-back-desktop@2x.jpg");
     background-size: auto 850px; }
@@ -1913,7 +2009,8 @@ a, button, input {
   .features__item--smile{
     background: url(../img/iphone-screen-3-desktop@2x.png) no-repeat center top;
     background-size: 292px 302px; } }
-  @media only screen and (max-width: 1023px){
+
+@media only screen and (max-width: 1023px){
   .owl-theme .owl-nav [class*='owl-']{
     display: none; }
   .nav{
@@ -1956,7 +2053,8 @@ a, button, input {
     background: #283645; }
   .slideshow-feedback{
     margin-top: 100px; } }
-  @media only screen and (max-width: 699px){
+
+@media only screen and (max-width: 699px){
   .slogan--download{
     display: none; }
   .slogan--topic{
@@ -2027,7 +2125,8 @@ a, button, input {
     background-color: #f2f2f2; }
   .form__legend--hide{
     display: none; } }
-  @media only screen and (max-width: 699px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 699px) and (min-resolution: 192dpi), only screen and (max-width: 699px) and (min-resolution: 2dppx){
+
+@media only screen and (max-width: 699px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 699px) and (min-resolution: 192dpi), only screen and (max-width: 699px) and (min-resolution: 2dppx){
   .header{
     background-image: url("../img/bg-back-mobile@2x.jpg");
     background-size: auto 730px; }

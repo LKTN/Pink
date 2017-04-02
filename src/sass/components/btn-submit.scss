@@ -1,0 +1,46 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.btn-submit {
+  width: 100%;
+  max-width: 300px;
+  height: 65px;
+  background-color: $background-btn-submit-color;
+  border-radius: 3px;
+  border: none;
+
+  &:hover {
+    background-color: $background-btn-submit-hover-color;
+  }
+
+  &--disabled {
+    background-color: $background-btn-submit-disabled-color;
+    outline: none;
+
+    &:hover {
+      background-color: $background-btn-submit-disabled-color;
+    }
+
+    &:active {
+      outline: none;
+    }
+
+  }
+
+}
+
+.btn-submit__text {
+  text-transform: uppercase;
+  @include font-OpenSansBold ($size: 18px, $colour: $text-color, $lh: 30px);
+  transition: opacity 0.3s;
+
+  .btn-submit:active & {
+    opacity: 0.3;
+  }
+
+  .btn-submit--disabled:active & {
+    opacity: 1;
+  }
+
+}

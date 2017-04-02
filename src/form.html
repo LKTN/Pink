@@ -168,21 +168,25 @@
 
           <fieldset class="form__fieldset form__fieldset--radio">
             <legend class="form__legend">С каким приложением путешествовали?</legend>
-              
-            <label class="radio" for="ios">Pink для iOS
-              <input class="radio__input" id="ios" type="radio" name="platform" value="iOS" />
-              <div class="radio__indicator"></div>
-            </label>
+            
+            <div class="form__radio-wrap">
+            
+              <label class="radio" for="ios">Pink для iOS
+                <input class="radio__input" id="ios" type="radio" name="platform" value="iOS" checked />
+                <div class="radio__indicator"></div>
+              </label>
 
-            <label class="radio" for="android">Pink на Android
-              <input class="radio__input" id="android" type="radio" name="platform" value="Android" />
-              <div class="radio__indicator"></div>
-            </label>
+              <label class="radio" for="android">Pink на Android
+                <input class="radio__input" id="android" type="radio" name="platform" value="Android" />
+                <div class="radio__indicator"></div>
+              </label>
 
-            <label class="radio" for="windows">Windows Phone
-              <input class="radio__input" id="windows" type="radio" name="platform" value="Windows" />
-              <div class="radio__indicator"></div>
-            </label>
+              <label class="radio" for="windows">Windows Phone
+                <input class="radio__input" id="windows" type="radio" name="platform" value="Windows" />
+                <div class="radio__indicator"></div>
+              </label>
+
+            </div>
 
           </fieldset> 
         
@@ -191,12 +195,81 @@
         <fieldset class="form__fieldset form__fieldset--textarea">
           <legend class="form__legend">Опишите свои эмоции</legend>
 
-          <textarea class="form__textarea" name="emotion" id="emotion" cols="30" rows="5" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+          <textarea class="form__textarea" name="emotion" id="emotion" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
           
-
         </fieldset>
+        
+        <section class="form__submit">
+
+          <button name="submit" class="btn-submit">
+            <span class="btn-submit__text">Отправить форму</span>
+          </button>
+
+          <p class="required-fields">
+            <sup class="required-fields__star">*</sup> — обязательные поля
+          </p>
+        </section>
+
 
       </form>
+
+    <footer class="footer">
+      
+      <div class="footer__logo">
+        <a href="#">
+          <picture>
+            <source srcset="img/logo-pink-footer-desktop.svg" media="only screen and (min-width: 1024px)">
+            <img class="logo" src="img/logo-pink-footer-tablet.svg" alt="logo" height="40" width="146">
+          </picture>
+        </a>
+      </div>
+
+
+      <section class="social footer__social">
+
+        <ul class="social__list">
+
+          <li class="social__item">
+            <a href="#" class="social__link">
+              <svg class="social__icon">
+                <use xlink:href="img/general.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link">
+              <svg class="social__icon">
+                <use xlink:href="img/general.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social__item">
+            <a href="#" class="social__link">
+              <svg class="social__icon">
+                <use xlink:href="img/general.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+
+        </ul>
+
+      </section>
+
+
+      <div class="copyright footer__copyright">
+        
+        <a href="#" class="copyright__link">
+          <span class="copyright__text">Разработано</span>
+          <svg class="copyright__icon">
+            <use xlink:href="img/general.svg#icon-htmlacademy"></use>
+          </svg>
+        </a>
+
+      </div>
+
+    </footer>
     
 
 
