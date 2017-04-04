@@ -1,0 +1,97 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.form-contacts-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  margin: 0 25px 50px;
+  border: none;
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    margin: 0 40px 50px;
+  }
+
+  @include media ("screen", ">=tablet-larger-small") {
+    max-width: 940px;
+    padding: 0 60px;
+    border: 2px solid #e5e5e5;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    margin: 0 0 60px;
+  }
+
+}
+
+.form-contacts-info__wrap {
+  @include media ("screen", ">=tablet-wide") {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+.form-contacts-info__group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  position: relative;
+
+  @include media ("screen", ">=tablet-wide") {
+    width: 375px;
+  }
+
+  &::after {
+    @include media ("screen", ">=tablet-larger-small") {
+      content: '';
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      top: 19px;
+      right: 19px;
+      background-size: 20px 20px;
+    }
+
+  }
+
+  &--phone {
+    &::after {
+      @include media ("screen", ">=tablet-larger-small") {
+        background: url("../img/icon-phone.svg") no-repeat;
+      }
+
+    }
+
+  }
+
+  &--mail {
+    &::after {
+      @include media ("screen", ">=tablet-larger-small") {
+        background: url("../img/icon-mail.svg") no-repeat;
+      }
+
+    }
+
+  }
+
+}
+
+.form-contacts-info__label {
+  @include font-OpenSansRegular($size: 14px, $colour: $text-form-title-color, $lh: 30px);
+  text-transform: uppercase;
+  padding: 0 0 0 25px;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    padding: 15px 25px 15px 0;
+  }
+
+  @include media ("screen", ">=tablet-larger-small") {
+    order: 1;
+    align-self: flex-start;
+    padding: 5px 0 25px 25px;
+  }
+  
+}

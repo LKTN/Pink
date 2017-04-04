@@ -1,0 +1,67 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.form-input-text {
+  @include font-OpenSansRegular($size: 18px, $colour: $text-form-main-color)
+  width: 100%;
+  height: 60px;
+  padding: 12px 10px;
+  border: 2px solid $border-input-color;
+
+  
+
+  @include media ("screen", ">=tablet-wide") {
+    &:hover {
+      border-color: $border-input-hover-color;
+    }
+    
+    &:focus {
+      border-color: $border-input-focus-color;
+    }
+
+  }
+
+  &:focus {
+    border-color: $border-input-focus-color;
+  }
+
+  &::-webkit-input-placeholder {
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+  }
+
+  &::-moz-placeholder {
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color);
+  }
+
+  &:-moz-placeholder {
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color);
+  }
+
+  &:-ms-input-placeholder {
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+  }
+
+  &:focus::-webkit-input-placeholder {color: transparent}
+  &:focus::-moz-placeholder          {color: transparent}
+  &:focus:-moz-placeholder           {color: transparent}
+  &:focus:-ms-input-placeholder      {color: transparent}
+
+  &--contacts {
+    @include media ("screen", ">=tablet-larger-small") {
+      border-width: 2px 60px 2px 2px;
+      position: relative;
+
+      &:hover {
+        border-width: 2px 60px 2px 2px;
+      }
+
+      &:focus {
+        border-width: 2px;
+      }
+
+    }
+
+  }
+  
+}

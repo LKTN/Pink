@@ -2,13 +2,59 @@
 @import "../mixins.scss";
 @import "../vars.scss";
 
-.checkbox {
+
+.form-checkbox {
+  display: flex;
+  flex-direction: column;
+  border: none;
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    margin: 0 40px;
+  }
+
+  @include media ("screen", ">=tablet-larger-small") {
+    width: 100%;
+    max-width: 940px;
+
+    padding: 0 0 0 25px;
+    border: 2px solid #e5e5e5;
+  }
+
+}
+
+.form-checkbox__wrap {
+  display: flex;
+  flex-direction: column;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+    max-width: 940px;
+    height: auto;
+  }
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    justify-content: space-around;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    justify-content: space-between;
+  }
+
+}
+
+
+
+.form-checkbox__label-group {
   position: relative;
   padding-left: 75px;
   margin-bottom: 40px;
   height: 40px;
   cursor: pointer;
   @include font-OpenSansRegular ($size: 18px, $lh: 30px, $colour: $text-form-main-color);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   @include media ("screen", ">=tablet-larger-small") {
     width: 280px;
@@ -16,13 +62,13 @@
 
 }
 
-.checkbox__input {
+.form-checkbox__input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 
   &[type="checkbox"]:checked {
-    ~ .checkbox__indicator {
+    ~ .form-checkbox__indicator {
       
       &:after {
         display: block;
@@ -33,12 +79,10 @@
   }
 
   &[type="checkbox"]:active {
-    ~ .checkbox__indicator {
-      border: 2px solid $pink;
+    ~ .form-checkbox__indicator {
+      border-color: $pink;
       &:after {
         display: block;
-        top: 3px;
-        left: 12px;
       }
 
     }
@@ -46,8 +90,8 @@
   }
 
   &[type="checkbox"]:checked:active {
-    ~ .checkbox__indicator {
-      border: 2px solid $pink;
+    ~ .form-checkbox__indicator {
+      border-color: $pink;
 
       &:after {
         display: none;
@@ -59,25 +103,17 @@
 
   @include media ("screen", ">=tablet-wide") {
     &[type="checkbox"]:hover {
-      ~ .checkbox__indicator {
-        border: 2px solid #283645;
-          
-        &:after {
-          top: 3px;
-          left: 12px;
-        }
-          
+      ~ .form-checkbox__indicator {
+        border-color: #283645;
       }
 
     }
 
     &[type="checkbox"]:active {
-      ~ .checkbox__indicator {
-        border: 2px solid $pink;
+      ~ .form-checkbox__indicator {
+        border-color: $pink;
         &:after {
           display: block;
-          top: 3px;
-          left: 12px;
         }
 
       }
@@ -85,8 +121,8 @@
     }
 
     &[type="checkbox"]:checked:active {
-      ~ .checkbox__indicator {
-        border: 2px solid $pink;
+      ~ .form-checkbox__indicator {
+        border-color: $pink;
 
         &:after {
           display: none;
@@ -100,7 +136,7 @@
 
 }
 
-.checkbox__indicator {
+.form-checkbox__indicator {
   position: absolute;
   top: 0;
   left: 0;

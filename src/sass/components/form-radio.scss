@@ -2,27 +2,52 @@
 @import "../mixins.scss";
 @import "../vars.scss";
 
-.radio {
+.form-radio {
+  border: none;
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    margin: 0 40px;
+  }
+
+  @include media ("screen", ">=tablet-larger-small") {
+    width: 100%;
+    padding: 0 0 0 55px;
+    border: 2px solid #e5e5e5;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    max-width: 440px;      
+  }
+  
+}
+
+.form-radio__wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-radio__group {
   position: relative;
   padding-left: 75px;
   margin-bottom: 40px;
   height: 40px;
   cursor: pointer;
   @include font-OpenSansRegular ($size: 18px, $lh: 30px, $colour: $text-form-main-color);
-
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  
   @include media ("screen", ">=tablet-larger-small") {
     width: 280px;
   }
 
 }
 
-.radio__input {
+.form-radio__input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 
   &[type="radio"]:checked {
-    ~ .radio__indicator {
+    ~ .form-radio__indicator {
       
       &:after {
         display: block;
@@ -33,7 +58,7 @@
   }
 
   &[type="radio"]:active {
-    ~ .radio__indicator {
+    ~ .form-radio__indicator {
       border: 2px solid $pink;
 
       &:after {
@@ -45,7 +70,7 @@
   }
 
   &[type="radio"]:checked:active {
-    ~ .radio__indicator {
+    ~ .form-radio__indicator {
       border: 2px solid $pink;
 
       &:after {
@@ -58,14 +83,14 @@
 
   @include media ("screen", ">=tablet-wide") {
     &[type="radio"]:hover {
-      ~ .radio__indicator {
+      ~ .form-radio__indicator {
         border: 2px solid #283645;
       }
 
     }
 
     &[type="radio"]:active {
-      ~ .radio__indicator {
+      ~ .form-radio__indicator {
         border: 2px solid $pink;
         &:after {
           display: block;
@@ -76,7 +101,7 @@
     }
 
     &[type="radio"]:checked:active {
-      ~ .radio__indicator {
+      ~ .form-radio__indicator {
         border: 2px solid $pink;
 
         &:after {
@@ -88,10 +113,10 @@
     }
 
   }
-
 }
 
-.radio__indicator {
+
+.form-radio__indicator {
   position: absolute;
   top: 0;
   left: 0;

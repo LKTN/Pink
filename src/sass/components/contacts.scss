@@ -75,7 +75,12 @@
   @include media ("screen", ">=tablet-wide") {
     &:hover {
       color: $text-link-hover-color; 
-    }    
+    }
+    
+    &:active {
+      color: $text-link-down-color;
+    }
+
   }
 
   &:active {

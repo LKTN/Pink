@@ -9,9 +9,12 @@
   background-color: $background-btn-submit-color;
   border-radius: 3px;
   border: none;
-
-  &:hover {
-    background-color: $background-btn-submit-hover-color;
+  
+  @include media ("screen", ">=tablet-wide") {
+    &:hover {
+      background-color: $background-btn-submit-hover-color;
+    }
+    
   }
 
   &--disabled {

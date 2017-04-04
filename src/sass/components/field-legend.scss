@@ -1,0 +1,24 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.field-legend {
+  width: 250px;
+  margin-bottom: 40px;
+
+  text-align: center;
+  @include font-OpenSansRegular($size: 14px, $colour: $text-form-title-color, $lh: 18px);
+  text-transform: uppercase;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    width: auto;
+    padding: 0 25px;
+  }
+
+  &--hide {
+    @include media ("screen", "<tablet-larger-small") {
+      display: none;
+    }
+
+  }
+}

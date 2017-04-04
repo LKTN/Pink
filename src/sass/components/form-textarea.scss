@@ -1,0 +1,76 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.form-textarea {
+  padding: 0 25px;
+  width: 100%;
+  border: none;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    padding: 0 40px;
+  }
+
+  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    margin: 0 40px;
+  }
+
+  @include media ("screen", ">=tablet-larger-small") {
+    max-width: 940px;
+    padding: 0 60px;
+    border: 2px solid #e5e5e5;
+  }
+
+}
+
+.form-textarea__area {
+  height: 200px;
+  width: 100%;
+  resize: none;
+  padding: 20px;
+  @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+  border: 2px solid $border-input-color;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    margin-bottom: 50px;
+  }
+
+  &:focus {
+    border-color: $border-input-focus-color;
+    outline: none;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    &:hover {
+      border-color: $border-input-hover-color;
+    }
+
+    &:focus {
+      border-color: $border-input-focus-color;
+      outline: none;
+    }
+
+  }
+
+
+  &::-webkit-input-placeholder {
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+  }
+
+  &::-moz-placeholder {
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+  }
+
+  &:-moz-placeholder {
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+  }
+
+  &:-ms-input-placeholder {
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+  }
+
+  &:focus::-webkit-input-placeholder {color: transparent}
+  &:focus::-moz-placeholder          {color: transparent}
+  &:focus:-moz-placeholder           {color: transparent}
+  &:focus:-ms-input-placeholder      {color: transparent}
+}

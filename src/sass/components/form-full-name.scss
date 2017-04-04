@@ -1,0 +1,49 @@
+@import "bourbon";
+@import "../mixins.scss";
+@import "../vars.scss";
+
+.form-full-name {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  margin: 0 25px 50px;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    margin: 0 40px 50px;
+  }
+  
+  @include media ("screen", ">=tablet-wide") {
+    width: 440px;
+    margin: 0;
+    order: -2;
+  }
+
+}
+
+.form-full-name__group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @include media ("screen", ">=tablet-wide") {
+    max-width: 440px;
+  }
+
+}
+
+.form-full-name__label {
+  @include font-OpenSansRegular($size: 14px, $colour: $text-form-title-color, $lh: 30px);
+  text-transform: uppercase;
+  padding: 0 0 0 25px;
+
+  @include media ("screen", ">=tablet-larger-small") {
+    padding: 15px 25px 15px 0;
+  }
+
+}
