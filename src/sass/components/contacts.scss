@@ -64,27 +64,26 @@
 }
 
 .contacts__title {
-  @include font-OpenSansBold ($size: 18px, $colour: $text-contacts-color);
+  @include font-OpenSansBold ($size: 18px, $colour: $text-color-main);
   margin-bottom: 7px;
 }
 
 .contacts__value {
-  color: $white;
-  @include font-OpenSansLight ($size: 24px, $colour: $text-link-color);
+  @include font-OpenSansLight ($size: 24px, $colour: $text-color-secondary);
   
   @include media ("screen", ">=tablet-wide") {
     &:hover {
-      color: $text-link-hover-color; 
+      color: $text-color-black; 
     }
     
     &:active {
-      color: $text-link-down-color;
+      color: rgba($text-color-black, 0.3);
     }
 
   }
 
   &:active {
-    color: $text-link-down-color;
+    color: rgba($text-color-black, 0.3);
   }
 
 }
@@ -93,7 +92,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  background-color: #FFF;
+  background-color: $color-white;
   
   @include media ("screen", "<tablet-larger-small") {
     height: 250px;
@@ -113,12 +112,12 @@
     position: absolute;
     z-index: 1;
     top: -1px;
-    border-top: 32px solid #fff;
+    border-top: 32px solid $color-white;
     border-right: 50vw solid transparent;
     border-left: 50vw solid transparent;
 
     @include media ("screen", ">=tablet-larger-small") {
-      border-top: 75px solid #fff;
+      border-top: 75px solid $color-white;
     }
 
   }

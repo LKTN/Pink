@@ -138,7 +138,7 @@
 }
 
 .features__title {
-  @include font-OpenSansBold($size: 18px, $colour: $text-advantage-title-color);
+  @include font-OpenSansBold($size: 18px, $colour: $text-color-black);
   padding-bottom: 20px;
 
   @include media ("screen", ">=tablet-wide") {
@@ -149,7 +149,7 @@
 }
 
 .features__text {
-  @include font-OpenSansRegular($size: 14px, $colour: $text-advantage-color);
+  @include font-OpenSansRegular($size: 14px, $colour: $text-color-main);
 
   @include media ("screen", ">=tablet-wide") {
     font-size: 18px;

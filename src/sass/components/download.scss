@@ -9,7 +9,7 @@
   justify-content: space-around;
 
   @include media("screen", "<tablet-larger-small") {
-    background-color: $background-main-color;
+    background-color: $color-main--dark;
     height: 285px;
     
   }

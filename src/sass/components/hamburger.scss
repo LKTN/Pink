@@ -112,17 +112,17 @@
 }
 
 .hamburger:active span {
-  background: $btn-menu-down-color;
+  background: rgba($color-secondary, 0.3);
 }
 
 .hamburger:active span::before,
 .hamburger:active span::after {
-  background-color: $btn-menu-down-color;
+  background-color: rgba($color-secondary, 0.3);
 }
 
 .hamburger:active.is-active span::before,
 .hamburger:active.is-active span::after {
-  background-color: $btn-menu-down-isActive-color;
+  background-color: $color-secondary--dark;
 }
 
 

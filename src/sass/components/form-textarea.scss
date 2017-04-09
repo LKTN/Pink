@@ -18,7 +18,7 @@
   @include media ("screen", ">=tablet-larger-small") {
     max-width: 940px;
     padding: 0 60px;
-    border: 2px solid #e5e5e5;
+    border: 2px solid $color-white--darker;
   }
 
 }
@@ -28,45 +28,44 @@
   width: 100%;
   resize: none;
   padding: 20px;
-  @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
-  border: 2px solid $border-input-color;
+  @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-color-main)
+  border: 2px solid $color-white--darker;
 
   @include media ("screen", ">=tablet-larger-small") {
     margin-bottom: 50px;
   }
 
   &:focus {
-    border-color: $border-input-focus-color;
+    border-color: $color-secondary;
     outline: none;
   }
 
   @include media ("screen", ">=tablet-wide") {
     &:hover {
-      border-color: $border-input-hover-color;
+      border-color: $color-main;
     }
 
     &:focus {
-      border-color: $border-input-focus-color;
+      border-color: $color-secondary;
       outline: none;
     }
 
   }
 
-
   &::-webkit-input-placeholder {
-    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-color-main)
   }
 
   &::-moz-placeholder {
-    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-color-main)
   }
 
   &:-moz-placeholder {
-    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-color-main)
   }
 
   &:-ms-input-placeholder {
-    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-form-main-color)
+    @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-color-main)
   }
 
   &:focus::-webkit-input-placeholder {color: transparent}

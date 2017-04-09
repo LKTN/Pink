@@ -6,23 +6,23 @@
   width: 100%;
   max-width: 300px;
   height: 65px;
-  background-color: $background-btn-submit-color;
+  background-color: $color-success--dark;
   border-radius: 3px;
   border: none;
   
   @include media ("screen", ">=tablet-wide") {
     &:hover {
-      background-color: $background-btn-submit-hover-color;
+      background-color: $color-success--darken;
     }
     
   }
 
   &--disabled {
-    background-color: $background-btn-submit-disabled-color;
+    background-color: $color-white--darker;
     outline: none;
 
     &:hover {
-      background-color: $background-btn-submit-disabled-color;
+      background-color: $color-white--darker;
     }
 
     &:active {
@@ -35,7 +35,7 @@
 
 .btn-submit__text {
   text-transform: uppercase;
-  @include font-OpenSansBold ($size: 18px, $colour: $text-color, $lh: 30px);
+  @include font-OpenSansBold ($size: 18px, $colour: $text-color-white, $lh: 30px);
   transition: opacity 0.3s;
 
   .btn-submit:active & {

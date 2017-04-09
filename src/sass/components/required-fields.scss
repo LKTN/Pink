@@ -3,10 +3,10 @@
 @import "../vars.scss";
 
 .required-fields {
-	@include font-OpenSansRegular ($size: 14px, $colour: $text-required-fields-color, $lh: 30px);
+	@include font-OpenSansRegular ($size: 14px, $colour: $text-color-main, $lh: 30px);
 	text-transform: uppercase;
 }
 
 .required-fields__star {
-	color: $text-required-fields-star-color;
+	color: $text-color-secondary;
 }

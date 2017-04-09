@@ -12,7 +12,7 @@
 }
 
 .copyright__text {
-	@include font-OpenSansRegular ($size: 14px, $colour: $text-copyright-color)
+	@include font-OpenSansRegular ($size: 14px, $colour: $text-color-main)
 	margin-right: 5px;
 }
 

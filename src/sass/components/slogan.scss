@@ -4,7 +4,7 @@
 
 
 .slogan {
-  color: $text-color;
+  color: $text-color-white;
   @include font-OpenSansLight ($size: 40px, $weight: normal);
   text-align: center;
 
@@ -35,7 +35,7 @@
   }
 
   &--descr {
-    color: $text-descr-slogan-color;
+    color: $text-color-main;
 
     @include media ("screen", "<tablet-larger-small") {
       font-size: 24px;
@@ -53,7 +53,7 @@
   }
 
   &--form {
-    @include font-OpenSansRegular($size: 14px, $colour: $text-descr-slogan-color, $lh: 30px);
+    @include font-OpenSansRegular($size: 14px, $colour: $text-color-main, $lh: 30px);
 
     @include media ("screen", "<tablet-larger-small") {
       font-size: 14px;

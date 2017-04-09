@@ -25,7 +25,7 @@
   width: 100%;
 
   @include media ("screen", "<tablet-larger-small") {
-    background-color: $background-form-checkbox-color;
+    background-color: $color-white--dark;
   }
 
   @include media ("screen", ">=tablet-wide") {

@@ -8,7 +8,7 @@
   width: 100%;
 
   @include media("screen", "<tablet-wide") {
-    background-color: $background-menu-color;
+    background-color: $color-main;
   }
 
   @include media("screen", "<tablet-larger-small") {
@@ -21,7 +21,7 @@
 
   &--closed {
     @include media("screen", "<tablet-wide") {
-      background-color: $background-menu-color-opacity;
+      background-color: rgba($color-main--dark, 0.4);
     }
 
   }
@@ -57,7 +57,7 @@
 
   @include media("screen", "<tablet-wide") {
     .menu--nojs & {
-      background: $background-menu-color;
+      background: $color-main;
     }
     
   }

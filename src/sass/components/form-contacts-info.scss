@@ -17,7 +17,7 @@
   @include media ("screen", ">=tablet-larger-small") {
     max-width: 940px;
     padding: 0 60px;
-    border: 2px solid #e5e5e5;
+    border: 2px solid $color-white--darker;
   }
 
   @include media ("screen", ">=tablet-wide") {
@@ -80,7 +80,7 @@
 }
 
 .form-contacts-info__label {
-  @include font-OpenSansRegular($size: 14px, $colour: $text-form-title-color, $lh: 30px);
+  @include font-OpenSansRegular($size: 14px, $colour: $text-color-secondary, $lh: 30px);
   text-transform: uppercase;
   padding: 0 0 0 25px;
 

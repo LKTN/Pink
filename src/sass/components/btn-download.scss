@@ -3,7 +3,7 @@
 @import "../vars.scss";
 
 .btn-download {
-  @include font-OpenSansBold($colour: #fff, $size: 18px);
+  @include font-OpenSansBold($colour: $text-color-white, $size: 18px);
   text-decoration: none;
 
   border-radius: 40px;
@@ -12,23 +12,24 @@
   
   @include media ("screen", ">=tablet-wide") {
     &:hover {
-      background-color: $btn-download-background-color;
-      color: $btn-download-text-color;
+      background-color: $color-white;
+      color: $text-color-secondary;
     }
 
     &:active {
-      background-color: $btn-download-background-color;
-      color: $btn-download-text-down-color;
+      background-color: $color-white;
+      color: rgba($text-color-secondary, 0.3);
     }
     
   }
 
   &:active {
-    background-color: $btn-download-background-color;
-    color: $btn-download-text-down-color;
+    background-color: $color-white;
+    color: rgba($text-color-secondary, 0.3);
   }
 
   @include media("screen", ">=tablet-larger-small") {
     background: none;
   }
+  
 }

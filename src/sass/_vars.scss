@@ -1,89 +1,34 @@
 // Global
 
-$pink:                                        #d22856;
-$white:                                       #fff;
-$black:                                       #000;
-$blue:                                        #283645;
-$dark-blue:                                   #1d2631;
-$success:                                     #3dc644;
-$error:                                       #f25b26;
+$color-main--light:                           #495562;
+$color-main:                                  #283645;
+$color-main--dark:                            #1d2631;
+
+$color-secondary:                             #d22856;
+$color-secondary--dark:                       #562b44;
+
+$color-white:                                 #fff;
+$color-white--dark:                           #f2f2f2;
+$color-white--darker:                         #e6e6e6;
+
+$color-black:                                 #030303;
+
+$color-success:                               #3dc644;
+$color-success--dark:                         #2aab6d;
+$color-success--darken:                       #159c5e;
+
+$color-error:                                 #f25b26;
 
 // Typography color
 
-$text-color:                                  $white;
-$text-descr-color:                            rgba($white, 0.7);
-$text-descr-slogan-color:                     #283645;
-$text-active-hover-color:                     $pink;
-$text-active-hover-color-opacity:             rgba($pink, 0.3);
-$text-down-color:                             rgba($white, 0.3);
-$text-advantage-title-color:                  $black;
-$text-advantage-color:                        #283645;
-$text-table-td-color:                         #283645;
-$text-table-th-color:                         $white;
-$text-contacts-color:                         #283645;
-$text-link-color:                             $pink;
-$text-link-hover-color:                       $black;
-$text-link-down-color:                        rgba($black, 0.3);
-$text-copyright-color:                        #283645;
-$text-form-title-color:                       $pink;
-$text-form-main-color:                        #283645;
-$text-required-fields-color:                  #283645;
-$text-required-fields-star-color:             $pink;
-
-
-// Border
-
-$border-menu-top-color:                       #495562;
-$border-menu-bottom-color:                    #030303;
-$border-menu-hover-color:                     $white;
-$border-menu-active-hover-color:              $pink;
-$border-hours-color:                          $pink;
-$border-table-color:                          #e5e5e5;
-$border-social-color:                         #f2f2f2;
-$border-social-hover-color:                   #030303;
-$border-input-color:                          #e5e5e5;
-$border-input-hover-color:                    #283645;
-$border-input-focus-color:                    $pink;
-
-// Backgrounds
-
-$background-main-color:                       $dark-blue;
-$background-menu-color:                       #283645;
-$background-menu-color-opacity:               rgba($background-main-color, 0.4);
-$background-th-color:                         #283645;
-$background-th-best-color:                    #d22856;
-$background-form-checkbox-color:              #f2f2f2;
-$background-btn-submit-color:                 #26ac6e;
-$background-btn-submit-hover-color:           #159c5e;
-$background-btn-submit-disabled-color:        #e6e6e6;
-
-
-// Button-download
-
-$btn-download-text-color:                     $pink;   
-$btn-download-background-color:               $white;   
-$btn-download-text-down-color:                rgba($pink, 0.3);   
-
-// Button-menu
-
-//$btn-menu-hover-color:                        $pink;
-$btn-menu-down-color:                         rgba($pink, 0.3);
-$btn-menu-down-isActive-color:                #562b44;
-
-// Slideshow
-
-$arrows-color:                                rgba(#283645, 0.3);
-$arrows-hover-color:                          rgba(#283645, 0.6);
-$arrows-down-color:                           rgba(#283645, 0.1);
-
-// Table cross and check
-
-$table-cross:                                 $error;
-$table-check:                                 $success;
+$text-color-main:                             $color-main;
+$text-color-secondary:                        $color-secondary;
+$text-color-white:                            $color-white;
+$text-color-black:                            $color-black;
 
 // Slider
 
-$dot-border:                                  $white;
+$dot-border:                                  $color-white;
 $dot-active-border:                           #283645;
 $dot-background:                              #BEC2C8;
-$dot-active-background:                       $white;
+$dot-active-background:                       $color-white;
