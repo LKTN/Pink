@@ -19,12 +19,12 @@
     outline: none;
   }
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     width: 100px;
     height: 110px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     display: none;
   }
 
@@ -45,7 +45,7 @@
   height: 4px;
   background: white;
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     top: 55px;
     height: 6px;
   }
@@ -69,7 +69,7 @@
     transition-duration: 0.3s, 0.3s;
     transition-delay: 0.3s, 0s;
     
-    @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    @include media ("screen", ">=tablet", "<desktop") {
       height: 6px;
     }
 
@@ -83,7 +83,7 @@
     top: -10px;
     transition-property: top, transform;
     
-    @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    @include media ("screen", ">=tablet", "<desktop") {
       top: -15px;
     }
 
@@ -98,7 +98,7 @@
     bottom: -10px;
     transition-property: bottom, transform;
 
-    @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    @include media ("screen", ">=tablet", "<desktop") {
       bottom: -15px;
     }
 

@@ -7,15 +7,11 @@
   width: 100%;
   border: none;
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     padding: 0 40px;
   }
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
-    margin: 0 40px;
-  }
-
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     max-width: 940px;
     padding: 0 60px;
     border: 2px solid $color-white--darker;
@@ -31,7 +27,7 @@
   @include font-OpenSansRegular($size: 18px, $lh: 30px, $colour: $text-color-main)
   border: 2px solid $color-white--darker;
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     margin-bottom: 50px;
   }
 
@@ -40,7 +36,7 @@
     outline: none;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &:hover {
       border-color: $color-main;
     }
@@ -72,4 +68,8 @@
   &:focus::-moz-placeholder          {color: transparent}
   &:focus:-moz-placeholder           {color: transparent}
   &:focus:-ms-input-placeholder      {color: transparent}
+}
+
+.form-textarea__legend {
+  margin-bottom: 40px;
 }

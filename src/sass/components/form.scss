@@ -10,7 +10,7 @@
   align-self: center;
   margin-bottom: 50px;
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     justify-content: space-between;
     max-width: 940px;
   }
@@ -24,16 +24,16 @@
   padding: 40px 0;
   width: 100%;
 
-  @include media ("screen", "<tablet-larger-small") {
+  @include media ("screen", "<tablet") {
     background-color: $color-white--dark;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     max-width: 940px;
   }
 
   &--radio {
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       max-width: 440px;
       order: -1;
       margin: 0;
@@ -55,20 +55,67 @@
 
   margin: 50px 20px 0 20px;
   
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     margin: 50px 40px 0 40px;
   }
   
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     flex-direction: row;
     justify-content: space-between;
     max-width: 940px;
     height: 65px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     margin: 50px 0 0 0;
     height: 65px;
   }
 
+}
+
+.form__checkbox {
+  @include media ("screen", ">=tablet", "<desktop") {
+    margin: 0 40px;
+  }
+
+}
+
+.form__contacts-info {
+  margin: 0 25px 50px;
+  
+  @include media ("screen", ">=tablet", "<desktop") {
+    margin: 0 40px 50px;
+  }
+
+  @include media ("screen", ">=desktop") {
+    margin: 0 0 60px;
+  }
+
+}
+
+.form__full-name {
+  margin: 0 25px 50px;
+  
+  @include media ("screen", ">=tablet") {
+    margin: 0 40px 50px;
+  }
+
+  @include media ("screen", ">=desktop") {
+    margin: 0;
+  }
+
+}
+
+.form__radio {
+  @include media ("screen", ">=tablet", "<desktop") {
+    margin: 0 40px;
+  }
+
+}
+
+.form__textarea {
+  @include media ("screen", ">=tablet", "<desktop") {
+    margin: 0 40px;
+  }
+  
 }

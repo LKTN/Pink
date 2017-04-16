@@ -22,7 +22,7 @@
 	border-radius: 50%;
 	transition: border-color .4s linear;
 	
-	@include media ("screen", ">=tablet-wide") {
+	@include media ("screen", ">=desktop") {
 		&:hover {
 			border-color: $color-black;
 		}	

@@ -7,11 +7,11 @@
   flex-direction: column;
   align-items: center;
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     padding-top: 55px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     padding-top: 75px;
   }
   
@@ -29,14 +29,14 @@
 
   width: 100%;
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 950px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     justify-content: space-between;
   }
 
@@ -47,14 +47,14 @@
   text-align: center;
   margin-bottom: 30px;
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     &:last-child {
       width: 100%;
     }
 
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &:nth-child(2) {
       order: 1;
     }
@@ -71,7 +71,7 @@
 .contacts__value {
   @include font-OpenSansLight ($size: 24px, $colour: $text-color-secondary);
   
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &:hover {
       color: $text-color-black; 
     }
@@ -94,15 +94,15 @@
   width: 100%;
   background-color: $color-white;
   
-  @include media ("screen", "<tablet-larger-small") {
+  @include media ("screen", "<tablet") {
     height: 250px;
   }
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     height: 420px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     height: 550px;
   }
 
@@ -116,7 +116,7 @@
     border-right: 50vw solid transparent;
     border-left: 50vw solid transparent;
 
-    @include media ("screen", ">=tablet-larger-small") {
+    @include media ("screen", ">=tablet") {
       border-top: 75px solid $color-white;
     }
 

@@ -8,11 +8,7 @@
   flex-direction: column;
   border: none;
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
-    margin: 0 40px;
-  }
-
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     width: 100%;
     max-width: 940px;
 
@@ -26,7 +22,7 @@
   display: flex;
   flex-direction: column;
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -35,11 +31,11 @@
     height: auto;
   }
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     justify-content: space-around;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     justify-content: space-between;
   }
 
@@ -55,7 +51,7 @@
   cursor: pointer;
   @include font-OpenSansRegular ($size: 18px, $lh: 30px, $colour: $text-color-main);
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     width: 280px;
   }
 
@@ -100,7 +96,7 @@
 
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &[type="checkbox"]:hover {
       ~ .form-checkbox__indicator {
         border-color: $color-main;
@@ -157,4 +153,8 @@
     transform: rotate(45deg);
   }
 
+}
+
+.form-checkbox__legend {
+  margin-bottom: 40px;
 }

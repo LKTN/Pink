@@ -8,32 +8,32 @@
   align-items: center;
   align-self: center;
 
-  @include media("screen", "<tablet-larger-small") {
+  @include media("screen", "<tablet") {
     margin-bottom: 50px;
     margin-top: 45px;
   }
 
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media("screen", ">=tablet", "<desktop") {
     margin-bottom: 150px;
     margin-top: 60px;
   }
 
-  @include media("screen", ">=tablet-wide") {
+  @include media("screen", ">=desktop") {
     margin-bottom: 80px;
     margin-top: 75px;
   }
   
   &--form {
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       padding: 0 25px;
     }
 
-    @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+    @include media ("screen", ">=tablet", "<desktop") {
       padding: 0 110px;
       margin-bottom: 50px;
     }
 
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       width: 780px;
     }
 

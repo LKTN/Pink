@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
@@ -19,7 +19,7 @@
         <div class="menu menu--closed menu--nojs">
 
           <div class="menu__wrap">
-          
+        
             <a href="index.html" class="logo">
               <picture>
                 <source srcset="img/logo-pink-desktop.svg" media="only screen and (min-width: 1024px)">
@@ -65,12 +65,13 @@
           </nav>
 
         </div>
-      
+    
       </div>
 
       <h2 class="slogan slogan--topic">
         Конкурс на самое безбашенное путешествие с Пинк
-      </h2> 
+      </h2>
+
     </header>
 
     <section class="offer offer--form">
@@ -82,7 +83,7 @@
       
       <form action="/" class="form" method="post">
         
-        <fieldset class="form-full-name">
+        <fieldset class="form-full-name form__full-name">
           
           <div class="form-full-name__group">
             <label class="form-full-name__label" for="name">Фамилия:</label>
@@ -103,8 +104,8 @@
 
         <div class="form__fieldset-wrap">
 
-          <fieldset class="form-checkbox">
-            <legend class="field-legend">Ваши безбашенные достижения в путешествии</legend>
+          <fieldset class="form-checkbox form__checkbox">
+            <legend class="field-legend form-checkbox__legend">Ваши безбашенные достижения в путешествии</legend>
             
             <div class="form-checkbox__wrap">
 
@@ -146,8 +147,8 @@
         </div>
 
 
-        <fieldset class="form-contacts-info">
-          <legend class="field-legend field-legend--hide">Контактная информация</legend>
+        <fieldset class="form-contacts-info form__contacts-info">
+          <legend class="field-legend field-legend--hide form-contacts-info__legend">Контактная информация</legend>
 
           <div class="form-contacts-info__wrap">
 
@@ -168,8 +169,8 @@
 
         <div class="form__fieldset-wrap form__fieldset-wrap--radio">
 
-          <fieldset class="form-radio">
-            <legend class="field-legend">С каким приложением путешествовали?</legend>
+          <fieldset class="form-radio form__radio">
+            <legend class="field-legend form-radio__legend">С каким приложением путешествовали?</legend>
             
             <div class="form-radio__wrap">
             
@@ -194,8 +195,8 @@
         
         </div>
 
-        <fieldset class="form-textarea">
-          <legend class="field-legend">Опишите свои эмоции</legend>
+        <fieldset class="form-textarea form__textarea">
+          <legend class="field-legend form-textarea__legend">Опишите свои эмоции</legend>
 
           <textarea class="form-textarea__area" name="emotion" id="emotion" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
           

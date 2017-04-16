@@ -23,7 +23,7 @@
         text-decoration: none;
       }
 
-      @include media ("screen", "<tablet-wide") {
+      @include media ("screen", "<desktop") {
         display: none;
       }
     }
@@ -62,7 +62,7 @@
         }
       }
 
-      @include media("screen", ">=tablet-wide") {
+      @include media("screen", ">=desktop") {
         display: none;
       }
     }
@@ -78,7 +78,7 @@
   }
 
   &--price {
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       
     }
   }
@@ -92,7 +92,7 @@
   left: 20%;
 }
 
-@include media ("screen", ">=tablet-wide") {
+@include media ("screen", ">=desktop") {
   .owl-carousel.owl-loaded {
     width: 1350px;
   }  

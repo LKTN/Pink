@@ -9,9 +9,7 @@
   padding: 12px 10px;
   border: 2px solid $color-white--darker;
 
-  
-
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &:hover {
       border-color: $color-main;
     }
@@ -48,7 +46,7 @@
   &:focus:-ms-input-placeholder      {color: transparent}
 
   &--contacts {
-    @include media ("screen", ">=tablet-larger-small") {
+    @include media ("screen", ">=tablet") {
       border-width: 2px 60px 2px 2px;
       position: relative;
 

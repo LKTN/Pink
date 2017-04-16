@@ -7,16 +7,16 @@
   align-self: center;
   padding: 40px; 
 
-  @include media ("screen", "<tablet-larger-small") {
+  @include media ("screen", "<tablet") {
     display: none;
   }
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     margin-top: 55px;
     max-width: 760px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     margin-top: 75px;
     max-width: 950px;
   }
@@ -31,7 +31,7 @@
 
 .research__timer {
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     background: url("../img/icon-timer.svg") no-repeat;
     background-position: right 16px center;
     background-size: 238px 276px;
@@ -39,7 +39,7 @@
     height: 276px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     background: url("../img/icon-timer.svg") no-repeat;
     background-position: right 16px center;
     background-size: 298px 345px;

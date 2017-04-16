@@ -5,10 +5,9 @@
 .text-descr {
   @include font-OpenSansRegular($size: 14px, $lh: 24px)
   text-align: center;
-  margin-bottom: 25px;
   color: rgba($text-color-white, 0.7);
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
   	font-size: 18px;
   }
   

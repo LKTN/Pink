@@ -10,7 +10,7 @@
   background-size: auto, auto;
   background-repeat: no-repeat;  
 
-  @include media("screen", "<tablet-larger-small") {
+  @include media("screen", "<tablet") {
     background-image: url("../img/bg-back-mobile@1x.jpg");
     height: 730px;
     background-position: center top;
@@ -22,7 +22,7 @@
   
   }
 
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media("screen", ">=tablet", "<desktop") {
     background-image: url("../img/bg-back-tablet@1x.jpg");
     height: 730px;
     background-position: center top;
@@ -34,7 +34,7 @@
 
   }
 
-  @include media("screen", ">=tablet-wide") {
+  @include media("screen", ">=desktop") {
     background-image: url("../img/bg-back-desktop@1x.jpg");
     height: 850px;
     background-position: center top;
@@ -49,7 +49,7 @@
   &--index {
     background-color: $color-main--dark;
 
-    @include media("screen", "<tablet-larger-small") {
+    @include media("screen", "<tablet") {
       background-image: url("../img/iphone-hand-mobile@1x.png"),
       url("../img/bg-back-mobile@1x.jpg");
       height: 730px;
@@ -63,7 +63,7 @@
     
     }
 
-    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    @include media("screen", ">=tablet", "<desktop") {
       background-image: url("../img/iphone-hand-tablet@1x.png"),
       url("../img/bg-back-tablet@1x.jpg");
       height: 730px;
@@ -79,7 +79,7 @@
 
     }
 
-    @include media("screen", ">=tablet-wide") {
+    @include media("screen", ">=desktop") {
       background-image: url("../img/iphone-hand-desktop@1x.png"),
       url("../img/bg-back-desktop@1x.jpg");
       height: 850px;
@@ -97,17 +97,17 @@
   }
 
   &--short {
-    @include media("screen", "<tablet-larger-small") {
+    @include media("screen", "<tablet") {
       height: 240px;
       background-position: center top;
     }
 
-    @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+    @include media("screen", ">=tablet", "<desktop") {
       height: 440px;
       background-position: center top;
     }
 
-    @include media("screen", ">=tablet-wide") {
+    @include media("screen", ">=desktop") {
       height: 380px;
     }
 
@@ -121,11 +121,24 @@
   width: 100%;
   background-color: rgba($color-main--dark, 0.4);
 
-  @include media("screen", "<tablet-larger-small") {
+  @include media("screen", "<tablet") {
     height: 70px;
   }
 
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media("screen", ">=tablet", "<desktop") {
     height: 110px;
   }
+}
+
+.header__download {
+  @include media("screen", ">=tablet", "<desktop") {
+    margin-right: 300px;
+    margin-bottom: 120px;  
+  }
+
+  @include media("screen", ">=desktop") {
+    margin-right: 600px;
+    margin-bottom: 100px;
+  }
+  
 }

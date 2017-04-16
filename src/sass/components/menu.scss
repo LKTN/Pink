@@ -7,29 +7,29 @@
   transition: border-color,background-color .4s linear;
   width: 100%;
 
-  @include media("screen", "<tablet-wide") {
+  @include media("screen", "<desktop") {
     background-color: $color-main;
   }
 
-  @include media("screen", "<tablet-larger-small") {
+  @include media("screen", "<tablet") {
     height: 70px;
   }
 
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media("screen", ">=tablet", "<desktop") {
     height: 110px;
   }
-
-  &--closed {
-    @include media("screen", "<tablet-wide") {
-      background-color: rgba($color-main--dark, 0.4);
-    }
-
-  }
-
-  @include media("screen", ">=tablet-wide") {
+  
+  @include media("screen", ">=desktop") {
     display: flex;
     justify-content: space-between;
     max-width: 950px;
+  }
+
+  &--closed {
+    @include media("screen", "<desktop") {
+      background-color: rgba($color-main--dark, 0.4);
+    }
+
   }
 
 }
@@ -39,23 +39,23 @@
   align-items: center;  
   width: 100%;
 
-  @include media("screen", "<tablet-larger-small") {
+  @include media("screen", "<tablet") {
     height: 70px;
     justify-content: space-between;
     padding: 0 0 0 15px;
   }
 
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media("screen", ">=tablet", "<desktop") {
     height: 110px;
     justify-content: space-between;
     padding: 0 0 0 35px;
   }
 
-  @include media("screen", ">=tablet-wide") {
+  @include media("screen", ">=desktop") {
     width: 150px;
   }
 
-  @include media("screen", "<tablet-wide") {
+  @include media("screen", "<desktop") {
     .menu--nojs & {
       background: $color-main;
     }
@@ -65,7 +65,7 @@
 }
 
 .menu__nav {
-  @include media("screen", "<tablet-larger-small") {
+  @include media("screen", "<tablet") {
     top: 70px;
 
     .menu--nojs & {
@@ -74,7 +74,7 @@
 
   }
 
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media("screen", ">=tablet", "<desktop") {
     top: 110px;
 
     .menu--nojs & {

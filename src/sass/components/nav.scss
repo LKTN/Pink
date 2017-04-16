@@ -7,21 +7,20 @@
   flex-wrap: wrap;
   z-index: 10;
 
-  @include media("screen", "<tablet-wide") {
+  @include media("screen", "<desktop") {
     position: absolute;
     left: 0;
     width: 100%;
     border-top: 1px solid $color-black;
-    transition: opacity .4s linear;
   }
 
-  @include media("screen", ">=tablet-wide") {
+  @include media("screen", ">=desktop") {
     justify-content: flex-end;
     width: 80%;   
   }
 
   .menu--closed & {
-    @include media("screen", "<tablet-wide") {
+    @include media("screen", "<desktop") {
       visibility: hidden;
       opacity: 0;
       transition: visibility 0.4s, opacity 0.4s linear;
@@ -30,7 +29,7 @@
   }
 
   .menu--opened & {
-    @include media("screen", "<tablet-wide") {
+    @include media("screen", "<desktop") {
       visibility: visible;
       opacity: 1;
       transition: visibility 0s, opacity 0.4s linear;
@@ -39,8 +38,9 @@
   }
 
   .menu--nojs & {
-    @include media("screen", "<tablet-wide") {
+    @include media("screen", "<desktop") {
       opacity: 1;
+      visibility: visible;
     }
 
   }
@@ -54,13 +54,13 @@
   width: 100%;
   @include font-OpenSansRegular;
     
-  @include media("screen", ">=tablet-wide") {
+  @include media("screen", ">=desktop") {
     width: 80%;
     height: 112px;
     justify-content: space-around;      
   }
 
-  @include media("screen", "<tablet-wide") {
+  @include media("screen", "<desktop") {
     flex-direction: column;
     @include font-OpenSansBold;
   }
@@ -68,7 +68,7 @@
 }
 
 .nav__item {
-  @include media("screen", "<tablet-wide") {
+  @include media("screen", "<desktop") {
     width: 100%;
     z-index: 20;     
   }
@@ -80,11 +80,11 @@
     color: $text-color-white;
     text-align: center;
 
-    @include media("screen", ">=tablet-wide") {
+    @include media("screen", ">=desktop") {
       padding-bottom: 10px;
     }
 
-    @include media("screen", ">=tablet-wide") {
+    @include media("screen", ">=desktop") {
       &[href]:hover {    
         border-bottom: 2px solid $color-secondary;
         color: $text-color-secondary;
@@ -95,7 +95,7 @@
     &[href]:active {
       color: rgba($color-secondary, 0.3);
 
-      @include media("screen", ">=tablet-wide") {
+      @include media("screen", ">=desktop") {
         color: rgba($text-color-white, 0.3);
         border: none;
       }
@@ -103,7 +103,7 @@
     }
 
     .nav & {
-      @include media("screen", "<tablet-wide") {
+      @include media("screen", "<desktop") {
         display: block;
         text-transform: uppercase;
         background-color: $color-main;
@@ -123,7 +123,7 @@
   &--active {
 
     & a {
-      @include media("screen", ">=tablet-wide") {
+      @include media("screen", ">=desktop") {
         &:hover {
           border-bottom: 2px solid $color-white;
           color: $text-color-white;

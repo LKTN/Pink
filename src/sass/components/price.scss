@@ -17,12 +17,13 @@
     border-right: 100vw solid transparent;
     border-top: 32px solid $color-white;
 
-    @include media ("screen", ">=tablet-larger-small") {
+    @include media ("screen", ">=tablet") {
       border-top: 75px solid $color-white;
     }
+    
   }
 
-  @include media ("screen", "<tablet-larger-small") {
+  @include media ("screen", "<tablet") {
     display: none;
   }
 
@@ -32,11 +33,11 @@
   width: 100%;
   align-self: center;
 
-  @include media ("screen", ">tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">tablet", "<desktop") {
     padding: 0 40px;
   }
   
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     width: 950px;
     padding-top: 65px;
   }
@@ -48,7 +49,7 @@
   width: 100%;
   border-collapse: collapse;
 
-  @include media ("screen", "<tablet-larger-small") {
+  @include media ("screen", "<tablet") {
     display: block;
   }
 
@@ -107,14 +108,14 @@
     padding-left: 25px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     font-size: 18px;
   }
 
 }
 
 .price__none {
-  @include media ("screen", "<tablet-larger-small") {
+  @include media ("screen", "<tablet") {
     display: none;
   }
 
@@ -124,7 +125,7 @@
   @include font-OpenSansBold($size: 18px)
   text-transform: uppercase;
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     font-size: 16px;
   }
 
@@ -134,7 +135,7 @@
   padding-top: 10px;
   @include font-OpenSansLight($size: 24px, $weight: normal);
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     font-size: 18px;
   }
   

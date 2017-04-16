@@ -8,20 +8,12 @@
   align-items: center;
   justify-content: space-around;
 
-  @include media("screen", "<tablet-larger-small") {
+  @include media("screen", "<tablet") {
     background-color: $color-main--dark;
     height: 285px;
-    
   }
 
-  @include media("screen", ">=tablet-larger-small", "<tablet-wide") {
-    margin-right: 300px;
-    margin-bottom: 120px;  
-  }
-
-  @include media("screen", ">=tablet-wide") {
-    margin-right: 600px;
-    margin-bottom: 100px;
+  @include media("screen", ">=desktop") {
     height: 500px;
   }
 
@@ -29,4 +21,12 @@
 
 .download__btn {
   margin-top: 28px;
+}
+
+.download__icons {
+  margin-top: 20px;
+}
+
+.download__descr {
+  margin-bottom: 25px;
 }

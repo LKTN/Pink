@@ -6,15 +6,16 @@
   display: flex;
   flex-direction: column;
   align-self: center;
+  max-width: 950px;
 
-  @include media ("screen",">=tablet-larger-small" ,"<tablet-wide") {
+  @include media ("screen",">=tablet" ,"<desktop") {
     flex-direction: row-reverse;
     align-items: flex-start;
     height: 420px;
   }
 
   &::after {
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       content: "";
       display: block;
       height: 276px;
@@ -28,7 +29,7 @@
 
     }
 
-    @include media ("screen", ">=tablet-larger-small" ,"<tablet-wide") {
+    @include media ("screen", ">=tablet" ,"<desktop") {
       content: "";
       display: block;
       position: relative;
@@ -54,11 +55,11 @@
   flex-direction: column;
   padding: 0 40px;
 
-  @include media ("screen",">=tablet-larger-small" ,"<tablet-wide") {
+  @include media ("screen",">=tablet" ,"<desktop") {
     flex-basis: 65%;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     flex-direction: row;
     width: 950px;
     padding: 0;
@@ -72,22 +73,22 @@
 
   text-align: center;
 
-  @include media ("screen", "<tablet-larger-small") {
+  @include media ("screen", "<tablet") {
     padding-bottom: 40px;
   }
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     text-align: left;
     padding-bottom: 45px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     width: 375px;
     align-items: center;
   }
 
   &--gray {
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       background: url(../img/iphone-screen-1-desktop@1x.png) no-repeat center top;
 
       @include media ("retina2x") {
@@ -100,7 +101,7 @@
   }
 
   &--pink {
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       background: url(../img/iphone-screen-2-desktop@1x.png) no-repeat center top;
 
       @include media ("retina2x") {
@@ -113,7 +114,7 @@
   }
 
   &--smile {
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       background: url(../img/iphone-screen-3-desktop@1x.png) no-repeat center top;
 
       @include media ("retina2x") {
@@ -126,7 +127,7 @@
   }
 
   &::before {
-    @include media("screen", ">=tablet-wide") {
+    @include media("screen", ">=desktop") {
       content: "";
       display: block;
       margin-bottom: 60px;
@@ -141,7 +142,7 @@
   @include font-OpenSansBold($size: 18px, $colour: $text-color-black);
   padding-bottom: 20px;
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     font-size: 30px;
     width: 250px;
   }
@@ -151,7 +152,7 @@
 .features__text {
   @include font-OpenSansRegular($size: 14px, $colour: $text-color-main);
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     font-size: 18px;
     width: 250px;
   }

@@ -9,11 +9,11 @@
   text-align: center;
 
   &--download {
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       display: none;
     }
 
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       font-size: 50px;
     }
 
@@ -23,11 +23,11 @@
     margin: auto;
     width: 80vw;
 
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       font-size: 24px;
     }
 
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       font-size: 50px;
       max-width: 830px;
     }
@@ -37,7 +37,7 @@
   &--descr {
     color: $text-color-main;
 
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       font-size: 24px;
 
       &:last-child {
@@ -46,7 +46,7 @@
 
     }
 
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       font-size: 50px;
     }
 
@@ -55,11 +55,11 @@
   &--form {
     @include font-OpenSansRegular($size: 14px, $colour: $text-color-main, $lh: 30px);
 
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       font-size: 14px;
     }
 
-    @include media ("screen", ">=tablet-larger-small") {
+    @include media ("screen", ">=tablet") {
       font-size: 18px;
     }
 

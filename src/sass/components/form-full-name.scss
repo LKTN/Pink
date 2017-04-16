@@ -7,15 +7,9 @@
   flex-direction: column;
   border: none;
   width: 100%;
-  margin: 0 25px 50px;
-
-  @include media ("screen", ">=tablet-larger-small") {
-    margin: 0 40px 50px;
-  }
   
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     width: 440px;
-    margin: 0;
     order: -2;
   }
 
@@ -26,12 +20,12 @@
   flex-direction: column;
   margin-top: 25px;
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     flex-direction: row;
     align-items: center;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     max-width: 440px;
   }
 
@@ -42,7 +36,7 @@
   text-transform: uppercase;
   padding: 0 0 0 25px;
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     padding: 15px 25px 15px 0;
   }
 

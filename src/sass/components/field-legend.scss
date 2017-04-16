@@ -4,21 +4,21 @@
 
 .field-legend {
   width: 250px;
-  margin-bottom: 40px;
 
   text-align: center;
   @include font-OpenSansRegular($size: 14px, $colour: $text-color-secondary, $lh: 18px);
   text-transform: uppercase;
 
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     width: auto;
     padding: 0 25px;
   }
 
   &--hide {
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       display: none;
     }
 
   }
+  
 }

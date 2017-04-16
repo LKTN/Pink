@@ -10,14 +10,14 @@
   border-radius: 3px;
   border: none;
   
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &:hover {
       background-color: $color-success--darken;
     }
     
   }
 
-  &--disabled {
+  &:disabled {
     background-color: $color-white--darker;
     outline: none;
 

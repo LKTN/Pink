@@ -14,7 +14,7 @@
 
   &--research {
     
-    @include media("screen", ">=tablet-larger-small") {
+    @include media("screen", ">=tablet") {
       text-align: left;
     }
 
@@ -23,7 +23,7 @@
   &--slideshow {
     line-height: 30px;
 
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       width: 90%;
       margin: auto;
     }
@@ -37,7 +37,7 @@
   padding-bottom: 20px;
 
   .text-advantage--research & {
-    @include media("screen", ">=tablet-larger-small") {
+    @include media("screen", ">=tablet") {
       font-size: 30px;
     }
     
@@ -51,19 +51,20 @@
 .text-advantage__text {
   @include font-OpenSansRegular($size: 14px, $colour: $text-color-main);
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     font-size: 18px;
     width: 250px;
   }
 
   .text-advantage--research & {
-    @include media ("screen", ">=tablet-wide") {
+    @include media ("screen", ">=desktop") {
       width: 100%;
     }
+    
   }
 
   .text-advantage--slideshow & {
-    @include media ("screen", ">=tablet-larger-small") {
+    @include media ("screen", ">=tablet") {
       order: -1;
       margin-bottom: 45px;
       font-size: 18px;
@@ -81,7 +82,7 @@
   color: $text-color-secondary;
   text-decoration: underline;
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &:hover {
       color: $text-color-black; 
     }
@@ -100,7 +101,7 @@
 .text-advantage__title-descr {
   
   .text-advantage--slideshow & {
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       display: none;
     }
 

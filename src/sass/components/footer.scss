@@ -9,7 +9,7 @@
   justify-content: space-around;
   height: 250px;
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
+  @include media ("screen", ">=tablet", "<desktop") {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -17,7 +17,7 @@
     padding: 0 40px;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     flex-direction: row;
     width: 950px;
     height: 200px;
@@ -28,7 +28,7 @@
 
 
   &--index {
-    @include media ("screen", "<tablet-larger-small") {
+    @include media ("screen", "<tablet") {
       display: none;
     }
 

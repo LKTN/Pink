@@ -10,7 +10,7 @@
   border: 3px solid #fff;
   padding: 15px 40px;
   
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &:hover {
       background-color: $color-white;
       color: $text-color-secondary;
@@ -28,7 +28,7 @@
     color: rgba($text-color-secondary, 0.3);
   }
 
-  @include media("screen", ">=tablet-larger-small") {
+  @include media("screen", ">=tablet") {
     background: none;
   }
   

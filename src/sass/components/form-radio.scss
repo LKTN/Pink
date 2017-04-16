@@ -5,17 +5,13 @@
 .form-radio {
   border: none;
 
-  @include media ("screen", ">=tablet-larger-small", "<tablet-wide") {
-    margin: 0 40px;
-  }
-
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     width: 100%;
     padding: 0 0 0 55px;
     border: 2px solid $color-white--darker;
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     max-width: 440px;      
   }
   
@@ -24,6 +20,11 @@
 .form-radio__wrap {
   display: flex;
   flex-direction: column;
+
+  @include media ("screen", ">=tablet", "<desktop") {
+    align-items: center;
+  }
+
 }
 
 .form-radio__group {
@@ -34,7 +35,7 @@
   cursor: pointer;
   @include font-OpenSansRegular ($size: 18px, $lh: 30px, $colour: $text-color-main);
   
-  @include media ("screen", ">=tablet-larger-small") {
+  @include media ("screen", ">=tablet") {
     width: 280px;
   }
 
@@ -80,7 +81,7 @@
 
   }
 
-  @include media ("screen", ">=tablet-wide") {
+  @include media ("screen", ">=desktop") {
     &[type="radio"]:hover {
       ~ .form-radio__indicator {
         border: 2px solid $color-main;
@@ -137,4 +138,8 @@
     border-radius: 50px;
   }
 
+}
+
+.form-radio__legend {
+  margin-bottom: 40px;
 }
